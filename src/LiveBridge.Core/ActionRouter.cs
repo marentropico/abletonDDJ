@@ -101,6 +101,18 @@ public class ActionRouter
         {
             return new ResolvedAction(ActionType.MidiCC, "Wildcard_LevelDepth", MidiChannel: 16, MidiCC: 47, MidiValue: ev.Value);
         }
+
+        // Reloop/Exit Left (Gravação contextual de slot de clip)
+        if (ev.Control == PhysicalControl.ReloopExit_Left)
+        {
+            return new ResolvedAction(ActionType.MidiCC, "Slot_Record_Toggle", MidiChannel: 16, MidiCC: 48, MidiValue: ev.Value);
+        }
+
+        // Reloop/Exit Right (Gravação global de Arrangement)
+        if (ev.Control == PhysicalControl.ReloopExit_Right)
+        {
+            return new ResolvedAction(ActionType.MidiCC, "Arrangement_Record_Toggle", MidiChannel: 16, MidiCC: 49, MidiValue: ev.Value);
+        }
         
         if (ev.Control == PhysicalControl.Volume_Left || ev.Control == PhysicalControl.Volume_Right)
         {

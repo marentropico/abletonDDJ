@@ -580,6 +580,72 @@ public class Program
         Console.ResetColor();
     }
 
+    private static bool TryDetectPad(byte status, byte data1, out PhysicalControl control, out string mode)
+    {
+        control = PhysicalControl.Unknown;
+        mode = "Sampler";
+
+        // Left Deck Pads (Channel 1 -> Status 144, or Channel 8 -> Status 151)
+        if (status == 144 || status == 151)
+        {
+            if (data1 >= 0 && data1 <= 7)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + data1);
+                mode = "HotCue";
+                return true;
+            }
+            if (data1 >= 16 && data1 <= 23)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 16));
+                mode = "BeatLoop";
+                return true;
+            }
+            if (data1 >= 32 && data1 <= 39)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 32));
+                mode = "BeatJump";
+                return true;
+            }
+            if (data1 >= 48 && data1 <= 55)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 48));
+                mode = "Sampler";
+                return true;
+            }
+        }
+
+        // Right Deck Pads (Channel 2 -> Status 145, or Channel 10 -> Status 153)
+        if (status == 145 || status == 153)
+        {
+            if (data1 >= 0 && data1 <= 7)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + data1);
+                mode = "HotCue";
+                return true;
+            }
+            if (data1 >= 16 && data1 <= 23)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 16));
+                mode = "BeatLoop";
+                return true;
+            }
+            if (data1 >= 32 && data1 <= 39)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 32));
+                mode = "BeatJump";
+                return true;
+            }
+            if (data1 >= 48 && data1 <= 55)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 48));
+                mode = "Sampler";
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private static void RunProductionMode() {
     try {
 
@@ -606,7 +672,20 @@ public class Program
         il.OnRawMidiEvent += (raw) =>
         {
             PhysicalControl ctrl = PhysicalControl.Unknown;
-            _lookup.TryGetValue((raw.Status, raw.Data1), out ctrl);
+            string padMode = "";
+
+            if (TryDetectPad(raw.Status, raw.Data1, out var padCtrl, out var detectedMode))
+            {
+                ctrl = padCtrl;
+                string deck = ctrl.ToString().EndsWith("_Right") ? "Right" : "Left";
+                sm.SetMode(deck, detectedMode);
+                padMode = detectedMode;
+            }
+            else
+            {
+                _lookup.TryGetValue((raw.Status, raw.Data1), out ctrl);
+                padMode = sm.GetMode(ctrl);
+            }
 
             if (ctrl != PhysicalControl.Unknown)
             {
@@ -627,7 +706,7 @@ public class Program
                 return;
             }
 
-            var mode = sm.GetMode(ctrl);
+            var mode = padMode;
             var ev   = new ControlEvent(ctrl, raw.Data2, sm.IsShiftActive, mode);
             var act  = ar.Resolve(ev);
             if (act == null) return;

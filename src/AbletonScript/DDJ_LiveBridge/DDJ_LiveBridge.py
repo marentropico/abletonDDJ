@@ -88,6 +88,23 @@ class DDJ_LiveBridge(ControlSurface):
         self.register_disconnectable(self._knob_wildcard)
         self._knob_wildcard.add_value_listener(self._do_wildcard_parameter)
 
+        # 6. Pads do Deck Direito para Botões do Plugin (CC 60 a 67)
+        self._right_pads = []
+        for i in range(8):
+            pad = ButtonElement(True, MIDI_CC_TYPE, 15, 60 + i)
+            self.register_disconnectable(pad)
+            pad.add_value_listener(self._make_pad_listener(i))
+            self._right_pads.append(pad)
+
+        # 7. Recording Controls (Reloop/Exit Left - CC 48, Reloop/Exit Right - CC 49)
+        self._btn_reloop_l = ButtonElement(True, MIDI_CC_TYPE, 15, 48)
+        self.register_disconnectable(self._btn_reloop_l)
+        self._btn_reloop_l.add_value_listener(self._do_slot_rec_toggle)
+
+        self._btn_reloop_r = ButtonElement(True, MIDI_CC_TYPE, 15, 49)
+        self.register_disconnectable(self._btn_reloop_r)
+        self._btn_reloop_r.add_value_listener(self._do_arrangement_rec_toggle)
+
     def _do_play_toggle(self, value):
         if value > 0:
             self.song.is_playing = not self.song.is_playing
@@ -231,6 +248,72 @@ class DDJ_LiveBridge(ControlSurface):
         param = self.song.view.selected_parameter
         if param:
             self._set_param(param, value)
+
+    def _make_pad_listener(self, pad_idx):
+        return lambda v: self._toggle_device_button_param(pad_idx, v)
+
+    def _toggle_device_button_param(self, pad_idx, value):
+        if value == 0:
+            return
+            
+        track = self.song.view.selected_track
+        if not track:
+            return
+        device = track.view.selected_device
+        if not device:
+            return
+            
+        buttons = []
+        for p in device.parameters:
+            if p.name.lower() == "device on":
+                continue
+            if self._is_boolean_parameter(p):
+                buttons.append(p)
+                
+        if len(buttons) > pad_idx:
+            param = buttons[pad_idx]
+            mid_point = (param.max + param.min) / 2.0
+            if param.value > mid_point:
+                param.value = param.min
+            else:
+                param.value = param.max
+
+    def _do_slot_rec_toggle(self, value):
+        if value == 0:
+            return
+            
+        slot = self.song.view.highlighted_clip_slot
+        if not slot:
+            return
+            
+        track = slot.canonical_parent
+        
+        # Caso 1: O slot já tem clipe e está ativamente gravando (novo ou overdub)
+        if slot.has_clip and slot.clip.is_recording:
+            if self.song.session_record:
+                self.song.session_record = False
+            else:
+                slot.fire()
+            self.log_message("Looper: Finalizada gravacao/overdub do clipe. Iniciado loop.")
+        # Caso 2: O slot já tem clipe, mas está parado ou tocando (inicia overdub)
+        elif slot.has_clip:
+            if hasattr(track, 'arm') and not track.arm:
+                track.arm = True
+            if not slot.clip.is_playing:
+                slot.fire()
+            self.song.session_record = True
+            self.log_message("Looper: Iniciado overdub/gravacao em clipe existente.")
+        # Caso 3: O slot está vazio (grava clipe novo)
+        else:
+            if hasattr(track, 'arm') and not track.arm:
+                track.arm = True
+            slot.fire()
+            self.log_message("Looper: Iniciada gravacao em slot vazio.")
+
+    def _do_arrangement_rec_toggle(self, value):
+        if value > 0:
+            self.song.record_mode = not self.song.record_mode
+            self.log_message("Arrangement Record alterado para: " + str(self.song.record_mode))
 
     def _set_param(self, param, midi_value):
         if param and param.is_enabled:
