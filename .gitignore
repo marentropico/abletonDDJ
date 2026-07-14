@@ -1,0 +1,27 @@
+# Build folders
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# IDE files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# WebView2 cache / user data
+*.WebView2/
+WebView2/
+**/Cookies
+**/Network/
+
+# OS specific files
+.DS_Store
+Thumbs.db

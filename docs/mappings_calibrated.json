@@ -1,0 +1,725 @@
+{
+    "CalibrationDate":  "Patch iniciado em 2026-07-13 11:00:34",
+    "Controls":  {
+                     "BrowseEncoder_TurnLeft":  {
+                                                    "Status":  182,
+                                                    "Data1":  64,
+                                                    "IsContinuous":  true,
+                                                    "IsShiftCombo":  false
+                                                },
+                     "BrowseEncoder_TurnRight":  {
+                                                     "Status":  182,
+                                                     "Data1":  64,
+                                                     "IsContinuous":  true,
+                                                     "IsShiftCombo":  false
+                                                 },
+                     "BrowseEncoder_Click":  {
+                                                 "Status":  150,
+                                                 "Data1":  65,
+                                                 "IsContinuous":  false,
+                                                 "IsShiftCombo":  false
+                                             },
+                     "Load_Left":  {
+                                       "Status":  150,
+                                       "Data1":  70,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Load_Left_Shift":  {
+                                             "Status":  150,
+                                             "Data1":  104,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Load_Right":  {
+                                        "Status":  150,
+                                        "Data1":  71,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Load_Right_Shift":  {
+                                              "Status":  150,
+                                              "Data1":  122,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Play_Left":  {
+                                       "Status":  144,
+                                       "Data1":  11,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Play_Left_Shift":  {
+                                             "Status":  144,
+                                             "Data1":  71,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Cue_Left":  {
+                                      "Status":  144,
+                                      "Data1":  12,
+                                      "IsContinuous":  false,
+                                      "IsShiftCombo":  false
+                                  },
+                     "Cue_Left_Shift":  {
+                                            "Status":  144,
+                                            "Data1":  72,
+                                            "IsContinuous":  false,
+                                            "IsShiftCombo":  true
+                                        },
+                     "BeatSync_Left":  {
+                                           "Status":  144,
+                                           "Data1":  88,
+                                           "IsContinuous":  false,
+                                           "IsShiftCombo":  false
+                                       },
+                     "BeatSync_Left_Shift":  {
+                                                 "Status":  144,
+                                                 "Data1":  96,
+                                                 "IsContinuous":  false,
+                                                 "IsShiftCombo":  true
+                                             },
+                     "LoopIn_Left":  {
+                                         "Status":  144,
+                                         "Data1":  16,
+                                         "IsContinuous":  false,
+                                         "IsShiftCombo":  false
+                                     },
+                     "LoopIn_Left_Shift":  {
+                                               "Status":  144,
+                                               "Data1":  76,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  true
+                                           },
+                     "LoopOut_Left":  {
+                                          "Status":  144,
+                                          "Data1":  17,
+                                          "IsContinuous":  false,
+                                          "IsShiftCombo":  false
+                                      },
+                     "LoopOut_Left_Shift":  {
+                                                "Status":  144,
+                                                "Data1":  78,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  true
+                                            },
+                     "ReloopExit_Left":  {
+                                             "Status":  144,
+                                             "Data1":  77,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  false
+                                         },
+                     "ReloopExit_Left_Shift":  {
+                                                   "Status":  144,
+                                                   "Data1":  80,
+                                                   "IsContinuous":  false,
+                                                   "IsShiftCombo":  true
+                                               },
+                     "LoopCallLeft_Left":  {
+                                               "Status":  144,
+                                               "Data1":  81,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  false
+                                           },
+                     "LoopCallLeft_Left_Shift":  {
+                                                     "Status":  144,
+                                                     "Data1":  62,
+                                                     "IsContinuous":  false,
+                                                     "IsShiftCombo":  true
+                                                 },
+                     "LoopCallRight_Left":  {
+                                                "Status":  144,
+                                                "Data1":  83,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "LoopCallRight_Left_Shift":  {
+                                                      "Status":  144,
+                                                      "Data1":  61,
+                                                      "IsContinuous":  false,
+                                                      "IsShiftCombo":  true
+                                                  },
+                     "TempoSlider_Left":  {
+                                              "Status":  176,
+                                              "Data1":  0,
+                                              "IsContinuous":  true,
+                                              "IsShiftCombo":  false
+                                          },
+                     "HotCueMode_Left":  {
+                                             "Status":  144,
+                                             "Data1":  27,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  false
+                                         },
+                     "BeatLoopMode_Left":  {
+                                               "Status":  144,
+                                               "Data1":  109,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  false
+                                           },
+                     "BeatJumpMode_Left":  {
+                                               "Status":  144,
+                                               "Data1":  32,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  false
+                                           },
+                     "SamplerMode_Left":  {
+                                              "Status":  144,
+                                              "Data1":  34,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  false
+                                          },
+                     "Pad1_Left":  {
+                                       "Status":  151,
+                                       "Data1":  48,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad1_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  48,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad2_Left":  {
+                                       "Status":  151,
+                                       "Data1":  49,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad2_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  49,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad3_Left":  {
+                                       "Status":  151,
+                                       "Data1":  50,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad3_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  50,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad4_Left":  {
+                                       "Status":  151,
+                                       "Data1":  51,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad4_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  51,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad5_Left":  {
+                                       "Status":  151,
+                                       "Data1":  52,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad5_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  52,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad6_Left":  {
+                                       "Status":  151,
+                                       "Data1":  53,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad6_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  53,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad7_Left":  {
+                                       "Status":  151,
+                                       "Data1":  54,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad7_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  54,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "Pad8_Left":  {
+                                       "Status":  151,
+                                       "Data1":  55,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Pad8_Left_Shift":  {
+                                             "Status":  152,
+                                             "Data1":  55,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "JogWheel_Outer_TurnLeft":  {
+                                                     "Status":  176,
+                                                     "Data1":  1,
+                                                     "IsContinuous":  true,
+                                                     "IsShiftCombo":  false
+                                                 },
+                     "JogWheel_Outer_TurnRight":  {
+                                                      "Status":  176,
+                                                      "Data1":  1,
+                                                      "IsContinuous":  true,
+                                                      "IsShiftCombo":  false
+                                                  },
+                     "JogWheel_Top_Touch":  {
+                                                "Status":  144,
+                                                "Data1":  54,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "JogWheel_Top_Scratch":  {
+                                                  "Status":  176,
+                                                  "Data1":  1,
+                                                  "IsContinuous":  true,
+                                                  "IsShiftCombo":  false
+                                              },
+                     "Play_Right":  {
+                                        "Status":  145,
+                                        "Data1":  11,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Play_Right_Shift":  {
+                                              "Status":  145,
+                                              "Data1":  71,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Cue_Right":  {
+                                       "Status":  145,
+                                       "Data1":  12,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "Cue_Right_Shift":  {
+                                             "Status":  145,
+                                             "Data1":  72,
+                                             "IsContinuous":  false,
+                                             "IsShiftCombo":  true
+                                         },
+                     "BeatSync_Right":  {
+                                            "Status":  145,
+                                            "Data1":  88,
+                                            "IsContinuous":  false,
+                                            "IsShiftCombo":  false
+                                        },
+                     "BeatSync_Right_Shift":  {
+                                                  "Status":  145,
+                                                  "Data1":  96,
+                                                  "IsContinuous":  false,
+                                                  "IsShiftCombo":  true
+                                              },
+                     "LoopIn_Right":  {
+                                          "Status":  145,
+                                          "Data1":  16,
+                                          "IsContinuous":  false,
+                                          "IsShiftCombo":  false
+                                      },
+                     "LoopIn_Right_Shift":  {
+                                                "Status":  145,
+                                                "Data1":  76,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  true
+                                            },
+                     "LoopOut_Right":  {
+                                           "Status":  145,
+                                           "Data1":  17,
+                                           "IsContinuous":  false,
+                                           "IsShiftCombo":  false
+                                       },
+                     "LoopOut_Right_Shift":  {
+                                                 "Status":  145,
+                                                 "Data1":  78,
+                                                 "IsContinuous":  false,
+                                                 "IsShiftCombo":  true
+                                             },
+                     "ReloopExit_Right":  {
+                                              "Status":  145,
+                                              "Data1":  77,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  false
+                                          },
+                     "ReloopExit_Right_Shift":  {
+                                                    "Status":  145,
+                                                    "Data1":  80,
+                                                    "IsContinuous":  false,
+                                                    "IsShiftCombo":  true
+                                                },
+                     "LoopCallLeft_Right":  {
+                                                "Status":  145,
+                                                "Data1":  81,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "LoopCallLeft_Right_Shift":  {
+                                                      "Status":  145,
+                                                      "Data1":  62,
+                                                      "IsContinuous":  false,
+                                                      "IsShiftCombo":  true
+                                                  },
+                     "LoopCallRight_Right":  {
+                                                 "Status":  145,
+                                                 "Data1":  83,
+                                                 "IsContinuous":  false,
+                                                 "IsShiftCombo":  false
+                                             },
+                     "LoopCallRight_Right_Shift":  {
+                                                       "Status":  145,
+                                                       "Data1":  61,
+                                                       "IsContinuous":  false,
+                                                       "IsShiftCombo":  true
+                                                   },
+                     "TempoSlider_Right":  {
+                                               "Status":  177,
+                                               "Data1":  0,
+                                               "IsContinuous":  true,
+                                               "IsShiftCombo":  false
+                                           },
+                     "HotCueMode_Right":  {
+                                              "Status":  145,
+                                              "Data1":  27,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  false
+                                          },
+                     "BeatLoopMode_Right":  {
+                                                "Status":  145,
+                                                "Data1":  109,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "BeatJumpMode_Right":  {
+                                                "Status":  145,
+                                                "Data1":  32,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "SamplerMode_Right":  {
+                                               "Status":  145,
+                                               "Data1":  34,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  false
+                                           },
+                     "Pad1_Right":  {
+                                        "Status":  153,
+                                        "Data1":  48,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad1_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  48,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad2_Right":  {
+                                        "Status":  153,
+                                        "Data1":  49,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad2_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  49,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad3_Right":  {
+                                        "Status":  153,
+                                        "Data1":  50,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad3_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  50,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad4_Right":  {
+                                        "Status":  153,
+                                        "Data1":  51,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad4_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  51,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad5_Right":  {
+                                        "Status":  153,
+                                        "Data1":  52,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad5_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  52,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad6_Right":  {
+                                        "Status":  153,
+                                        "Data1":  53,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad6_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  53,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad7_Right":  {
+                                        "Status":  153,
+                                        "Data1":  54,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad7_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  54,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "Pad8_Right":  {
+                                        "Status":  153,
+                                        "Data1":  55,
+                                        "IsContinuous":  false,
+                                        "IsShiftCombo":  false
+                                    },
+                     "Pad8_Right_Shift":  {
+                                              "Status":  154,
+                                              "Data1":  55,
+                                              "IsContinuous":  false,
+                                              "IsShiftCombo":  true
+                                          },
+                     "JogWheel_Outer_TurnLeft_Right":  {
+                                                           "Status":  177,
+                                                           "Data1":  1,
+                                                           "IsContinuous":  true,
+                                                           "IsShiftCombo":  false
+                                                       },
+                     "JogWheel_Outer_TurnRight_Right":  {
+                                                            "Status":  177,
+                                                            "Data1":  1,
+                                                            "IsContinuous":  true,
+                                                            "IsShiftCombo":  false
+                                                        },
+                     "JogWheel_Top_Touch_Right":  {
+                                                      "Status":  145,
+                                                      "Data1":  54,
+                                                      "IsContinuous":  false,
+                                                      "IsShiftCombo":  false
+                                                  },
+                     "JogWheel_Top_Scratch_Right":  {
+                                                        "Status":  177,
+                                                        "Data1":  1,
+                                                        "IsContinuous":  true,
+                                                        "IsShiftCombo":  false
+                                                    },
+                     "Trim_Left":  {
+                                       "Status":  176,
+                                       "Data1":  4,
+                                       "IsContinuous":  true,
+                                       "IsShiftCombo":  false
+                                   },
+                     "EQ_High_Left":  {
+                                          "Status":  176,
+                                          "Data1":  7,
+                                          "IsContinuous":  true,
+                                          "IsShiftCombo":  false
+                                      },
+                     "EQ_Mid_Left":  {
+                                         "Status":  176,
+                                         "Data1":  11,
+                                         "IsContinuous":  true,
+                                         "IsShiftCombo":  false
+                                     },
+                     "EQ_Low_Left":  {
+                                         "Status":  176,
+                                         "Data1":  15,
+                                         "IsContinuous":  true,
+                                         "IsShiftCombo":  false
+                                     },
+                     "Filter_Left":  {
+                                         "Status":  182,
+                                         "Data1":  23,
+                                         "IsContinuous":  true,
+                                         "IsShiftCombo":  false
+                                     },
+                     "HeadphoneCue_Left":  {
+                                               "Status":  144,
+                                               "Data1":  84,
+                                               "IsContinuous":  false,
+                                               "IsShiftCombo":  false
+                                           },
+                     "VolumeSlider_Left":  {
+                                               "Status":  176,
+                                               "Data1":  19,
+                                               "IsContinuous":  true,
+                                               "IsShiftCombo":  false
+                                           },
+                     "Trim_Right":  {
+                                        "Status":  177,
+                                        "Data1":  4,
+                                        "IsContinuous":  true,
+                                        "IsShiftCombo":  false
+                                    },
+                     "EQ_High_Right":  {
+                                           "Status":  177,
+                                           "Data1":  7,
+                                           "IsContinuous":  true,
+                                           "IsShiftCombo":  false
+                                       },
+                     "EQ_Mid_Right":  {
+                                          "Status":  177,
+                                          "Data1":  11,
+                                          "IsContinuous":  true,
+                                          "IsShiftCombo":  false
+                                      },
+                     "EQ_Low_Right":  {
+                                          "Status":  177,
+                                          "Data1":  15,
+                                          "IsContinuous":  true,
+                                          "IsShiftCombo":  false
+                                      },
+                     "Filter_Right":  {
+                                          "Status":  182,
+                                          "Data1":  24,
+                                          "IsContinuous":  true,
+                                          "IsShiftCombo":  false
+                                      },
+                     "HeadphoneCue_Right":  {
+                                                "Status":  145,
+                                                "Data1":  84,
+                                                "IsContinuous":  false,
+                                                "IsShiftCombo":  false
+                                            },
+                     "VolumeSlider_Right":  {
+                                                "Status":  177,
+                                                "Data1":  19,
+                                                "IsContinuous":  true,
+                                                "IsShiftCombo":  false
+                                            },
+                     "Crossfader":  {
+                                        "Status":  182,
+                                        "Data1":  31,
+                                        "IsContinuous":  true,
+                                        "IsShiftCombo":  false
+                                    },
+                     "HeadphoneMixing":  {
+                                             "Status":  182,
+                                             "Data1":  12,
+                                             "IsContinuous":  true,
+                                             "IsShiftCombo":  false
+                                         },
+                     "MasterCue":  {
+                                       "Status":  150,
+                                       "Data1":  99,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "BeatLeft":  {
+                                      "Status":  148,
+                                      "Data1":  74,
+                                      "IsContinuous":  false,
+                                      "IsShiftCombo":  false
+                                  },
+                     "BeatRight":  {
+                                       "Status":  148,
+                                       "Data1":  75,
+                                       "IsContinuous":  false,
+                                       "IsShiftCombo":  false
+                                   },
+                     "FxSelect":  {
+                                      "Status":  148,
+                                      "Data1":  99,
+                                      "IsContinuous":  false,
+                                      "IsShiftCombo":  false
+                                  },
+                     "FxChannelSelect":  {
+                                             "Status":  148,
+                                             "Data1":  17,
+                                             "IsContinuous":  true,
+                                             "IsShiftCombo":  false
+                                         },
+                     "LevelDepth":  {
+                                        "Status":  180,
+                                        "Data1":  2,
+                                        "IsContinuous":  true,
+                                        "IsShiftCombo":  false
+                                    },
+                     "FxOnOff":  {
+                                     "Status":  148,
+                                     "Data1":  71,
+                                     "IsContinuous":  false,
+                                     "IsShiftCombo":  false
+                                 },
+                     "HotCueMode_Left_Shift":  {
+                                                   "Status":  144,
+                                                   "Data1":  105,
+                                                   "IsContinuous":  false,
+                                                   "IsShiftCombo":  true
+                                               },
+                     "BeatLoopMode_Left_Shift":  {
+                                                     "Status":  144,
+                                                     "Data1":  30,
+                                                     "IsContinuous":  false,
+                                                     "IsShiftCombo":  true
+                                                 },
+                     "BeatJumpMode_Left_Shift":  {
+                                                     "Status":  144,
+                                                     "Data1":  107,
+                                                     "IsContinuous":  false,
+                                                     "IsShiftCombo":  true
+                                                 },
+                     "SamplerMode_Left_Shift":  {
+                                                    "Status":  144,
+                                                    "Data1":  111,
+                                                    "IsContinuous":  false,
+                                                    "IsShiftCombo":  true
+                                                },
+                     "HotCueMode_Right_Shift":  {
+                                                    "Status":  145,
+                                                    "Data1":  105,
+                                                    "IsContinuous":  false,
+                                                    "IsShiftCombo":  true
+                                                },
+                     "BeatLoopMode_Right_Shift":  {
+                                                      "Status":  145,
+                                                      "Data1":  30,
+                                                      "IsContinuous":  false,
+                                                      "IsShiftCombo":  true
+                                                  },
+                     "BeatJumpMode_Right_Shift":  {
+                                                      "Status":  145,
+                                                      "Data1":  107,
+                                                      "IsContinuous":  false,
+                                                      "IsShiftCombo":  true
+                                                  },
+                     "SamplerMode_Right_Shift":  {
+                                                     "Status":  145,
+                                                     "Data1":  111,
+                                                     "IsContinuous":  false,
+                                                     "IsShiftCombo":  true
+                                                 }
+                 }
+}

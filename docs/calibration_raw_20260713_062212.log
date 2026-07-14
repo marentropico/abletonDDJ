@@ -1,0 +1,3206 @@
+﻿# DDJ-LiveBridge — Raw Calibration Log
+# Data: 2026-07-13 06:22:12
+# Formato: [HH:mm:ss.fff] [ETAPA] Status(dec) Data1(dec/hex) Data2
+
+[06:22:21.724] [BrowseEncoder_TurnLeft] Status=182(0xB6) Data1=64(0x40) Data2=127
+  >> CAPTURADO
+[06:22:21.770] [BrowseEncoder_TurnLeft] Status=182(0xB6) Data1=64(0x40) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:27.399] [BrowseEncoder_TurnRight] Status=182(0xB6) Data1=64(0x40) Data2=1
+  >> CAPTURADO
+[06:22:27.750] [BrowseEncoder_TurnRight] Status=182(0xB6) Data1=64(0x40) Data2=1
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:30.657] [BrowseEncoder_Click] Status=150(0x96) Data1=65(0x41) Data2=127
+  >> CAPTURADO
+[06:22:30.856] [BrowseEncoder_Click] Status=150(0x96) Data1=65(0x41) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:34.484] [Load_Left] Status=150(0x96) Data1=70(0x46) Data2=127
+  >> CAPTURADO
+[06:22:34.676] [Load_Left] Status=150(0x96) Data1=70(0x46) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:41.395] [Load_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:22:42.735] [Load_Left_Shift] Status=150(0x96) Data1=104(0x68) Data2=127
+  >> CAPTURADO
+[06:22:42.926] [Load_Left_Shift] Status=150(0x96) Data1=104(0x68) Data2=0
+  >> CAPTURADO
+[06:22:43.341] [Load_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:49.737] [Load_Right] Status=150(0x96) Data1=71(0x47) Data2=127
+  >> CAPTURADO
+[06:22:49.929] [Load_Right] Status=150(0x96) Data1=71(0x47) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:22:58.648] [Load_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:22:59.126] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=127
+  >> CAPTURADO
+[06:22:59.350] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=0
+  >> CAPTURADO
+[06:22:59.732] [Load_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> REINICIADO PELO USUÁRIO
+[06:23:10.863] [Load_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:23:11.277] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=127
+  >> CAPTURADO
+[06:23:11.532] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=0
+  >> CAPTURADO
+[06:23:11.882] [Load_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+[06:23:15.923] [Load_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+[06:23:16.846] [Load_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> REINICIADO PELO USUÁRIO
+[06:23:18.722] [Load_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:23:20.409] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=127
+  >> CAPTURADO
+[06:23:20.600] [Load_Right_Shift] Status=150(0x96) Data1=122(0x7A) Data2=0
+  >> CAPTURADO
+[06:23:21.171] [Load_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+[06:23:22.731] [Load_Right_Shift] Status=176(0xB0) Data1=51(0x33) Data2=94
+  >> RUÍDO DESCARTADO (fader CC51)
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:29.428] [Play_Left] Status=144(0x90) Data1=11(0x0B) Data2=127
+  >> CAPTURADO
+[06:23:29.555] [Play_Left] Status=144(0x90) Data1=11(0x0B) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:37.601] [Play_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:23:37.886] [Play_Left_Shift] Status=144(0x90) Data1=71(0x47) Data2=127
+  >> CAPTURADO
+[06:23:38.079] [Play_Left_Shift] Status=144(0x90) Data1=71(0x47) Data2=0
+  >> CAPTURADO
+[06:23:38.366] [Play_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:40.624] [Cue_Left] Status=144(0x90) Data1=12(0x0C) Data2=127
+  >> CAPTURADO
+[06:23:40.752] [Cue_Left] Status=144(0x90) Data1=12(0x0C) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:42.916] [Cue_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:23:43.235] [Cue_Left_Shift] Status=144(0x90) Data1=72(0x48) Data2=127
+  >> CAPTURADO
+[06:23:43.394] [Cue_Left_Shift] Status=144(0x90) Data1=72(0x48) Data2=0
+  >> CAPTURADO
+[06:23:43.680] [Cue_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:47.564] [BeatSync_Left] Status=144(0x90) Data1=88(0x58) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:23:52.720] [BeatSync_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:23:53.228] [BeatSync_Left_Shift] Status=144(0x90) Data1=96(0x60) Data2=0
+  >> CAPTURADO
+[06:23:53.671] [BeatSync_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:00.672] [LoopIn_Left] Status=144(0x90) Data1=16(0x10) Data2=127
+  >> CAPTURADO
+[06:24:00.799] [LoopIn_Left] Status=144(0x90) Data1=16(0x10) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:04.458] [LoopIn_Left_Shift] Status=144(0x90) Data1=17(0x11) Data2=127
+[06:24:04.711] [LoopIn_Left_Shift] Status=144(0x90) Data1=17(0x11) Data2=0
+  >> REINICIADO PELO USUÁRIO
+[06:24:13.641] [LoopIn_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:24:14.560] [LoopIn_Left_Shift] Status=144(0x90) Data1=76(0x4C) Data2=127
+  >> CAPTURADO
+[06:24:14.783] [LoopIn_Left_Shift] Status=144(0x90) Data1=76(0x4C) Data2=0
+  >> CAPTURADO
+[06:24:15.134] [LoopIn_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:18.952] [LoopOut_Left] Status=144(0x90) Data1=17(0x11) Data2=127
+  >> CAPTURADO
+[06:24:19.079] [LoopOut_Left] Status=144(0x90) Data1=17(0x11) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:21.179] [LoopOut_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:24:21.530] [LoopOut_Left_Shift] Status=144(0x90) Data1=78(0x4E) Data2=127
+  >> CAPTURADO
+[06:24:21.689] [LoopOut_Left_Shift] Status=144(0x90) Data1=78(0x4E) Data2=0
+  >> CAPTURADO
+[06:24:22.007] [LoopOut_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:25.091] [ReloopExit_Left] Status=144(0x90) Data1=77(0x4D) Data2=127
+  >> CAPTURADO
+[06:24:25.250] [ReloopExit_Left] Status=144(0x90) Data1=77(0x4D) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:27.445] [ReloopExit_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:24:27.890] [ReloopExit_Left_Shift] Status=144(0x90) Data1=80(0x50) Data2=127
+  >> CAPTURADO
+[06:24:28.081] [ReloopExit_Left_Shift] Status=144(0x90) Data1=80(0x50) Data2=0
+  >> CAPTURADO
+[06:24:28.368] [ReloopExit_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:36.381] [LoopCallLeft_Left] Status=144(0x90) Data1=81(0x51) Data2=127
+  >> CAPTURADO
+[06:24:36.573] [LoopCallLeft_Left] Status=144(0x90) Data1=81(0x51) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:39.468] [LoopCallLeft_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:24:39.785] [LoopCallLeft_Left_Shift] Status=144(0x90) Data1=62(0x3E) Data2=127
+  >> CAPTURADO
+[06:24:39.976] [LoopCallLeft_Left_Shift] Status=144(0x90) Data1=62(0x3E) Data2=0
+  >> CAPTURADO
+[06:24:40.263] [LoopCallLeft_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:47.885] [LoopCallRight_Left] Status=144(0x90) Data1=83(0x53) Data2=127
+  >> CAPTURADO
+[06:24:48.140] [LoopCallRight_Left] Status=144(0x90) Data1=83(0x53) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:51.387] [LoopCallRight_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:24:51.737] [LoopCallRight_Left_Shift] Status=144(0x90) Data1=61(0x3D) Data2=127
+  >> CAPTURADO
+[06:24:51.960] [LoopCallRight_Left_Shift] Status=144(0x90) Data1=61(0x3D) Data2=0
+  >> CAPTURADO
+[06:24:52.311] [LoopCallRight_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:24:57.873] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=61
+  >> CAPTURADO
+[06:24:57.905] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:24:57.937] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=82
+  >> CAPTURADO
+[06:24:57.969] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=87
+  >> CAPTURADO
+[06:24:58.000] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=117
+  >> CAPTURADO
+[06:24:58.032] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=10
+  >> CAPTURADO
+[06:24:58.064] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=92
+  >> CAPTURADO
+[06:24:58.096] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=97
+  >> CAPTURADO
+[06:24:58.128] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=20
+  >> CAPTURADO
+[06:24:58.159] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=55
+  >> CAPTURADO
+[06:24:58.191] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=30
+  >> CAPTURADO
+[06:24:58.223] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:24:58.574] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=123
+  >> CAPTURADO
+[06:24:58.605] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=107
+  >> CAPTURADO
+[06:24:58.637] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=83
+  >> CAPTURADO
+[06:24:58.669] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=73
+  >> CAPTURADO
+[06:24:58.701] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=52
+  >> CAPTURADO
+[06:24:58.733] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=119
+  >> CAPTURADO
+[06:24:58.764] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:24:58.796] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=53
+  >> CAPTURADO
+[06:24:58.828] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=113
+  >> CAPTURADO
+[06:24:58.860] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=8
+  >> CAPTURADO
+[06:24:58.892] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=63
+  >> CAPTURADO
+[06:24:58.924] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=47
+  >> CAPTURADO
+[06:24:58.955] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=69
+  >> CAPTURADO
+[06:24:58.987] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=71
+  >> CAPTURADO
+[06:24:59.018] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+[06:25:01.977] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=65
+  >> CAPTURADO
+[06:25:02.009] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=95
+  >> CAPTURADO
+[06:25:02.041] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=89
+  >> CAPTURADO
+[06:25:02.073] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=87
+  >> CAPTURADO
+[06:25:02.105] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=13
+  >> CAPTURADO
+[06:25:02.136] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=102
+  >> CAPTURADO
+[06:25:02.168] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:25:02.199] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=126
+  >> CAPTURADO
+[06:25:02.231] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=63
+  >> CAPTURADO
+[06:25:02.263] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=110
+  >> CAPTURADO
+[06:25:02.295] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=122
+  >> CAPTURADO
+[06:25:02.327] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=43
+  >> CAPTURADO
+[06:25:02.359] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=11
+  >> CAPTURADO
+[06:25:02.390] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=125
+  >> CAPTURADO
+[06:25:02.423] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=21
+  >> CAPTURADO
+[06:25:02.454] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=70
+  >> CAPTURADO
+[06:25:02.486] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:25:03.599] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=67
+  >> CAPTURADO
+[06:25:03.663] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=70
+  >> CAPTURADO
+[06:25:03.695] [TempoSlider_Left] Status=176(0xB0) Data1=0(0x00) Data2=5
+  >> CAPTURADO
+[06:25:03.726] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=114
+  >> CAPTURADO
+[06:25:03.758] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=27
+  >> CAPTURADO
+[06:25:03.790] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=48
+  >> CAPTURADO
+[06:25:03.821] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=25
+  >> CAPTURADO
+[06:25:03.853] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=34
+  >> CAPTURADO
+[06:25:03.885] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=78
+  >> CAPTURADO
+[06:25:03.917] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=22
+  >> CAPTURADO
+[06:25:03.949] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=17
+  >> CAPTURADO
+[06:25:03.981] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=26
+  >> CAPTURADO
+[06:25:04.013] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=52
+  >> CAPTURADO
+[06:25:04.045] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=91
+  >> CAPTURADO
+[06:25:04.077] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=73
+  >> CAPTURADO
+[06:25:04.109] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=37
+  >> CAPTURADO
+[06:25:04.140] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=63
+  >> CAPTURADO
+[06:25:04.172] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:25:04.236] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=102
+  >> CAPTURADO
+[06:25:04.268] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=125
+  >> CAPTURADO
+[06:25:04.300] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=23
+  >> CAPTURADO
+[06:25:04.331] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=125
+  >> CAPTURADO
+[06:25:04.363] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=88
+  >> CAPTURADO
+[06:25:04.395] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=1
+  >> CAPTURADO
+[06:25:04.427] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=108
+  >> CAPTURADO
+[06:25:04.458] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=19
+  >> CAPTURADO
+[06:25:04.490] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=31
+  >> CAPTURADO
+[06:25:04.522] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=89
+  >> CAPTURADO
+[06:25:04.554] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=51
+  >> CAPTURADO
+[06:25:04.586] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=93
+  >> CAPTURADO
+[06:25:04.618] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=69
+  >> CAPTURADO
+[06:25:04.650] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+[06:25:04.682] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=22
+  >> CAPTURADO
+[06:25:04.713] [TempoSlider_Left] Status=176(0xB0) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:16.606] [HotCueMode_Left] Status=144(0x90) Data1=27(0x1B) Data2=127
+  >> CAPTURADO
+[06:25:16.764] [HotCueMode_Left] Status=144(0x90) Data1=27(0x1B) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:20.387] [BeatLoopMode_Left] Status=144(0x90) Data1=109(0x6D) Data2=127
+  >> CAPTURADO
+[06:25:20.515] [BeatLoopMode_Left] Status=144(0x90) Data1=109(0x6D) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:22.681] [BeatJumpMode_Left] Status=144(0x90) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+[06:25:22.872] [BeatJumpMode_Left] Status=144(0x90) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:30.681] [SamplerMode_Left] Status=144(0x90) Data1=34(0x22) Data2=127
+  >> CAPTURADO
+[06:25:30.872] [SamplerMode_Left] Status=144(0x90) Data1=34(0x22) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:37.457] [Pad1_Left] Status=151(0x97) Data1=48(0x30) Data2=127
+  >> CAPTURADO
+[06:25:37.584] [Pad1_Left] Status=151(0x97) Data1=48(0x30) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:40.345] [Pad1_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:40.727] [Pad1_Left_Shift] Status=152(0x98) Data1=48(0x30) Data2=127
+  >> CAPTURADO
+[06:25:40.919] [Pad1_Left_Shift] Status=152(0x98) Data1=48(0x30) Data2=0
+  >> CAPTURADO
+[06:25:41.268] [Pad1_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:43.239] [Pad2_Left] Status=151(0x97) Data1=49(0x31) Data2=127
+  >> CAPTURADO
+[06:25:43.367] [Pad2_Left] Status=151(0x97) Data1=49(0x31) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:45.436] [Pad2_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:45.691] [Pad2_Left_Shift] Status=152(0x98) Data1=49(0x31) Data2=127
+  >> CAPTURADO
+[06:25:45.849] [Pad2_Left_Shift] Status=152(0x98) Data1=49(0x31) Data2=0
+  >> CAPTURADO
+[06:25:46.072] [Pad2_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:48.424] [Pad3_Left] Status=151(0x97) Data1=50(0x32) Data2=127
+  >> CAPTURADO
+[06:25:48.583] [Pad3_Left] Status=151(0x97) Data1=50(0x32) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:49.537] [Pad3_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:49.792] [Pad3_Left_Shift] Status=152(0x98) Data1=50(0x32) Data2=127
+  >> CAPTURADO
+[06:25:50.015] [Pad3_Left_Shift] Status=152(0x98) Data1=50(0x32) Data2=0
+  >> CAPTURADO
+[06:25:50.270] [Pad3_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:52.179] [Pad4_Left] Status=151(0x97) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:25:52.435] [Pad4_Left] Status=151(0x97) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:53.612] [Pad4_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:53.868] [Pad4_Left_Shift] Status=152(0x98) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:25:54.090] [Pad4_Left_Shift] Status=152(0x98) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:25:54.281] [Pad4_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:55.551] [Pad5_Left] Status=151(0x97) Data1=52(0x34) Data2=127
+  >> CAPTURADO
+[06:25:55.742] [Pad5_Left] Status=151(0x97) Data1=52(0x34) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:56.568] [Pad5_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:56.854] [Pad5_Left_Shift] Status=152(0x98) Data1=52(0x34) Data2=127
+  >> CAPTURADO
+[06:25:57.077] [Pad5_Left_Shift] Status=152(0x98) Data1=52(0x34) Data2=0
+  >> CAPTURADO
+[06:25:57.300] [Pad5_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:58.286] [Pad6_Left] Status=151(0x97) Data1=53(0x35) Data2=127
+  >> CAPTURADO
+[06:25:58.477] [Pad6_Left] Status=151(0x97) Data1=53(0x35) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:25:59.589] [Pad6_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:25:59.907] [Pad6_Left_Shift] Status=152(0x98) Data1=53(0x35) Data2=127
+  >> CAPTURADO
+[06:26:00.066] [Pad6_Left_Shift] Status=152(0x98) Data1=53(0x35) Data2=0
+  >> CAPTURADO
+[06:26:00.385] [Pad6_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:02.469] [Pad7_Left] Status=151(0x97) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:26:02.628] [Pad7_Left] Status=151(0x97) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:04.475] [Pad7_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:26:04.760] [Pad7_Left_Shift] Status=152(0x98) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:26:04.984] [Pad7_Left_Shift] Status=152(0x98) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+[06:26:05.207] [Pad7_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:07.465] [Pad8_Left] Status=151(0x97) Data1=55(0x37) Data2=127
+  >> CAPTURADO
+[06:26:07.687] [Pad8_Left] Status=151(0x97) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:08.482] [Pad8_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:26:08.768] [Pad8_Left_Shift] Status=152(0x98) Data1=55(0x37) Data2=127
+  >> CAPTURADO
+[06:26:08.928] [Pad8_Left_Shift] Status=152(0x98) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+[06:26:09.119] [Pad8_Left_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:13.384] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.416] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.449] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.480] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.512] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.544] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.576] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.608] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.640] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.671] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.703] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.735] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.766] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:13.798] [JogWheel_Outer_TurnLeft] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:16.439] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.472] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.504] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.535] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.567] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.599] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.631] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.663] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.695] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.727] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.758] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.790] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.822] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.854] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:16.886] [JogWheel_Outer_TurnRight] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:21.030] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:21.062] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:21.125] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:21.157] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:21.188] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.220] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.252] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.284] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.315] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.347] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:21.411] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:21.442] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:23.323] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:23.355] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:23.387] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:23.482] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:23.577] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:24.564] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:26.817] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:26.881] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:26.913] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:26.976] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:27.008] [JogWheel_Top_Touch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:35.456] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.488] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.520] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:35.552] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:35.584] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:35.616] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:26:35.648] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.680] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.712] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.743] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.775] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:26:35.807] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:35.839] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:35.870] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:35.902] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:35.934] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:35.966] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:35.998] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.030] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.062] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.094] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.125] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.157] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:36.189] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:36.221] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:36.252] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:26:36.284] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.316] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.348] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.380] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.412] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.444] [JogWheel_Top_Scratch] Status=176(0xB0) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:26:36.476] [JogWheel_Top_Scratch] Status=144(0x90) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:40.929] [Play_Right] Status=145(0x91) Data1=11(0x0B) Data2=127
+  >> CAPTURADO
+[06:26:41.088] [Play_Right] Status=145(0x91) Data1=11(0x0B) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:45.766] [Play_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:26:45.924] [Play_Right_Shift] Status=145(0x91) Data1=71(0x47) Data2=127
+  >> CAPTURADO
+[06:26:46.146] [Play_Right_Shift] Status=145(0x91) Data1=71(0x47) Data2=0
+  >> CAPTURADO
+[06:26:46.369] [Play_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:48.341] [Cue_Right] Status=145(0x91) Data1=12(0x0C) Data2=127
+  >> CAPTURADO
+[06:26:48.501] [Cue_Right] Status=145(0x91) Data1=12(0x0C) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:51.046] [Cue_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:26:51.300] [Cue_Right_Shift] Status=145(0x91) Data1=72(0x48) Data2=127
+  >> CAPTURADO
+[06:26:51.492] [Cue_Right_Shift] Status=145(0x91) Data1=72(0x48) Data2=0
+  >> CAPTURADO
+[06:26:51.716] [Cue_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:55.115] [BeatSync_Right] Status=145(0x91) Data1=88(0x58) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:26:58.904] [BeatSync_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:26:59.382] [BeatSync_Right_Shift] Status=145(0x91) Data1=96(0x60) Data2=0
+  >> CAPTURADO
+[06:26:59.635] [BeatSync_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:02.465] [LoopIn_Right] Status=145(0x91) Data1=16(0x10) Data2=127
+  >> CAPTURADO
+[06:27:02.529] [LoopIn_Right] Status=145(0x91) Data1=16(0x10) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:05.808] [LoopIn_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:27:06.063] [LoopIn_Right_Shift] Status=145(0x91) Data1=76(0x4C) Data2=127
+  >> CAPTURADO
+[06:27:06.222] [LoopIn_Right_Shift] Status=145(0x91) Data1=76(0x4C) Data2=0
+  >> CAPTURADO
+[06:27:06.510] [LoopIn_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:09.783] [LoopOut_Right] Status=145(0x91) Data1=17(0x11) Data2=127
+  >> CAPTURADO
+[06:27:09.942] [LoopOut_Right] Status=145(0x91) Data1=17(0x11) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:12.295] [LoopOut_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:27:12.677] [LoopOut_Right_Shift] Status=145(0x91) Data1=78(0x4E) Data2=127
+  >> CAPTURADO
+[06:27:12.868] [LoopOut_Right_Shift] Status=145(0x91) Data1=78(0x4E) Data2=0
+  >> CAPTURADO
+[06:27:13.123] [LoopOut_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:17.068] [ReloopExit_Right] Status=145(0x91) Data1=77(0x4D) Data2=127
+  >> CAPTURADO
+[06:27:17.227] [ReloopExit_Right] Status=145(0x91) Data1=77(0x4D) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:19.582] [ReloopExit_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:27:19.964] [ReloopExit_Right_Shift] Status=145(0x91) Data1=80(0x50) Data2=127
+  >> CAPTURADO
+[06:27:20.123] [ReloopExit_Right_Shift] Status=145(0x91) Data1=80(0x50) Data2=0
+  >> CAPTURADO
+[06:27:20.440] [ReloopExit_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:24.318] [LoopCallLeft_Right] Status=145(0x91) Data1=81(0x51) Data2=127
+  >> CAPTURADO
+[06:27:24.477] [LoopCallLeft_Right] Status=145(0x91) Data1=81(0x51) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:27.150] [LoopCallLeft_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:27:27.437] [LoopCallLeft_Right_Shift] Status=145(0x91) Data1=62(0x3E) Data2=127
+  >> CAPTURADO
+[06:27:27.628] [LoopCallLeft_Right_Shift] Status=145(0x91) Data1=62(0x3E) Data2=0
+  >> CAPTURADO
+[06:27:27.883] [LoopCallLeft_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:29.317] [LoopCallRight_Right] Status=145(0x91) Data1=83(0x53) Data2=127
+  >> CAPTURADO
+[06:27:29.475] [LoopCallRight_Right] Status=145(0x91) Data1=83(0x53) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:31.025] [LoopCallRight_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:27:31.280] [LoopCallRight_Right_Shift] Status=145(0x91) Data1=61(0x3D) Data2=127
+  >> CAPTURADO
+[06:27:31.407] [LoopCallRight_Right_Shift] Status=145(0x91) Data1=61(0x3D) Data2=0
+  >> CAPTURADO
+[06:27:31.694] [LoopCallRight_Right_Shift] Status=144(0x90) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:36.051] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=30
+  >> CAPTURADO
+[06:27:36.083] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=40
+  >> CAPTURADO
+[06:27:36.115] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=51
+  >> CAPTURADO
+[06:27:36.147] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=93
+  >> CAPTURADO
+[06:27:36.179] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=89
+  >> CAPTURADO
+[06:27:36.210] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=38
+  >> CAPTURADO
+[06:27:36.242] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=68
+  >> CAPTURADO
+[06:27:36.274] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=96
+  >> CAPTURADO
+[06:27:36.305] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=94
+  >> CAPTURADO
+[06:27:36.337] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=73
+  >> CAPTURADO
+[06:27:36.369] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=68
+  >> CAPTURADO
+[06:27:36.401] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=112
+  >> CAPTURADO
+[06:27:36.433] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=15
+  >> CAPTURADO
+[06:27:36.465] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=59
+  >> CAPTURADO
+[06:27:36.496] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=8
+  >> CAPTURADO
+[06:27:36.528] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=36
+  >> CAPTURADO
+[06:27:36.560] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=108
+  >> CAPTURADO
+[06:27:36.592] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=38
+  >> CAPTURADO
+[06:27:36.624] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=15
+  >> CAPTURADO
+[06:27:36.656] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=57
+  >> CAPTURADO
+[06:27:36.688] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=48
+  >> CAPTURADO
+[06:27:36.720] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=23
+  >> CAPTURADO
+[06:27:36.752] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=109
+  >> CAPTURADO
+[06:27:36.783] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=23
+  >> CAPTURADO
+[06:27:36.815] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=11
+  >> CAPTURADO
+[06:27:36.848] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=67
+  >> CAPTURADO
+[06:27:36.880] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:27:38.819] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=98
+  >> CAPTURADO
+[06:27:38.851] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=19
+  >> CAPTURADO
+[06:27:38.883] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=53
+  >> CAPTURADO
+[06:27:38.946] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=102
+  >> CAPTURADO
+[06:27:39.009] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=72
+  >> CAPTURADO
+[06:27:39.041] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=121
+  >> CAPTURADO
+[06:27:39.073] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=42
+  >> CAPTURADO
+[06:27:39.136] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=91
+  >> CAPTURADO
+[06:27:39.168] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=60
+  >> CAPTURADO
+[06:27:39.200] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=109
+  >> CAPTURADO
+[06:27:39.232] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=30
+  >> CAPTURADO
+[06:27:39.264] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=79
+  >> CAPTURADO
+[06:27:39.295] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=49
+  >> CAPTURADO
+[06:27:39.327] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=97
+  >> CAPTURADO
+[06:27:39.359] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=21
+  >> CAPTURADO
+[06:27:39.391] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=118
+  >> CAPTURADO
+[06:27:39.423] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=41
+  >> CAPTURADO
+[06:27:39.455] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=11
+  >> CAPTURADO
+[06:27:39.487] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=16
+  >> CAPTURADO
+[06:27:39.519] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=83
+  >> CAPTURADO
+[06:27:39.550] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=90
+  >> CAPTURADO
+[06:27:39.582] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=95
+  >> CAPTURADO
+[06:27:39.614] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=67
+  >> CAPTURADO
+[06:27:39.646] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=104
+  >> CAPTURADO
+[06:27:39.678] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=125
+  >> CAPTURADO
+[06:27:39.710] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=18
+  >> CAPTURADO
+[06:27:39.741] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=55
+  >> CAPTURADO
+[06:27:39.773] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=13
+  >> CAPTURADO
+[06:27:39.805] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=113
+  >> CAPTURADO
+[06:27:39.836] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=8
+  >> CAPTURADO
+[06:27:39.869] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=112
+  >> CAPTURADO
+[06:27:39.900] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=108
+  >> CAPTURADO
+[06:27:39.932] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=52
+  >> CAPTURADO
+[06:27:39.964] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=79
+  >> CAPTURADO
+[06:27:39.996] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=70
+  >> CAPTURADO
+[06:27:40.028] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=95
+  >> CAPTURADO
+[06:27:40.060] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+[06:27:40.123] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=67
+  >> CAPTURADO
+[06:27:40.156] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=9
+  >> CAPTURADO
+[06:27:40.187] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=65
+  >> CAPTURADO
+[06:27:40.219] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=118
+  >> CAPTURADO
+[06:27:40.251] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=111
+  >> CAPTURADO
+[06:27:40.283] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=71
+  >> CAPTURADO
+[06:27:40.314] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=78
+  >> CAPTURADO
+[06:27:40.346] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=115
+  >> CAPTURADO
+[06:27:40.377] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=73
+  >> CAPTURADO
+[06:27:40.409] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=47
+  >> CAPTURADO
+[06:27:40.441] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=103
+  >> CAPTURADO
+[06:27:40.473] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=45
+  >> CAPTURADO
+[06:27:40.505] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=21
+  >> CAPTURADO
+[06:27:40.537] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=91
+  >> CAPTURADO
+[06:27:40.568] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=51
+  >> CAPTURADO
+[06:27:40.601] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=60
+  >> CAPTURADO
+[06:27:40.632] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=116
+  >> CAPTURADO
+[06:27:40.664] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=93
+  >> CAPTURADO
+[06:27:40.696] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=113
+  >> CAPTURADO
+[06:27:40.728] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=57
+  >> CAPTURADO
+[06:27:40.759] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=46
+  >> CAPTURADO
+[06:27:40.791] [TempoSlider_Right] Status=177(0xB1) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:45.117] [HotCueMode_Right] Status=145(0x91) Data1=27(0x1B) Data2=127
+  >> CAPTURADO
+[06:27:45.244] [HotCueMode_Right] Status=145(0x91) Data1=27(0x1B) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:47.849] [BeatLoopMode_Right] Status=145(0x91) Data1=109(0x6D) Data2=127
+  >> CAPTURADO
+[06:27:47.944] [BeatLoopMode_Right] Status=145(0x91) Data1=109(0x6D) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:49.027] [BeatJumpMode_Right] Status=145(0x91) Data1=32(0x20) Data2=127
+  >> CAPTURADO
+[06:27:49.185] [BeatJumpMode_Right] Status=145(0x91) Data1=32(0x20) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:51.760] [SamplerMode_Right] Status=145(0x91) Data1=34(0x22) Data2=127
+  >> CAPTURADO
+[06:27:51.950] [SamplerMode_Right] Status=145(0x91) Data1=34(0x22) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:27:54.209] [Pad1_Right] Status=153(0x99) Data1=48(0x30) Data2=127
+  >> CAPTURADO
+[06:27:54.368] [Pad1_Right] Status=153(0x99) Data1=48(0x30) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:00.157] [Pad1_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:00.414] [Pad1_Right_Shift] Status=154(0x9A) Data1=48(0x30) Data2=127
+  >> CAPTURADO
+[06:28:00.605] [Pad1_Right_Shift] Status=154(0x9A) Data1=48(0x30) Data2=0
+  >> CAPTURADO
+[06:28:00.765] [Pad1_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:02.897] [Pad2_Right] Status=153(0x99) Data1=49(0x31) Data2=127
+  >> CAPTURADO
+[06:28:03.089] [Pad2_Right] Status=153(0x99) Data1=49(0x31) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:04.174] [Pad2_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:04.365] [Pad2_Right_Shift] Status=154(0x9A) Data1=49(0x31) Data2=127
+  >> CAPTURADO
+[06:28:04.588] [Pad2_Right_Shift] Status=154(0x9A) Data1=49(0x31) Data2=0
+  >> CAPTURADO
+[06:28:04.651] [Pad2_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:06.020] [Pad3_Right] Status=153(0x99) Data1=50(0x32) Data2=127
+  >> CAPTURADO
+[06:28:06.211] [Pad3_Right] Status=153(0x99) Data1=50(0x32) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:07.484] [Pad3_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:07.707] [Pad3_Right_Shift] Status=154(0x9A) Data1=50(0x32) Data2=127
+  >> CAPTURADO
+[06:28:07.930] [Pad3_Right_Shift] Status=154(0x9A) Data1=50(0x32) Data2=0
+  >> CAPTURADO
+[06:28:08.121] [Pad3_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:08.852] [Pad4_Right] Status=153(0x99) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:28:09.107] [Pad4_Right] Status=153(0x99) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:09.745] [Pad4_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:09.904] [Pad4_Right_Shift] Status=154(0x9A) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:28:10.126] [Pad4_Right_Shift] Status=154(0x9A) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:28:10.285] [Pad4_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:12.191] [Pad5_Right] Status=153(0x99) Data1=52(0x34) Data2=127
+  >> CAPTURADO
+[06:28:12.350] [Pad5_Right] Status=153(0x99) Data1=52(0x34) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:13.083] [Pad5_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:13.305] [Pad5_Right_Shift] Status=154(0x9A) Data1=52(0x34) Data2=127
+  >> CAPTURADO
+[06:28:13.527] [Pad5_Right_Shift] Status=154(0x9A) Data1=52(0x34) Data2=0
+  >> CAPTURADO
+[06:28:13.718] [Pad5_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:15.275] [Pad6_Right] Status=153(0x99) Data1=53(0x35) Data2=127
+  >> CAPTURADO
+[06:28:15.465] [Pad6_Right] Status=153(0x99) Data1=53(0x35) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:16.898] [Pad6_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:17.120] [Pad6_Right_Shift] Status=154(0x9A) Data1=53(0x35) Data2=127
+  >> CAPTURADO
+[06:28:17.341] [Pad6_Right_Shift] Status=154(0x9A) Data1=53(0x35) Data2=0
+  >> CAPTURADO
+[06:28:17.564] [Pad6_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:21.350] [Pad7_Right] Status=153(0x99) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:28:21.509] [Pad7_Right] Status=153(0x99) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:22.495] [Pad7_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:22.717] [Pad7_Right_Shift] Status=154(0x9A) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:28:22.909] [Pad7_Right_Shift] Status=154(0x9A) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+[06:28:23.036] [Pad7_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:24.056] [Pad8_Right] Status=153(0x99) Data1=55(0x37) Data2=127
+  >> CAPTURADO
+[06:28:24.184] [Pad8_Right] Status=153(0x99) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:25.457] [Pad8_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=127
+  >> Shift físico confirmado. Aguardando botão alvo.
+[06:28:25.744] [Pad8_Right_Shift] Status=154(0x9A) Data1=55(0x37) Data2=127
+  >> CAPTURADO
+[06:28:25.966] [Pad8_Right_Shift] Status=154(0x9A) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+[06:28:26.094] [Pad8_Right_Shift] Status=145(0x91) Data1=63(0x3F) Data2=0
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:28.641] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.673] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.705] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.737] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.769] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.801] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.833] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.865] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.896] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.928] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.960] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:28.991] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:29.023] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:29.055] [JogWheel_Outer_TurnLeft_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:29.912] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:29.944] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:29.977] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.008] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.040] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.072] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.104] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.136] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.168] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.200] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.232] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.264] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=65
+  >> CAPTURADO
+[06:28:30.295] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:30.327] [JogWheel_Outer_TurnRight_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:33.397] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:33.429] [JogWheel_Top_Touch_Right] Status=145(0x91) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:28:33.556] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.588] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.620] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.683] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:33.779] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.811] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.843] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:33.907] [JogWheel_Top_Touch_Right] Status=145(0x91) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+[06:28:35.531] [JogWheel_Top_Touch_Right] Status=145(0x91) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:28:35.595] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:35.627] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:35.659] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:35.723] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:35.755] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:35.787] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:35.819] [JogWheel_Top_Touch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:35.851] [JogWheel_Top_Touch_Right] Status=145(0x91) Data1=54(0x36) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:41.742] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:41.774] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:41.805] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:41.837] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:41.869] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:41.900] [JogWheel_Top_Scratch_Right] Status=145(0x91) Data1=54(0x36) Data2=127
+  >> CAPTURADO
+[06:28:41.932] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:41.964] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:41.996] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.028] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.060] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.092] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.124] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.155] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.187] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.219] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.251] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.283] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.314] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.346] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.378] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.410] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.442] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.474] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.507] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=65
+  >> CAPTURADO
+[06:28:42.538] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.570] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.602] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=34(0x22) Data2=63
+  >> CAPTURADO
+[06:28:42.634] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+[06:28:42.666] [JogWheel_Top_Scratch_Right] Status=177(0xB1) Data1=33(0x21) Data2=63
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:48.043] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=115
+  >> CAPTURADO
+[06:28:48.075] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=60
+  >> CAPTURADO
+[06:28:48.106] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=49
+  >> CAPTURADO
+[06:28:48.138] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=24
+  >> CAPTURADO
+[06:28:48.170] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=42
+  >> CAPTURADO
+[06:28:48.202] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=61
+  >> CAPTURADO
+[06:28:48.234] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=79
+  >> CAPTURADO
+[06:28:48.266] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=47
+  >> CAPTURADO
+[06:28:48.298] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=38
+  >> CAPTURADO
+[06:28:48.330] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=49
+  >> CAPTURADO
+[06:28:48.362] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=0
+  >> CAPTURADO
+[06:28:48.966] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=98
+  >> CAPTURADO
+[06:28:48.999] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=84
+  >> CAPTURADO
+[06:28:49.030] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=100
+  >> CAPTURADO
+[06:28:49.062] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=74
+  >> CAPTURADO
+[06:28:49.094] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=101
+  >> CAPTURADO
+[06:28:49.126] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=82
+  >> CAPTURADO
+[06:28:49.157] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=109
+  >> CAPTURADO
+[06:28:49.189] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=87
+  >> CAPTURADO
+[06:28:49.221] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=23
+  >> CAPTURADO
+[06:28:49.253] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=117
+  >> CAPTURADO
+[06:28:49.284] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=15
+  >> CAPTURADO
+[06:28:49.316] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=114
+  >> CAPTURADO
+[06:28:49.348] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=9
+  >> CAPTURADO
+[06:28:49.380] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=24
+  >> CAPTURADO
+[06:28:49.412] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=123
+  >> CAPTURADO
+[06:28:49.443] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=43
+  >> CAPTURADO
+[06:28:49.475] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=111
+  >> CAPTURADO
+[06:28:49.507] [Trim_Left] Status=176(0xB0) Data1=36(0x24) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:53.617] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=41
+  >> CAPTURADO
+[06:28:53.649] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=34
+  >> CAPTURADO
+[06:28:53.681] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=81
+  >> CAPTURADO
+[06:28:53.713] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=127
+  >> CAPTURADO
+[06:28:53.745] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=122
+  >> CAPTURADO
+[06:28:53.777] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=4
+  >> CAPTURADO
+[06:28:53.809] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=0
+  >> CAPTURADO
+[06:28:54.412] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=85
+  >> CAPTURADO
+[06:28:54.444] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=92
+  >> CAPTURADO
+[06:28:54.476] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=12
+  >> CAPTURADO
+[06:28:54.508] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=9
+  >> CAPTURADO
+[06:28:54.540] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=56
+  >> CAPTURADO
+[06:28:54.572] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=103
+  >> CAPTURADO
+[06:28:54.604] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=83
+  >> CAPTURADO
+[06:28:54.636] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=0
+  >> CAPTURADO
+[06:28:54.699] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=111
+  >> CAPTURADO
+[06:28:54.732] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=88
+  >> CAPTURADO
+[06:28:54.763] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=84
+  >> CAPTURADO
+[06:28:54.795] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=35
+  >> CAPTURADO
+[06:28:54.827] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=116
+  >> CAPTURADO
+[06:28:54.859] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=92
+  >> CAPTURADO
+[06:28:54.891] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=60
+  >> CAPTURADO
+[06:28:54.923] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=79
+  >> CAPTURADO
+[06:28:54.955] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=82
+  >> CAPTURADO
+[06:28:54.987] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=51
+  >> CAPTURADO
+[06:28:55.018] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=22
+  >> CAPTURADO
+[06:28:55.050] [EQ_High_Left] Status=176(0xB0) Data1=39(0x27) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:28:56.992] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=110
+  >> CAPTURADO
+[06:28:57.024] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=115
+  >> CAPTURADO
+[06:28:57.056] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=87
+  >> CAPTURADO
+[06:28:57.088] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=100
+  >> CAPTURADO
+[06:28:57.120] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=63
+  >> CAPTURADO
+[06:28:57.152] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=77
+  >> CAPTURADO
+[06:28:57.184] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=83
+  >> CAPTURADO
+[06:28:57.215] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=122
+  >> CAPTURADO
+[06:28:57.247] [EQ_Mid_Left] Status=176(0xB0) Data1=11(0x0B) Data2=13
+  >> CAPTURADO
+[06:28:57.279] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=37
+  >> CAPTURADO
+[06:28:57.311] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=0
+  >> CAPTURADO
+[06:28:57.850] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=114
+  >> CAPTURADO
+[06:28:57.882] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=58
+  >> CAPTURADO
+[06:28:57.914] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=13
+  >> CAPTURADO
+[06:28:57.945] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=110
+  >> CAPTURADO
+[06:28:57.976] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=19
+  >> CAPTURADO
+[06:28:58.008] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=106
+  >> CAPTURADO
+[06:28:58.040] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=82
+  >> CAPTURADO
+[06:28:58.071] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=119
+  >> CAPTURADO
+[06:28:58.103] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=18
+  >> CAPTURADO
+[06:28:58.135] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=36
+  >> CAPTURADO
+[06:28:58.166] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=106
+  >> CAPTURADO
+[06:28:58.198] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=98
+  >> CAPTURADO
+[06:28:58.230] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=83
+  >> CAPTURADO
+[06:28:58.261] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=0
+  >> CAPTURADO
+[06:28:58.452] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=44
+  >> CAPTURADO
+[06:28:58.484] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=7
+  >> CAPTURADO
+[06:28:58.515] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=19
+  >> CAPTURADO
+[06:28:58.547] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=6
+  >> CAPTURADO
+[06:28:58.579] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=94
+  >> CAPTURADO
+[06:28:58.611] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=80
+  >> CAPTURADO
+[06:28:58.642] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=109
+  >> CAPTURADO
+[06:28:58.675] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=77
+  >> CAPTURADO
+[06:28:58.706] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=80
+  >> CAPTURADO
+[06:28:58.738] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=115
+  >> CAPTURADO
+[06:28:58.769] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=5
+  >> CAPTURADO
+[06:28:58.801] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=117
+  >> CAPTURADO
+[06:28:58.833] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=84
+  >> CAPTURADO
+[06:28:58.865] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=110
+  >> CAPTURADO
+[06:28:58.897] [EQ_Mid_Left] Status=176(0xB0) Data1=43(0x2B) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:00.351] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=33
+  >> CAPTURADO
+[06:29:00.383] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=123
+  >> CAPTURADO
+[06:29:00.415] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=111
+  >> CAPTURADO
+[06:29:00.447] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=13
+  >> CAPTURADO
+[06:29:00.479] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=112
+  >> CAPTURADO
+[06:29:00.511] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=50
+  >> CAPTURADO
+[06:29:00.543] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=4
+  >> CAPTURADO
+[06:29:00.575] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=62
+  >> CAPTURADO
+[06:29:00.606] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=24
+  >> CAPTURADO
+[06:29:00.638] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=89
+  >> CAPTURADO
+[06:29:00.670] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=0
+  >> CAPTURADO
+[06:29:01.309] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=99
+  >> CAPTURADO
+[06:29:01.341] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=51
+  >> CAPTURADO
+[06:29:01.372] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=39
+  >> CAPTURADO
+[06:29:01.404] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=24
+  >> CAPTURADO
+[06:29:01.436] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=18
+  >> CAPTURADO
+[06:29:01.468] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=71
+  >> CAPTURADO
+[06:29:01.500] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=125
+  >> CAPTURADO
+[06:29:01.532] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=94
+  >> CAPTURADO
+[06:29:01.564] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=36
+  >> CAPTURADO
+[06:29:01.596] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=29
+  >> CAPTURADO
+[06:29:01.627] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=124
+  >> CAPTURADO
+[06:29:01.659] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=0
+  >> CAPTURADO
+[06:29:02.167] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=10
+  >> CAPTURADO
+[06:29:02.199] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=125
+  >> CAPTURADO
+[06:29:02.231] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=70
+  >> CAPTURADO
+[06:29:02.262] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=14
+  >> CAPTURADO
+[06:29:02.294] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=18
+  >> CAPTURADO
+[06:29:02.326] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=125
+  >> CAPTURADO
+[06:29:02.358] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=94
+  >> CAPTURADO
+[06:29:02.390] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=12
+  >> CAPTURADO
+[06:29:02.422] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=109
+  >> CAPTURADO
+[06:29:02.454] [EQ_Low_Left] Status=176(0xB0) Data1=47(0x2F) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:06.052] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=33
+  >> CAPTURADO
+[06:29:06.084] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=56
+  >> CAPTURADO
+[06:29:06.116] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=18
+  >> CAPTURADO
+[06:29:06.148] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=77
+  >> CAPTURADO
+[06:29:06.181] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=101
+  >> CAPTURADO
+[06:29:06.212] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=99
+  >> CAPTURADO
+[06:29:06.244] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=61
+  >> CAPTURADO
+[06:29:06.276] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=50
+  >> CAPTURADO
+[06:29:06.308] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=3
+  >> CAPTURADO
+[06:29:06.340] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=51
+  >> CAPTURADO
+[06:29:06.372] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=32
+  >> CAPTURADO
+[06:29:06.404] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=96
+  >> CAPTURADO
+[06:29:06.435] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:08.723] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=19
+  >> CAPTURADO
+[06:29:08.755] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=5
+  >> CAPTURADO
+[06:29:08.787] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=118
+  >> CAPTURADO
+[06:29:08.819] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=111
+  >> CAPTURADO
+[06:29:08.851] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=121
+  >> CAPTURADO
+[06:29:08.883] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=80
+  >> CAPTURADO
+[06:29:08.915] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=40
+  >> CAPTURADO
+[06:29:08.947] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=126
+  >> CAPTURADO
+[06:29:08.979] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=86
+  >> CAPTURADO
+[06:29:09.011] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=71
+  >> CAPTURADO
+[06:29:09.043] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=117
+  >> CAPTURADO
+[06:29:09.075] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=8
+  >> CAPTURADO
+[06:29:09.107] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=114
+  >> CAPTURADO
+[06:29:09.139] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=0
+  >> CAPTURADO
+[06:29:09.171] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=17
+  >> CAPTURADO
+[06:29:09.203] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=54
+  >> CAPTURADO
+[06:29:09.234] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=99
+  >> CAPTURADO
+[06:29:09.266] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=92
+  >> CAPTURADO
+[06:29:09.298] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=58
+  >> CAPTURADO
+[06:29:09.330] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=70
+  >> CAPTURADO
+[06:29:09.362] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=89
+  >> CAPTURADO
+[06:29:09.394] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=49
+  >> CAPTURADO
+[06:29:09.426] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=85
+  >> CAPTURADO
+[06:29:09.458] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=107
+  >> CAPTURADO
+[06:29:09.490] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=59
+  >> CAPTURADO
+[06:29:09.521] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=71
+  >> CAPTURADO
+[06:29:09.553] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=40
+  >> CAPTURADO
+[06:29:09.585] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=110
+  >> CAPTURADO
+[06:29:09.617] [Filter_Left] Status=182(0xB6) Data1=55(0x37) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:13.143] [HeadphoneCue_Left] Status=144(0x90) Data1=84(0x54) Data2=127
+  >> CAPTURADO
+[06:29:13.302] [HeadphoneCue_Left] Status=144(0x90) Data1=84(0x54) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:17.499] [VolumeSlider_Left] Status=177(0xB1) Data1=51(0x33) Data2=19
+  >> CAPTURADO
+[06:29:17.977] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:18.009] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=112
+  >> CAPTURADO
+[06:29:18.041] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:29:18.073] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=45
+  >> CAPTURADO
+[06:29:18.105] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:29:18.136] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:18.168] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=32
+  >> CAPTURADO
+[06:29:18.201] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:18.233] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=121
+  >> CAPTURADO
+[06:29:18.264] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=97
+  >> CAPTURADO
+[06:29:18.296] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=30
+  >> CAPTURADO
+[06:29:18.328] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=117
+  >> CAPTURADO
+[06:29:18.360] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=59
+  >> CAPTURADO
+[06:29:18.392] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:19.377] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=53
+  >> CAPTURADO
+[06:29:19.409] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:19.664] [VolumeSlider_Left] Status=176(0xB0) Data1=19(0x13) Data2=43
+  >> CAPTURADO
+[06:29:19.695] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=81
+  >> CAPTURADO
+[06:29:19.727] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=7
+  >> CAPTURADO
+[06:29:19.759] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=6
+  >> CAPTURADO
+[06:29:19.791] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:19.822] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:19.854] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=64
+  >> CAPTURADO
+[06:29:19.886] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=113
+  >> CAPTURADO
+[06:29:19.918] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=53
+  >> CAPTURADO
+[06:29:19.950] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:20.013] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=94
+  >> CAPTURADO
+[06:29:20.045] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:29:20.077] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:29:20.109] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=100
+  >> CAPTURADO
+[06:29:20.140] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:20.172] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:20.204] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=68
+  >> CAPTURADO
+[06:29:20.236] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=19
+  >> CAPTURADO
+[06:29:20.300] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=88
+  >> CAPTURADO
+[06:29:20.331] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=1
+  >> CAPTURADO
+[06:29:20.363] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:20.395] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:29:20.427] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:20.459] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:29:20.491] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:20.523] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=10
+  >> CAPTURADO
+[06:29:20.554] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=126
+  >> CAPTURADO
+[06:29:20.586] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=113
+  >> CAPTURADO
+[06:29:20.618] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=89
+  >> CAPTURADO
+[06:29:20.650] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:29:20.682] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=121
+  >> CAPTURADO
+[06:29:20.714] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:20.746] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:20.778] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=50
+  >> CAPTURADO
+[06:29:20.810] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:29:20.841] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=106
+  >> CAPTURADO
+[06:29:20.873] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=80
+  >> CAPTURADO
+[06:29:20.904] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=96
+  >> CAPTURADO
+[06:29:20.936] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=95
+  >> CAPTURADO
+[06:29:20.968] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:21.000] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:29:21.032] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:29:21.064] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=100
+  >> CAPTURADO
+[06:29:21.095] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:21.127] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=59
+  >> CAPTURADO
+[06:29:21.159] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=97
+  >> CAPTURADO
+[06:29:21.191] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:29:21.222] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=42
+  >> CAPTURADO
+[06:29:21.255] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=68
+  >> CAPTURADO
+[06:29:21.287] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=120
+  >> CAPTURADO
+[06:29:21.319] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:21.350] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=17
+  >> CAPTURADO
+[06:29:21.382] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:21.414] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=95
+  >> CAPTURADO
+[06:29:21.510] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=95
+  >> CAPTURADO
+[06:29:21.542] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=79
+  >> CAPTURADO
+[06:29:21.573] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=28
+  >> CAPTURADO
+[06:29:21.605] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=4
+  >> CAPTURADO
+[06:29:21.637] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=5
+  >> CAPTURADO
+[06:29:21.669] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:21.701] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:21.765] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=82
+  >> CAPTURADO
+[06:29:21.797] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=116
+  >> CAPTURADO
+[06:29:21.828] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:21.859] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=65
+  >> CAPTURADO
+[06:29:21.891] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=116
+  >> CAPTURADO
+[06:29:21.923] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:21.987] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:22.019] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:22.050] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:22.082] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:22.114] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:22.146] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:22.177] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:22.209] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=108
+  >> CAPTURADO
+[06:29:22.241] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=8
+  >> CAPTURADO
+[06:29:22.273] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:22.305] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=16
+  >> CAPTURADO
+[06:29:22.337] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:22.369] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:22.401] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=81
+  >> CAPTURADO
+[06:29:22.433] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:29:22.465] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:22.496] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=16
+  >> CAPTURADO
+[06:29:22.528] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:22.560] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=30
+  >> CAPTURADO
+[06:29:22.592] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=105
+  >> CAPTURADO
+[06:29:22.655] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=89
+  >> CAPTURADO
+[06:29:22.687] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=108
+  >> CAPTURADO
+[06:29:22.719] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=21
+  >> CAPTURADO
+[06:29:22.751] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=108
+  >> CAPTURADO
+[06:29:22.783] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:22.815] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=115
+  >> CAPTURADO
+[06:29:22.847] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=10
+  >> CAPTURADO
+[06:29:22.879] [VolumeSlider_Left] Status=176(0xB0) Data1=19(0x13) Data2=125
+  >> CAPTURADO
+[06:29:22.911] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:29:22.943] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=16
+  >> CAPTURADO
+[06:29:23.039] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=34
+  >> CAPTURADO
+[06:29:23.071] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=126
+  >> CAPTURADO
+[06:29:23.103] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:29:23.135] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:23.167] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=52
+  >> CAPTURADO
+[06:29:23.199] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=95
+  >> CAPTURADO
+[06:29:23.231] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:29:23.263] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:23.454] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=89
+  >> CAPTURADO
+[06:29:23.486] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+[06:29:23.517] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=6
+  >> CAPTURADO
+[06:29:23.549] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=5
+  >> CAPTURADO
+[06:29:23.580] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:23.612] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:23.644] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:23.676] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=121
+  >> CAPTURADO
+[06:29:23.708] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=24
+  >> CAPTURADO
+[06:29:23.739] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:23.771] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=116
+  >> CAPTURADO
+[06:29:23.803] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:23.835] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:23.866] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:23.898] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:23.930] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=47
+  >> CAPTURADO
+[06:29:24.025] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:24.057] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:24.089] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:24.120] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:24.184] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=30
+  >> CAPTURADO
+[06:29:24.216] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=22
+  >> CAPTURADO
+[06:29:24.248] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=64
+  >> CAPTURADO
+[06:29:24.279] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=22
+  >> CAPTURADO
+[06:29:24.311] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:29:24.343] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=15
+  >> CAPTURADO
+[06:29:24.375] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:24.407] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:24.439] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:24.535] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:24.566] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:24.598] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=49
+  >> CAPTURADO
+[06:29:24.630] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:29:24.662] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=82
+  >> CAPTURADO
+[06:29:24.694] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:24.757] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=5
+  >> CAPTURADO
+[06:29:24.916] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=94
+  >> CAPTURADO
+[06:29:24.948] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:24.980] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:25.012] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:25.044] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:25.076] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:25.107] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=117
+  >> CAPTURADO
+[06:29:25.139] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:25.171] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=92
+  >> CAPTURADO
+[06:29:25.203] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:25.235] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=78
+  >> CAPTURADO
+[06:29:25.266] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:29:25.298] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=46
+  >> CAPTURADO
+[06:29:25.329] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:25.361] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:25.393] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=41
+  >> CAPTURADO
+[06:29:25.424] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:25.456] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:26.636] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=20
+  >> CAPTURADO
+[06:29:26.668] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:29:26.700] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=84
+  >> CAPTURADO
+[06:29:26.732] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=41
+  >> CAPTURADO
+[06:29:26.763] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=84
+  >> CAPTURADO
+[06:29:26.795] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:29:26.828] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:26.859] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:29:26.891] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:26.923] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:26.955] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=81
+  >> CAPTURADO
+[06:29:26.987] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=12
+  >> CAPTURADO
+[06:29:27.019] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=29
+  >> CAPTURADO
+[06:29:27.051] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=113
+  >> CAPTURADO
+[06:29:27.082] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:29:27.114] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:27.146] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=120
+  >> CAPTURADO
+[06:29:27.177] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+[06:29:27.209] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=17
+  >> CAPTURADO
+[06:29:27.241] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:27.273] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=7
+  >> CAPTURADO
+[06:29:27.304] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=15
+  >> CAPTURADO
+[06:29:27.336] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:27.368] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:27.400] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:27.432] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:27.464] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=100
+  >> CAPTURADO
+[06:29:27.495] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=44
+  >> CAPTURADO
+[06:29:27.527] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=10
+  >> CAPTURADO
+[06:29:27.559] [VolumeSlider_Left] Status=176(0xB0) Data1=19(0x13) Data2=90
+  >> CAPTURADO
+[06:29:27.591] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:27.622] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=88
+  >> CAPTURADO
+[06:29:27.654] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:27.686] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:27.750] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=52
+  >> CAPTURADO
+[06:29:27.782] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=9
+  >> CAPTURADO
+[06:29:27.814] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:29:27.846] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=60
+  >> CAPTURADO
+[06:29:27.878] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=97
+  >> CAPTURADO
+[06:29:27.909] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:27.941] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:27.973] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=68
+  >> CAPTURADO
+[06:29:28.005] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=25
+  >> CAPTURADO
+[06:29:28.037] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:29:28.068] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=85
+  >> CAPTURADO
+[06:29:28.100] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=34
+  >> CAPTURADO
+[06:29:28.132] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=59
+  >> CAPTURADO
+[06:29:28.164] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:29:28.196] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=60
+  >> CAPTURADO
+[06:29:28.228] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=27
+  >> CAPTURADO
+[06:29:28.259] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:28.292] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:29:28.324] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=31
+  >> CAPTURADO
+[06:29:28.355] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=81
+  >> CAPTURADO
+[06:29:28.387] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=65
+  >> CAPTURADO
+[06:29:28.419] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=82
+  >> CAPTURADO
+[06:29:28.450] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:28.482] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=82
+  >> CAPTURADO
+[06:29:28.514] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=64
+  >> CAPTURADO
+[06:29:28.546] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:29:28.578] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=115
+  >> CAPTURADO
+[06:29:28.610] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=5
+  >> CAPTURADO
+[06:29:28.641] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=12
+  >> CAPTURADO
+[06:29:28.673] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=46
+  >> CAPTURADO
+[06:29:28.705] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=28
+  >> CAPTURADO
+[06:29:28.737] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:28.768] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:29:28.801] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:28.832] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:29:28.864] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=17
+  >> CAPTURADO
+[06:29:28.896] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:28.928] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=113
+  >> CAPTURADO
+[06:29:28.960] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:28.992] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:29.024] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=22
+  >> CAPTURADO
+[06:29:29.055] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:29.086] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=116
+  >> CAPTURADO
+[06:29:29.118] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:29.150] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:29:29.182] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:29.213] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=112
+  >> CAPTURADO
+[06:29:29.245] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=123
+  >> CAPTURADO
+[06:29:29.277] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=124
+  >> CAPTURADO
+[06:29:29.309] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=84
+  >> CAPTURADO
+[06:29:29.341] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:29.373] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=37
+  >> CAPTURADO
+[06:29:29.405] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+[06:29:29.437] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:29.469] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=19
+  >> CAPTURADO
+[06:29:29.501] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=49
+  >> CAPTURADO
+[06:29:29.533] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:29:29.565] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=71
+  >> CAPTURADO
+[06:29:29.597] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=120
+  >> CAPTURADO
+[06:29:29.628] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=17
+  >> CAPTURADO
+[06:29:29.660] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:29.692] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:29.724] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:29.756] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:29.787] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:29.819] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:29.850] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:29.882] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:29:29.914] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=94
+  >> CAPTURADO
+[06:29:29.946] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=83
+  >> CAPTURADO
+[06:29:29.978] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:30.010] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=40
+  >> CAPTURADO
+[06:29:30.041] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:30.073] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:30.105] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:29:30.137] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:30.169] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=74
+  >> CAPTURADO
+[06:29:30.201] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:30.232] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=58
+  >> CAPTURADO
+[06:29:30.264] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=67
+  >> CAPTURADO
+[06:29:30.296] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:29:30.328] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:29:30.359] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=7
+  >> CAPTURADO
+[06:29:30.391] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=84
+  >> CAPTURADO
+[06:29:30.423] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=58
+  >> CAPTURADO
+[06:29:30.647] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=50
+  >> CAPTURADO
+[06:29:30.678] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=49
+  >> CAPTURADO
+[06:29:30.711] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=126
+  >> CAPTURADO
+[06:29:30.742] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:30.774] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:29:30.806] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:30.837] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=114
+  >> CAPTURADO
+[06:29:30.869] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:30.901] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:30.933] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:29:30.965] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:29:31.188] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+[06:29:31.220] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:31.252] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+[06:29:31.284] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:31.316] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=111
+  >> CAPTURADO
+[06:29:31.347] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=1
+  >> CAPTURADO
+[06:29:31.379] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=87
+  >> CAPTURADO
+[06:29:31.410] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=79
+  >> CAPTURADO
+[06:29:31.730] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=28
+  >> CAPTURADO
+[06:29:32.814] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=79
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:34.214] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:34.755] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=78
+  >> CAPTURADO
+[06:29:34.787] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:34.819] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=29
+  >> CAPTURADO
+[06:29:34.851] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=65
+  >> CAPTURADO
+[06:29:34.882] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:34.914] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:29:34.946] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=35
+  >> CAPTURADO
+[06:29:34.978] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=27
+  >> CAPTURADO
+[06:29:35.010] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=63
+  >> CAPTURADO
+[06:29:35.042] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:35.074] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:35.105] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=111
+  >> CAPTURADO
+[06:29:35.137] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:29:35.995] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=79
+  >> CAPTURADO
+[06:29:36.027] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:36.058] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:29:36.090] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:29:36.121] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=22
+  >> CAPTURADO
+[06:29:36.153] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=106
+  >> CAPTURADO
+[06:29:36.185] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+[06:29:36.217] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=120
+  >> CAPTURADO
+[06:29:36.249] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:29:36.281] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=118
+  >> CAPTURADO
+[06:29:36.312] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=75
+  >> CAPTURADO
+[06:29:36.344] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:29:36.375] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:29:36.407] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=15
+  >> CAPTURADO
+[06:29:36.439] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:29:36.470] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=20
+  >> CAPTURADO
+[06:29:36.502] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:36.534] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:36.566] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=29
+  >> CAPTURADO
+[06:29:36.598] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=116
+  >> CAPTURADO
+[06:29:36.629] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=66
+  >> CAPTURADO
+[06:29:36.661] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=115
+  >> CAPTURADO
+[06:29:36.693] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=72
+  >> CAPTURADO
+[06:29:36.724] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=106
+  >> CAPTURADO
+[06:29:36.756] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:29:36.788] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=63
+  >> CAPTURADO
+[06:29:36.820] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=88
+  >> CAPTURADO
+[06:29:36.853] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=11
+  >> CAPTURADO
+[06:29:36.884] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=3
+  >> CAPTURADO
+[06:29:36.948] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:29:36.980] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=105
+  >> CAPTURADO
+[06:29:37.012] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:29:37.044] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=37
+  >> CAPTURADO
+[06:29:37.076] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:29:37.107] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=111
+  >> CAPTURADO
+[06:29:37.139] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=69
+  >> CAPTURADO
+[06:29:37.203] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=69
+  >> CAPTURADO
+[06:29:37.330] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:37.362] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=95
+  >> CAPTURADO
+[06:29:37.394] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:37.426] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:37.458] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=19
+  >> CAPTURADO
+[06:29:37.490] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=121
+  >> CAPTURADO
+[06:29:37.521] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=6
+  >> CAPTURADO
+[06:29:37.553] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:37.585] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=90
+  >> CAPTURADO
+[06:29:37.617] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=64
+  >> CAPTURADO
+[06:29:37.745] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=124
+  >> CAPTURADO
+[06:29:37.808] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=98
+  >> CAPTURADO
+[06:29:37.840] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=80
+  >> CAPTURADO
+[06:29:37.872] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+[06:29:37.935] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=29
+  >> CAPTURADO
+[06:29:37.967] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=21
+  >> CAPTURADO
+[06:29:37.999] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:29:38.031] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=62
+  >> CAPTURADO
+[06:29:38.093] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:38.125] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=105
+  >> CAPTURADO
+[06:29:38.731] [VolumeSlider_Left] Status=176(0xB0) Data1=51(0x33) Data2=28
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:41.720] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=113
+  >> CAPTURADO
+[06:29:41.752] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=53
+  >> CAPTURADO
+[06:29:41.880] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=105
+  >> CAPTURADO
+[06:29:41.912] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=55
+  >> CAPTURADO
+[06:29:41.944] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=90
+  >> CAPTURADO
+[06:29:41.976] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=117
+  >> CAPTURADO
+[06:29:42.008] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:29:42.039] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:29:42.071] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:29:42.103] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=13
+  >> CAPTURADO
+[06:29:42.135] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:29:42.166] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=84
+  >> CAPTURADO
+[06:29:42.198] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:29:42.229] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=87
+  >> CAPTURADO
+[06:29:42.261] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=30
+  >> CAPTURADO
+[06:29:42.293] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=96
+  >> CAPTURADO
+[06:29:42.325] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=13
+  >> CAPTURADO
+[06:29:42.357] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=49
+  >> CAPTURADO
+[06:29:42.388] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:42.420] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:42.453] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+[06:29:42.676] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:29:43.090] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:43.121] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:43.153] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=69
+  >> CAPTURADO
+[06:29:43.185] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:29:43.217] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=79
+  >> CAPTURADO
+[06:29:43.249] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=105
+  >> CAPTURADO
+[06:29:43.281] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=20
+  >> CAPTURADO
+[06:29:43.312] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=12
+  >> CAPTURADO
+[06:29:43.344] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=97
+  >> CAPTURADO
+[06:29:43.407] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=115
+  >> CAPTURADO
+[06:29:43.439] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=46
+  >> CAPTURADO
+[06:29:43.471] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=21
+  >> CAPTURADO
+[06:29:43.503] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=63
+  >> CAPTURADO
+[06:29:43.535] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:43.566] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=120
+  >> CAPTURADO
+[06:29:43.598] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=2
+  >> CAPTURADO
+[06:29:43.662] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:29:43.694] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=41
+  >> CAPTURADO
+[06:29:43.726] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:29:43.758] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:29:43.789] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:29:43.821] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:43.917] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=50
+  >> CAPTURADO
+[06:29:43.948] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=60
+  >> CAPTURADO
+[06:29:43.980] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:44.075] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=57
+  >> CAPTURADO
+[06:29:44.107] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=0
+  >> CAPTURADO
+[06:29:44.139] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=112
+  >> CAPTURADO
+[06:29:44.171] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:29:46.208] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=61
+  >> CAPTURADO
+[06:29:46.240] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:29:46.336] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=124
+  >> CAPTURADO
+[06:29:46.368] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=92
+  >> CAPTURADO
+[06:29:46.399] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=72
+  >> CAPTURADO
+[06:29:46.431] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=42
+  >> CAPTURADO
+[06:29:46.463] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:46.494] [Trim_Right] Status=177(0xB1) Data1=19(0x13) Data2=10
+  >> CAPTURADO
+[06:29:46.526] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=50
+  >> CAPTURADO
+[06:29:46.558] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=118
+  >> CAPTURADO
+[06:29:46.590] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=66
+  >> CAPTURADO
+[06:29:46.622] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=6
+  >> CAPTURADO
+[06:29:46.654] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=12
+  >> CAPTURADO
+[06:29:46.685] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=39
+  >> CAPTURADO
+[06:29:46.717] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=63
+  >> CAPTURADO
+[06:29:46.749] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=62
+  >> CAPTURADO
+[06:29:46.781] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=20
+  >> CAPTURADO
+[06:29:46.813] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=87
+  >> CAPTURADO
+[06:29:46.845] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=60
+  >> CAPTURADO
+[06:29:46.877] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=85
+  >> CAPTURADO
+[06:29:46.909] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=16
+  >> CAPTURADO
+[06:29:46.941] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=41
+  >> CAPTURADO
+[06:29:46.973] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=66
+  >> CAPTURADO
+[06:29:47.005] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=99
+  >> CAPTURADO
+[06:29:47.036] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=56
+  >> CAPTURADO
+[06:29:47.068] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=21
+  >> CAPTURADO
+[06:29:47.100] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=114
+  >> CAPTURADO
+[06:29:47.132] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=78
+  >> CAPTURADO
+[06:29:47.164] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=61
+  >> CAPTURADO
+[06:29:47.196] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=26
+  >> CAPTURADO
+[06:29:47.228] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=61
+  >> CAPTURADO
+[06:29:47.260] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=25
+  >> CAPTURADO
+[06:29:47.387] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:47.419] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=18
+  >> CAPTURADO
+[06:29:47.450] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=9
+  >> CAPTURADO
+[06:29:47.483] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=59
+  >> CAPTURADO
+[06:29:47.515] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=111
+  >> CAPTURADO
+[06:29:47.546] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=34
+  >> CAPTURADO
+[06:29:47.578] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:29:48.026] [Trim_Right] Status=176(0xB0) Data1=51(0x33) Data2=79
+  >> RUÍDO DESCARTADO (fader CC51)
+[06:29:48.217] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=25
+  >> CAPTURADO
+[06:29:48.947] [Trim_Right] Status=177(0xB1) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:53.726] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=70
+  >> CAPTURADO
+[06:29:53.758] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=5
+  >> CAPTURADO
+[06:29:53.790] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=60
+  >> CAPTURADO
+[06:29:53.822] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=65
+  >> CAPTURADO
+[06:29:53.854] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=85
+  >> CAPTURADO
+[06:29:53.885] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=46
+  >> CAPTURADO
+[06:29:53.918] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=0
+  >> CAPTURADO
+[06:29:54.394] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=108
+  >> CAPTURADO
+[06:29:54.426] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=10
+  >> CAPTURADO
+[06:29:54.457] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=25
+  >> CAPTURADO
+[06:29:54.489] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=62
+  >> CAPTURADO
+[06:29:54.521] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=22
+  >> CAPTURADO
+[06:29:54.552] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=126
+  >> CAPTURADO
+[06:29:54.584] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=59
+  >> CAPTURADO
+[06:29:54.615] [EQ_High_Right] Status=177(0xB1) Data1=7(0x07) Data2=52
+  >> CAPTURADO
+[06:29:54.647] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=4
+  >> CAPTURADO
+[06:29:54.679] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=0
+  >> CAPTURADO
+[06:29:54.710] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=68
+  >> CAPTURADO
+[06:29:54.742] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=103
+  >> CAPTURADO
+[06:29:54.774] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=2
+  >> CAPTURADO
+[06:29:55.059] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=88
+  >> CAPTURADO
+[06:29:55.091] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=48
+  >> CAPTURADO
+[06:29:55.123] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=121
+  >> CAPTURADO
+[06:29:55.155] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=29
+  >> CAPTURADO
+[06:29:55.187] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=17
+  >> CAPTURADO
+[06:29:55.219] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=72
+  >> CAPTURADO
+[06:29:55.251] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=94
+  >> CAPTURADO
+[06:29:55.283] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=123
+  >> CAPTURADO
+[06:29:55.314] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=49
+  >> CAPTURADO
+[06:29:55.346] [EQ_High_Right] Status=177(0xB1) Data1=39(0x27) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:56.619] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=110
+  >> CAPTURADO
+[06:29:56.651] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=41
+  >> CAPTURADO
+[06:29:56.683] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=73
+  >> CAPTURADO
+[06:29:56.715] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=42
+  >> CAPTURADO
+[06:29:56.747] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=99
+  >> CAPTURADO
+[06:29:56.779] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=61
+  >> CAPTURADO
+[06:29:56.811] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=67
+  >> CAPTURADO
+[06:29:56.843] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=79
+  >> CAPTURADO
+[06:29:56.874] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=24
+  >> CAPTURADO
+[06:29:56.906] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=3
+  >> CAPTURADO
+[06:29:56.938] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=0
+  >> CAPTURADO
+[06:29:57.320] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=35
+  >> CAPTURADO
+[06:29:57.352] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=98
+  >> CAPTURADO
+[06:29:57.383] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=34
+  >> CAPTURADO
+[06:29:57.415] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=56
+  >> CAPTURADO
+[06:29:57.447] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=84
+  >> CAPTURADO
+[06:29:57.479] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=28
+  >> CAPTURADO
+[06:29:57.511] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=56
+  >> CAPTURADO
+[06:29:57.542] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=119
+  >> CAPTURADO
+[06:29:57.574] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=62
+  >> CAPTURADO
+[06:29:57.606] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=14
+  >> CAPTURADO
+[06:29:57.638] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=76
+  >> CAPTURADO
+[06:29:57.670] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=0
+  >> CAPTURADO
+[06:29:58.115] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=103
+  >> CAPTURADO
+[06:29:58.147] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=119
+  >> CAPTURADO
+[06:29:58.179] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=37
+  >> CAPTURADO
+[06:29:58.210] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=76
+  >> CAPTURADO
+[06:29:58.242] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=115
+  >> CAPTURADO
+[06:29:58.274] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=94
+  >> CAPTURADO
+[06:29:58.306] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=29
+  >> CAPTURADO
+[06:29:58.338] [EQ_Mid_Right] Status=177(0xB1) Data1=43(0x2B) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:29:59.258] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=83
+  >> CAPTURADO
+[06:29:59.290] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=28
+  >> CAPTURADO
+[06:29:59.322] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=103
+  >> CAPTURADO
+[06:29:59.354] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=7
+  >> CAPTURADO
+[06:29:59.386] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=14
+  >> CAPTURADO
+[06:29:59.417] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=11
+  >> CAPTURADO
+[06:29:59.448] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=76
+  >> CAPTURADO
+[06:29:59.480] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=70
+  >> CAPTURADO
+[06:29:59.512] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=96
+  >> CAPTURADO
+[06:29:59.544] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=0
+  >> CAPTURADO
+[06:29:59.864] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=44
+  >> CAPTURADO
+[06:29:59.896] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=107
+  >> CAPTURADO
+[06:29:59.929] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=78
+  >> CAPTURADO
+[06:29:59.960] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=64
+  >> CAPTURADO
+[06:29:59.992] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=110
+  >> CAPTURADO
+[06:30:00.024] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=96
+  >> CAPTURADO
+[06:30:00.055] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=91
+  >> CAPTURADO
+[06:30:00.087] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=118
+  >> CAPTURADO
+[06:30:00.119] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=61
+  >> CAPTURADO
+[06:30:00.151] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=2
+  >> CAPTURADO
+[06:30:00.182] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=13
+  >> CAPTURADO
+[06:30:00.214] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=0
+  >> CAPTURADO
+[06:30:00.626] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=4
+  >> CAPTURADO
+[06:30:00.659] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=105
+  >> CAPTURADO
+[06:30:00.691] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=109
+  >> CAPTURADO
+[06:30:00.722] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=63
+  >> CAPTURADO
+[06:30:00.754] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=52
+  >> CAPTURADO
+[06:30:00.786] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=33
+  >> CAPTURADO
+[06:30:00.818] [EQ_Low_Right] Status=177(0xB1) Data1=47(0x2F) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:02.093] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=24
+  >> CAPTURADO
+[06:30:02.124] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=104
+  >> CAPTURADO
+[06:30:02.156] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=49
+  >> CAPTURADO
+[06:30:02.188] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=114
+  >> CAPTURADO
+[06:30:02.220] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=9
+  >> CAPTURADO
+[06:30:02.252] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=98
+  >> CAPTURADO
+[06:30:02.284] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=77
+  >> CAPTURADO
+[06:30:02.315] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=121
+  >> CAPTURADO
+[06:30:02.347] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=0
+  >> CAPTURADO
+  >> REINICIADO PELO USUÁRIO
+[06:30:03.526] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=104
+  >> CAPTURADO
+[06:30:03.558] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=65
+  >> CAPTURADO
+[06:30:03.590] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=77
+  >> CAPTURADO
+[06:30:03.621] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=123
+  >> CAPTURADO
+[06:30:03.653] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=109
+  >> CAPTURADO
+[06:30:03.685] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=1
+  >> CAPTURADO
+[06:30:03.717] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=4
+  >> CAPTURADO
+[06:30:03.749] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=40
+  >> CAPTURADO
+[06:30:03.781] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=69
+  >> CAPTURADO
+[06:30:03.813] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=19
+  >> CAPTURADO
+[06:30:03.845] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=14
+  >> CAPTURADO
+[06:30:03.877] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=0
+  >> CAPTURADO
+[06:30:04.004] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=9
+  >> CAPTURADO
+[06:30:04.036] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=87
+  >> CAPTURADO
+[06:30:04.068] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=64
+  >> CAPTURADO
+[06:30:04.100] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=6
+  >> CAPTURADO
+[06:30:04.132] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=51
+  >> CAPTURADO
+[06:30:04.164] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=88
+  >> CAPTURADO
+[06:30:04.195] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=56
+  >> CAPTURADO
+[06:30:04.227] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=125
+  >> CAPTURADO
+[06:30:04.259] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=25
+  >> CAPTURADO
+[06:30:04.291] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=60
+  >> CAPTURADO
+[06:30:04.322] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=36
+  >> CAPTURADO
+[06:30:04.355] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=54
+  >> CAPTURADO
+[06:30:04.386] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=39
+  >> CAPTURADO
+[06:30:04.418] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=110
+  >> CAPTURADO
+[06:30:04.450] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=1
+  >> CAPTURADO
+[06:30:04.482] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=47
+  >> CAPTURADO
+[06:30:04.515] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=24
+  >> CAPTURADO
+[06:30:04.546] [Filter_Right] Status=182(0xB6) Data1=56(0x38) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:08.173] [HeadphoneCue_Right] Status=145(0x91) Data1=84(0x54) Data2=127
+  >> CAPTURADO
+[06:30:08.300] [HeadphoneCue_Right] Status=145(0x91) Data1=84(0x54) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:20.043] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=77
+  >> CAPTURADO
+[06:30:20.075] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:30:20.107] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=85
+  >> CAPTURADO
+[06:30:20.171] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:30:20.203] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=34
+  >> CAPTURADO
+[06:30:20.235] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=103
+  >> CAPTURADO
+[06:30:20.267] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:30:20.299] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=104
+  >> CAPTURADO
+[06:30:20.331] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=96
+  >> CAPTURADO
+[06:30:20.362] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=21
+  >> CAPTURADO
+[06:30:20.393] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=115
+  >> CAPTURADO
+[06:30:20.425] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=23
+  >> CAPTURADO
+[06:30:20.457] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:30:20.489] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=77
+  >> CAPTURADO
+[06:30:20.521] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=36
+  >> CAPTURADO
+[06:30:20.553] [VolumeSlider_Right] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> RUÍDO DESCARTADO (fader CC51)
+[06:30:20.585] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=73
+  >> CAPTURADO
+[06:30:20.617] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=125
+  >> CAPTURADO
+[06:30:20.649] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=7
+  >> CAPTURADO
+[06:30:20.681] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=59
+  >> CAPTURADO
+[06:30:20.713] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=38
+  >> CAPTURADO
+[06:30:20.745] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:30:20.777] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=108
+  >> CAPTURADO
+[06:30:20.808] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:30:20.840] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:30:20.871] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=48
+  >> CAPTURADO
+[06:30:20.903] [VolumeSlider_Right] Status=176(0xB0) Data1=51(0x33) Data2=54
+  >> RUÍDO DESCARTADO (fader CC51)
+[06:30:20.935] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=70
+  >> CAPTURADO
+[06:30:20.966] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=89
+  >> CAPTURADO
+[06:30:20.998] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=109
+  >> CAPTURADO
+[06:30:21.030] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=107
+  >> CAPTURADO
+[06:30:21.062] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=14
+  >> CAPTURADO
+[06:30:21.093] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=13
+  >> CAPTURADO
+[06:30:21.125] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=80
+  >> CAPTURADO
+[06:30:21.156] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=27
+  >> CAPTURADO
+[06:30:21.189] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=52
+  >> CAPTURADO
+[06:30:21.220] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:30:21.252] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=66
+  >> CAPTURADO
+[06:30:21.284] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=91
+  >> CAPTURADO
+[06:30:21.316] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=124
+  >> CAPTURADO
+[06:30:21.348] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=54
+  >> CAPTURADO
+[06:30:21.379] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=121
+  >> CAPTURADO
+[06:30:21.411] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=52
+  >> CAPTURADO
+[06:30:21.443] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:30:21.475] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:30:21.506] [VolumeSlider_Right] Status=176(0xB0) Data1=51(0x33) Data2=113
+  >> RUÍDO DESCARTADO (fader CC51)
+[06:30:21.602] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:30:21.634] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=110
+  >> CAPTURADO
+[06:30:21.666] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=43
+  >> CAPTURADO
+[06:30:21.698] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=119
+  >> CAPTURADO
+[06:30:21.730] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:30:21.793] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=25
+  >> CAPTURADO
+[06:30:21.984] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=86
+  >> CAPTURADO
+[06:30:22.016] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=1
+  >> CAPTURADO
+[06:30:22.048] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=27
+  >> CAPTURADO
+[06:30:22.080] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=93
+  >> CAPTURADO
+[06:30:22.112] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=34
+  >> CAPTURADO
+[06:30:22.144] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=51
+  >> CAPTURADO
+[06:30:22.176] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=42
+  >> CAPTURADO
+[06:30:22.208] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=111
+  >> CAPTURADO
+[06:30:22.240] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=102
+  >> CAPTURADO
+[06:30:22.303] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=25
+  >> CAPTURADO
+[06:30:22.335] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=76
+  >> CAPTURADO
+[06:30:22.621] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=127
+  >> CAPTURADO
+[06:30:23.543] [VolumeSlider_Right] Status=177(0xB1) Data1=51(0x33) Data2=50
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:28.698] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=113
+  >> CAPTURADO
+[06:30:28.730] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=8
+  >> CAPTURADO
+[06:30:28.762] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=124
+  >> CAPTURADO
+[06:30:28.794] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=114
+  >> CAPTURADO
+[06:30:28.825] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=70
+  >> CAPTURADO
+[06:30:28.857] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=22
+  >> CAPTURADO
+[06:30:28.889] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=114
+  >> CAPTURADO
+[06:30:28.921] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=33
+  >> CAPTURADO
+[06:30:28.953] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=19
+  >> CAPTURADO
+[06:30:28.985] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=3
+  >> CAPTURADO
+[06:30:29.016] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=0
+  >> CAPTURADO
+[06:30:29.556] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=6
+  >> CAPTURADO
+[06:30:29.588] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=120
+  >> CAPTURADO
+[06:30:29.620] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=43
+  >> CAPTURADO
+[06:30:29.652] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=36
+  >> CAPTURADO
+[06:30:29.684] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=111
+  >> CAPTURADO
+[06:30:29.715] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=43
+  >> CAPTURADO
+[06:30:29.747] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=105
+  >> CAPTURADO
+[06:30:29.779] [Crossfader] Status=182(0xB6) Data1=31(0x1F) Data2=72
+  >> CAPTURADO
+[06:30:29.811] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=116
+  >> CAPTURADO
+[06:30:29.843] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=17
+  >> CAPTURADO
+[06:30:29.875] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=77
+  >> CAPTURADO
+[06:30:29.907] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=55
+  >> CAPTURADO
+[06:30:29.939] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=66
+  >> CAPTURADO
+[06:30:29.971] [Crossfader] Status=182(0xB6) Data1=63(0x3F) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:35.663] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=12
+  >> CAPTURADO
+[06:30:35.694] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=0
+  >> CAPTURADO
+[06:30:35.726] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=73
+  >> CAPTURADO
+[06:30:35.758] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=97
+  >> CAPTURADO
+[06:30:35.790] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=95
+  >> CAPTURADO
+[06:30:35.822] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=42
+  >> CAPTURADO
+[06:30:35.854] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=91
+  >> CAPTURADO
+[06:30:35.887] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=63
+  >> CAPTURADO
+[06:30:35.918] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=9
+  >> CAPTURADO
+[06:30:35.950] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=4
+  >> CAPTURADO
+[06:30:35.982] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=0
+  >> CAPTURADO
+[06:30:36.556] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=109
+  >> CAPTURADO
+[06:30:36.588] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=13
+  >> CAPTURADO
+[06:30:36.620] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=86
+  >> CAPTURADO
+[06:30:36.651] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=92
+  >> CAPTURADO
+[06:30:36.683] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=10
+  >> CAPTURADO
+[06:30:36.715] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=66
+  >> CAPTURADO
+[06:30:36.746] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=0
+  >> CAPTURADO
+[06:30:36.810] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=43
+  >> CAPTURADO
+[06:30:36.842] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=72
+  >> CAPTURADO
+[06:30:36.875] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=76
+  >> CAPTURADO
+[06:30:36.906] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=2
+  >> CAPTURADO
+[06:30:36.938] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=82
+  >> CAPTURADO
+[06:30:36.970] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=7
+  >> CAPTURADO
+[06:30:37.002] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=79
+  >> CAPTURADO
+[06:30:37.034] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=117
+  >> CAPTURADO
+[06:30:37.066] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=39
+  >> CAPTURADO
+[06:30:37.097] [HeadphoneMixing] Status=182(0xB6) Data1=44(0x2C) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:41.332] [MasterCue] Status=150(0x96) Data1=99(0x63) Data2=127
+  >> CAPTURADO
+[06:30:41.523] [MasterCue] Status=150(0x96) Data1=99(0x63) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:45.882] [BeatLeft] Status=148(0x94) Data1=74(0x4A) Data2=127
+  >> CAPTURADO
+[06:30:46.041] [BeatLeft] Status=148(0x94) Data1=74(0x4A) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:47.376] [BeatRight] Status=148(0x94) Data1=75(0x4B) Data2=127
+  >> CAPTURADO
+[06:30:47.566] [BeatRight] Status=148(0x94) Data1=75(0x4B) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:49.219] [FxSelect] Status=148(0x94) Data1=99(0x63) Data2=127
+  >> CAPTURADO
+[06:30:49.411] [FxSelect] Status=148(0x94) Data1=99(0x63) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:30:56.155] [FxChannelSelect] Status=148(0x94) Data1=17(0x11) Data2=127
+  >> CAPTURADO
+[06:30:56.187] [FxChannelSelect] Status=148(0x94) Data1=17(0x11) Data2=0
+  >> CAPTURADO
+[06:30:56.727] [FxChannelSelect] Status=148(0x94) Data1=17(0x11) Data2=127
+  >> CAPTURADO
+[06:30:57.142] [FxChannelSelect] Status=148(0x94) Data1=17(0x11) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:31:00.833] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=40
+  >> CAPTURADO
+[06:31:00.866] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=2
+  >> CAPTURADO
+[06:31:00.897] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=124
+  >> CAPTURADO
+[06:31:00.929] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=102
+  >> CAPTURADO
+[06:31:00.961] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=9
+  >> CAPTURADO
+[06:31:00.993] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=7
+  >> CAPTURADO
+[06:31:01.025] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=36
+  >> CAPTURADO
+[06:31:01.056] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=0
+  >> CAPTURADO
+[06:31:01.630] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=36
+  >> CAPTURADO
+[06:31:01.661] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=84
+  >> CAPTURADO
+[06:31:01.693] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=46
+  >> CAPTURADO
+[06:31:01.724] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=93
+  >> CAPTURADO
+[06:31:01.756] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=97
+  >> CAPTURADO
+[06:31:01.788] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=95
+  >> CAPTURADO
+[06:31:01.820] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=14
+  >> CAPTURADO
+[06:31:01.851] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=0
+  >> CAPTURADO
+[06:31:01.883] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=46
+  >> CAPTURADO
+[06:31:01.915] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=32
+  >> CAPTURADO
+[06:31:01.947] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=114
+  >> CAPTURADO
+[06:31:01.979] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=118
+  >> CAPTURADO
+[06:31:02.011] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=70
+  >> CAPTURADO
+[06:31:02.043] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=108
+  >> CAPTURADO
+[06:31:02.074] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=50
+  >> CAPTURADO
+[06:31:02.106] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=5
+  >> CAPTURADO
+[06:31:02.138] [LevelDepth] Status=180(0xB4) Data1=34(0x22) Data2=127
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+
+[06:31:05.097] [FxOnOff] Status=148(0x94) Data1=71(0x47) Data2=127
+  >> CAPTURADO
+[06:31:05.257] [FxOnOff] Status=148(0x94) Data1=71(0x47) Data2=0
+  >> CAPTURADO
+  >> CONFIRMADO PELO USUÁRIO
+

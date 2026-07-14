@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: #08080a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.full-screen-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 100%;
+    filter: drop-shadow(0 25px 45px rgba(0,0,0,.55));
+    transition: transform 0.1s ease-out;
+}
+
+#status-overlay {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.active-midi {
+    filter: drop-shadow(0 0 0 6px #2ea6ff) brightness(1.5) !important;
+}
+
+/* Base transitions for animating SVGs */
+.fader-cap, .knob-face, .knob-pointer, .btn, .pad {
+    transition: transform 0.05s linear, filter 0.1s;
+    transform-origin: center;
+}
+.knob {
+    transition: transform 0.05s linear;
+}
+
+/* --- SVG Replacements --- */
+
+  
+  h1{ color:#f0f0f0; font-size:19px; font-weight:600; margin:0; }
+  .sub-h{ color:#8a8a8d; font-size:12.5px; max-width:760px; text-align:center; margin-bottom:4px; }
+  .stage{ position:relative; width:1500px; max-width:96vw; }
+  svg{ width:100%; height:auto; display:block; filter:drop-shadow(0 25px 45px rgba(0,0,0,.55)); }
+
+  .chassis{ fill:url(#bodyGrad); }
+  .panelline{ stroke:#000; stroke-width:1.5; opacity:.5; }
+
+  .lbl{ fill:#d8dade; font-family:Arial, sans-serif; letter-spacing:.2px; }
+  .lbl.sub{ fill:#8f9297; }
+  .brandname{ fill:#eceef0; font-weight:800; letter-spacing:1px; }
+  .brandtext{ fill:#9a9da2; letter-spacing:1px; }
+  .brand-logo{ fill:#c9cbce; font-style:italic; font-weight:700; }
+  .grp-title{ fill:#9a9da2; font-weight:700; letter-spacing:.5px; }
+
+  .knob-base{ fill:url(#knobBase); stroke:#000; stroke-width:1; }
+  .knob-face{ fill:url(#knobFace); }
+  .knob-pointer{ stroke:#fff; stroke-width:2.4; stroke-linecap:round; }
+
+  .btn{ fill:url(#btnGrad); stroke:#050505; stroke-width:1; }
+  .btn.round{ fill:url(#btnRoundGrad); }
+  .btn.orange{ fill:url(#orangeGrad); stroke:#7a3d00; }
+  .btn.blue{ fill:url(#blueGrad); stroke:#0a3f66; }
+
+  .pad{ fill:url(#padGrad); stroke:#000; stroke-width:1; }
+
+  .fader-track{ fill:#101012; stroke:#000; stroke-width:1; }
+  .fader-cap{ fill:url(#capGrad); stroke:#050505; stroke-width:1; }
+  .fader-groove{ stroke:#050505; stroke-width:1.5; }
+
+  .jog-outer{ fill:url(#jogOuterGrad); stroke:#0a0a0a; stroke-width:2; }
+  .jog-ring{ fill:none; stroke:#4a4d52; stroke-width:1; opacity:.6; }
+  .jog-tick{ stroke:#5c5f64; stroke-width:2; }
+  .jog-disc{ fill:url(#jogDiscGrad); stroke:#000; stroke-width:2; }
+  .jog-led-ring{ fill:none; stroke:#2ea6ff; stroke-width:2.5; opacity:.85; }
+  .jog-logo-box{ fill:#141416; stroke:#48494c; stroke-width:2; }
+  .jog-logo-circle{ fill:none; stroke:#5a5c60; stroke-width:2.5; }
+
+  .grp-box{ fill:none; stroke:#8a8d92; stroke-width:1.4; stroke-dasharray:5 4; opacity:.75; }
+
+  .hit{ cursor:pointer; }
+  .hit:hover .knob-base, .hit:hover .btn, .hit:hover .pad, .hit:hover .fader-cap,
+  .hit:hover .jog-outer{
+    filter: drop-shadow(0 0 0 2px #2ea6ff) brightness(1.15);
+  }
+
+  #tooltip{
+    position:fixed; pointer-events:none;
+    background:#111317; color:#f2f3f5; font-size:13px; line-height:1.35;
+    padding:7px 11px; border-radius:7px; max-width:280px;
+    box-shadow:0 8px 22px rgba(0,0,0,.5); border:1px solid #2a2d33;
+    opacity:0; transform:translateY(4px); transition:opacity .1s ease, transform .1s ease;
+    z-index:1000;
+  }
+  #tooltip.show{ opacity:1; transform:translateY(0); }
+.log-console {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #38bdf8;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
