@@ -47,9 +47,12 @@ svg {
 }
 
 /* Base transitions for animating SVGs */
-.fader-cap, .knob-face, .knob-pointer, .btn, .pad {
+.fader-cap, .btn, .pad {
     transition: transform 0.05s linear, filter 0.1s;
     transform-origin: center;
+}
+.knob-face, .knob-pointer {
+    transition: transform 0.05s linear, filter 0.1s;
 }
 .knob {
     transition: transform 0.05s linear;
@@ -127,4 +130,111 @@ svg {
     text-align: center;
     backdrop-filter: blur(8px);
     z-index: 1000;
+}
+
+/* --- Info Panel Glassmorphism --- */
+.info-panel {
+    position: fixed;
+    right: -360px; /* Hidden by default */
+    top: 20px;
+    bottom: 80px;
+    width: 320px;
+    background: rgba(18, 18, 24, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 24px;
+    color: #f8fafc;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+.info-panel.open {
+    right: 20px;
+}
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+.info-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #38bdf8;
+}
+.info-header button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.info-header button:hover {
+    color: #f1f5f9;
+}
+.info-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+.section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    font-weight: 700;
+}
+.info-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #cbd5e1;
+}
+.midi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 12px;
+    color: #94a3b8;
+}
+.midi-grid strong {
+    color: #cbd5e1;
+}
+
+/* --- Glowing active state --- */
+.hit.active-midi .btn, .hit.active-midi .pad {
+    filter: drop-shadow(0 0 12px #2ea6ff) brightness(1.6) !important;
+    stroke: #2ea6ff !important;
+    stroke-width: 1.8px !important;
+}
+
+.hit.active-midi .btn.orange {
+    filter: drop-shadow(0 0 12px #ff9f1c) brightness(1.6) !important;
+    stroke: #ff9f1c !important;
+}
+
+.hit.active-midi .btn.blue {
+    filter: drop-shadow(0 0 12px #2ea6ff) brightness(1.6) !important;
+    stroke: #2ea6ff !important;
+}
+
+.hit.active-midi .btn:not(.orange):not(.blue), .hit.active-midi .pad {
+    filter: drop-shadow(0 0 10px #ffffff) brightness(1.6) !important;
+    stroke: #ffffff !important;
+}
+
+.hit.active-midi .knob-face, .hit.active-midi .fader-cap {
+    filter: drop-shadow(0 0 8px #2ea6ff) brightness(1.4) !important;
 }

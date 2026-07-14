@@ -1,29 +1,32 @@
 # Manual do Usuário - LiveBridge (Pioneer DDJ-400)
 
-Este manual documenta o comportamento oficial de cada controle da controladora DDJ-400 quando utilizada no Ableton Live através do aplicativo **LiveBridge**. 
+Este manual documenta o comportamento oficial de cada controle da controladora DDJ-400 quando utilizada no Ableton Live através do aplicativo **LiveBridge**.
 
-Os controles listados aqui já operam nativamente sem necessidade de mapeamento manual (graças ao nosso Remote Script).
+Os controles listados aqui operam nativamente sem a necessidade de mapeamento manual na maioria das funções (graças à ponte C# e ao nosso Remote Script Python).
 
 ---
 
-## 1. Sessão de Transporte (Deck Esquerdo e Direito)
+## 1. Seção de Transporte (Deck Esquerdo e Direito)
 
-Esta seção controla a reprodução de áudio e a posição da música no Ableton.
+Esta seção controla a reprodução e gravação de áudio no Ableton Live.
 
 | Botão | Ação no Ableton | Comportamento Detalhado |
 | :--- | :--- | :--- |
-| **Play/Pause** | Tocar / Pausar | Funciona exatamente como a barra de espaço do teclado. Se o som estiver parado, ele toca. Se estiver tocando, ele pausa e a "agulha" (playhead) retorna para o marcador de onde você iniciou. |
-| **Shift + Play** | Stop All Clips | Para a reprodução de todos os clipes que estiverem tocando na Session View (útil como um "Panic Button" para silenciar tudo ao mesmo tempo). |
-| **Cue** | Play da Agulha | Inicia a reprodução da música exatamente a partir do local atual da agulha/insert marker. |
-| **Shift + Cue** | Back to Arrangement | Se você estava tocando na Session View e o botão de Arrangement acendeu, esse comando restaura a reprodução para a Timeline do Arrangement View. |
+| **Play/Pause** | Tocar / Pausar | Alterna o estado de reprodução global do Ableton (`song.is_playing`). |
+| **Shift + Play** | Stop All Clips (CC 12) | Envia um sinal para parar todos os clipes que estiverem tocando na Session View. |
+| **Cue** | Play de Agulha (CC 11) | Continua a reprodução da música exatamente a partir da posição atual da agulha. |
+| **Shift + Cue** | Back to Arrangement (CC 13) | Restaura a reprodução para a Timeline do Arrangement View se um clipe da Session estava ativo. |
+| **Reloop/Exit (Deck Esquerdo)** | Looper Contextual (CC 48) | **Gravação inteligente baseada no slot de clipe focado:**<br>• *Slot vazio:* Arma a pista e inicia a gravação de um novo clipe.<br>• *Slot gravando:* Para de gravar e inicia a reprodução do clipe em loop.<br>• *Slot parado/tocando:* Inicia gravação de Overdub/gravação cumulativa no clipe. |
+| **Reloop/Exit (Deck Direito)** | Arrangement Record (CC 49) | Alterna o botão de gravação geral da timeline do Arrangement View (`song.record_mode`). |
 
 ---
 
 ## 2. Mixer Dinâmico e Controle de Pista Selecionada
 
-O mixer agora se auto-ajusta dinamicamente para a pista (Track) selecionada no Ableton Live. 
+O mixer se auto-ajusta dinamicamente para a pista (Track) selecionada no Ableton Live.
 
-*Nota: Os faders físicos de volume do Deck Esquerdo e Direito foram desativados temporariamente devido a mau contato físico.*
+> [!NOTE]
+> Os faders físicos de volume do Deck Esquerdo e Direito estão desativados temporariamente devido a problemas físicos de mau contato no hardware da controladora.
 
 - **Trim Deck A (Esquerdo)**: Controla o **Volume** da pista selecionada na tela.
 - **Trim Deck B (Direito)**: Controla o **PAN** (balanço esquerda/direita) da pista selecionada na tela.
@@ -32,13 +35,16 @@ O mixer agora se auto-ajusta dinamicamente para a pista (Track) selecionada no A
 
 ---
 
-## 3. Navegação da Timeline (Arrangement) e Zoom
+## 3. Navegação da Timeline (Arrangement) e Loop Dinâmico
 
-A mobilidade pelo arranjo do projeto é feita com os seguintes controles, agora com **Auto-Scroll da Tela (Display Scroll Follow)**:
+A mobilidade pelo arranjo do projeto e o controle de loops foram otimizados:
 
-- **Crossfader (Timeline)**: Posiciona a linha do playhead (agulha de reprodução) do Ableton. Todo à esquerda vai para o início do projeto, todo à direita vai para o final do projeto. **O display acompanha o movimento rolando a tela horizontalmente para mostrar onde a agulha está!**
-- **Anel Externo do Jog Esquerdo (Ajuste Fino)**: Ajusta de forma fina o posicionamento da linha de reprodução (passos curtos de 0.25 beats). **A tela rola horizontalmente junto com o ajuste fino para você nunca perder a linha de vista!**
-- **Jog Direito (Zoom)**: Controla o Zoom horizontal do Arrangement. Girar para a esquerda dá **Zoom In** (aumenta o zoom), girar para a direita dá **Zoom Out** (diminui o zoom).
+- **Crossfader (Timeline)**: Posiciona a linha do playhead (agulha de reprodução) do Ableton. Todo à esquerda vai para o início do projeto, todo à direita vai para o final do projeto.
+- **Anel Externo do Jog Esquerdo (Ajuste Fino)**: Ajusta de forma fina o posicionamento da linha de reprodução (passos curtos e simulação de scroll horizontal).
+- **Jog Direito (Zoom)**: Controla o Zoom horizontal do Arrangement. Girar para a esquerda dá **Zoom In**, girar para a direita dá **Zoom Out**.
+- **FX ON/OFF (Seção Beat FX)**:
+  - **Segurar FX ON/OFF + Arrastar Crossfader**: Marca o início do loop na agulha atual e permite redimensionar o tamanho do loop ativamente arrastando o crossfader.
+  - **Soltar FX ON/OFF**: Define a região selecionada como o loop ativo e o habilita no Ableton (simula o atalho `Ctrl + Shift + L`).
 
 ---
 
@@ -47,7 +53,7 @@ A mobilidade pelo arranjo do projeto é feita com os seguintes controles, agora 
 O botão prateado central (Selector Knob) possui dois modos de operação, alternados pelo botão **LOAD Deck A**:
 
 ### Modo Pista (Padrão)
-- **Ativação**: Pressione o botão **LOAD Deck A** (o foco da tela mudará para as pistas).
+- **Ativação**: Pressione o botão **LOAD Deck A** (o foco mudará para as pistas).
 - **Rotacionar Selector**: Navega verticalmente selecionando a pista de cima ou de baixo.
 - **TRIM e CUE**: Controlam Volume, PAN, Solo e Mute da pista que foi selecionada.
 
@@ -61,58 +67,58 @@ O botão prateado central (Selector Knob) possui dois modos de operação, alter
 
 ---
 
-## 5. Visualização (Views)
+## 5. Visualização e Criação de Tracks
 
-- **Botão LOAD Deck B**: Alterna a tela do Ableton Live entre a **Session View** (tela de clipes em colunas) e a **Arrangement View** (linha do tempo horizontal).
+- **Botão LOAD Deck B**: Alterna a tela do Ableton Live entre a **Session View** (tela de clipes) e a **Arrangement View** (linha do tempo).
+- **Seletor FX ▽ / △ (FxSelect)**:
+  - **Normal**: Cria uma nova **Pista de Áudio** (simula `Ctrl + T`).
+  - **Shift**: Cria uma nova **Pista MIDI** (simula `Ctrl + Shift + T`).
 
 ---
 
-## 6. Criação de Pistas (Tracks)
+## 6. Atalhos de Teclado Mapeados no Painel
 
-Você pode criar novas pistas no projeto de forma extremamente simples:
-- **Botão FX Select (Mixer/FX)**: Cria uma nova **Pista de Áudio** (simula `Ctrl + T`).
-- **Shift + Botão FX Select**: Cria uma nova **Pista MIDI** (simula `Ctrl + Shift + T`).
+Vários botões físicos da DDJ-400 simulam atalhos padrão do Ableton Live para acelerar a produção:
+
+- **Beat ◀ / Beat ▶**: Navega lateralmente na cadeia de dispositivos e efeitos (simula setas Esquerda/Direita).
+- **Loop In (Deck Esquerdo)**: Duplica o clipe ou pista selecionada (simula `Ctrl + D`).
+- **Loop Out (Deck Esquerdo)**: Deleta o clipe ou pista selecionada (simula `Delete`).
+- **Loop Call ◀ (Deck Esquerdo)**: Desfazer ação (simula `Ctrl + Z`).
+- **Loop Call ▶ (Deck Esquerdo)**: Refazer ação (simula `Ctrl + Y`).
+- **Beat Sync (Deck Esquerdo)**:
+  - **Normal**: Quantiza notas MIDI (simula `Ctrl + U`).
+  - **Shift**: Liga/Desliga o metrônomo do Ableton (simula `Ctrl + Option + M`).
 
 ---
 
 ## 7. Controle de Efeitos e Sintetizadores (Device Control)
 
-Qualquer plugin ou rack que estiver selecionado (com a "mãozinha azul") será controlado pelos botões de EQ!
-Isso transforma seus EQs em um painel de "8 Macros" portátil.
-- **Deck Esquerdo (High, Mid, Low, Filter)**: Controlam os **Parâmetros de 1 a 4** do plugin selecionado (Ex: Low, Mid, High e Output de um Channel EQ).
-- **Deck Direito (High, Mid, Low, Filter)**: Controlam os **Parâmetros de 5 a 8** do mesmo plugin selecionado.
+Qualquer plugin ou rack que estiver selecionado e em foco ativo (mãozinha azul) será controlado pelos knobs de equalização da controladora, divididos em 8 controles:
+
+- **Deck Esquerdo (High, Mid, Low, Filter)**: Controlam os **Parâmetros de 1 a 4** do plugin selecionado (Ex: Low, Mid, High e Cutoff de um EQ).
+- **Deck Direito (High, Mid, Low, Filter)**: Controlam os **Parâmetros de 5 a 8** do mesmo plugin.
 
 ### 🎯 Modo de Alta Precisão (Smart Knobs)
-Os EQs e Filtros da DDJ-400 agora são botões inteligentes!
-- **Fine-Tuning**: Segure o `SHIFT` enquanto gira o EQ ou Filtro para entrar no modo Lupa. A velocidade de rotação no Ableton cairá para 25%, permitindo ajustes cirúrgicos.
-- **Embreagem (Takeover)**: Se você girar com `SHIFT` e depois soltar o botão, o botão físico estará em um lugar diferente da tela (Desync). Ao girar sem o SHIFT novamente, o Ableton **ignorará** o movimento até que o botão físico "cruze" a posição atual da tela. Assim, a música nunca dá "pulos" de volume ou frequência de surpresa!
-- **Botões Liga/Desliga**: Gire devagar (com ou sem shift) para passar pela marca de 50% e ligar/desligar parâmetros do tipo Switch com total segurança.
+- **Fine-Tuning (Ajuste Fino)**: Segure o `SHIFT` enquanto gira o EQ ou Filtro para entrar no modo Lupa. A sensibilidade do knob cai para 25%, permitindo ajustes cirúrgicos.
+- **Embreagem (Takeover)**: Se você fizer um ajuste com `SHIFT` e depois soltar, as posições do knob físico e do Ableton estarão desalinhadas. Ao voltar a girar sem `SHIFT`, o Ableton ignorará o movimento até que o botão físico "cruze" a posição atual da tela, evitando pulos bruscos no som.
 
 ---
 
-## 8. Modos de Performance dos Pads (Pads Dinâmicos)
+## 8. Modos de Performance dos Pads
 
 Pressione um dos botões de modo (`Hot Cue`, `Beat Loop`, `Beat Jump`, `Sampler`) para alterar a função dos 8 pads de cada deck:
 
-### Modo HOT CUE (Lançamento de Clipes)
-- **Pads 1 ao 8**: Disparam os clipes nos slots de 1 a 8 no Ableton (Deck Esquerdo controla a **Track 1** e Deck Direito controla a **Track 2**).
-- **Shift + Pads 1 ao 8**: Para a reprodução do clipe correspondente.
+### Modo SAMPLER (MPC Style)
+- **Pads 1 ao 8**: Enviam Notas MIDI padrão (C1 a G1 / Notas 36 a 43) no **Canal 1** (Deck Esquerdo) e **Canal 2** (Deck Direito). Ideal para tocar Drum Racks ou samplers de percussão diretamente.
 
-### Modo BEAT LOOP (Controle de Looper)
-Controla automaticamente o primeiro plugin `Looper` presente na Track 1 (Deck Esquerdo) ou Track 2 (Deck Direito).
-- **Pad 1**: Record / Play / Overdub (botão multiuso do Looper).
-- **Pad 2**: Stop (para a gravação/reprodução).
-- **Pad 3**: Undo (desfaz a última gravação).
-- **Pad 4**: Clear (limpa o buffer do Looper).
+### Modo HOT CUE (Lançamento de Clipes & Controle de Plugin)
+- **Deck Esquerdo (Lançamento de Clipes)**:
+  - **Pads 1 ao 8**: Disparam os clipes nos slots correspondentes da pista selecionada (CC 50-57, Canal 16).
+  - **Shift + Pads 1 ao 8**: Para a reprodução do clipe correspondente.
+- **Deck Direito (Controle de Botões de Efeitos)**:
+  - **Pads 1 ao 8**: Enviam CCs virtuais 60-67 (Canal 16) $\rightarrow$ **Python:** Inverte e alterna o estado de parâmetros booleanos (como On/Off, Ativar/Desativar) do plugin selecionado.
 
-### Modo BEAT JUMP (Efeitos Momentâneos)
-Transforma os pads em botões de efeitos momentâneos.
-- **Pads 1 ao 8**: Controlam os **Parâmetros de 1 a 8 (Macros)** do plugin selecionado. O efeito só fica ativo enquanto você mantiver o pad pressionado (momentâneo).
-
-### Modo SAMPLER (Drum Rack / MPC Style)
-- **Pads 1 ao 8**: Enviam Notas MIDI padrão de Bumbo, Caixa, etc. (C1 a G1) para tocar instrumentos no Ableton (Canal 1 para Deck Esquerdo, Canal 2 para Deck Direito).
-- *Ideal para tocar Drum Racks carregados no Ableton.*
-
----
-
-*(Mais seções serão adicionadas conforme o desenvolvimento avança...)*
+### Modo BEAT LOOP e BEAT JUMP
+- Estes modos enviam CCs dedicados para mapeamento manual de loops e efeitos customizados no Ableton Live através do Canal 16:
+  - **Beat Loop**: CCs 70-77 (Esquerdo) e 80-87 (Direito).
+  - **Beat Jump**: CCs 90-97 (Esquerdo) e 100-107 (Direito).

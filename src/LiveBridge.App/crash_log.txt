@@ -1,9 +1,7 @@
-Melanchall.DryWetMidi.Multimedia.MidiDeviceException: Internal error (OUT_GETINFORESULT_NODRIVER).
+Melanchall.DryWetMidi.Multimedia.MidiDeviceException: There is no memory in the system to complete the operation (IN_OPENRESULT_NOMEMORY).
    at Melanchall.DryWetMidi.Multimedia.NativeApi.HandleResult[TResult,TException](TResult result, Func`3 createException)
    at Melanchall.DryWetMidi.Multimedia.NativeApiUtilities.HandleDevicesNativeApiResult[TResult](TResult result)
-   at Melanchall.DryWetMidi.Multimedia.OutputDevice.GetByIndex(Int32 index)
-   at Melanchall.DryWetMidi.Multimedia.OutputDevice.GetAllLazy()+MoveNext()
-   at System.Linq.Enumerable.<ToArray>g__EnumerableToArray|324_0[TSource](IEnumerable`1 source)
-   at Melanchall.DryWetMidi.Multimedia.OutputDevice.GetAll()
-   at LiveBridge.Midi.OutputEmitter.Connect(String virtualPortName, String ddjOutputName) in C:\Users\User\Desktop\AbletonDDJ\src\LiveBridge.Midi\OutputEmitter.cs:line 44
-   at LiveBridge.App.Program.RunProductionMode() in C:\Users\User\Desktop\AbletonDDJ\src\LiveBridge.App\Program.cs:line 604
+   at Melanchall.DryWetMidi.Multimedia.InputDevice.EnsureHandleIsCreated()
+   at Melanchall.DryWetMidi.Multimedia.InputDevice.StartEventsListening()
+   at LiveBridge.Midi.InputListener.Start(String deviceName) in W:\Desktop\AbletonDDJ\src\LiveBridge.Midi\InputListener.cs:line 44
+   at LiveBridge.App.Program.RunProductionMode() in W:\Desktop\AbletonDDJ\src\LiveBridge.App\Program.cs:line 717

@@ -683,7 +683,7 @@ public class Program
             {
                 var s = sm.IsShiftActive ? " [SHIFT]" : "";
                 Log($"[OK] {ctrl}{s}  val={raw.Data2}  (0x{raw.Status:X2}/0x{raw.Data1:X2})", ConsoleColor.Green);
-                OnMidiLog?.Invoke($"{{\"control\":\"" + ctrl.ToString() + "\",\"value\":" + raw.Data2 + "}}");
+                OnMidiLog?.Invoke($"{{\"control\":\"{ctrl}\",\"value\":{raw.Data2}}}");
             }
             else
             {
