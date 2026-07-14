@@ -95,6 +95,12 @@ public class ActionRouter
             }
             return new ResolvedAction(ActionType.MidiCC, "Mixer_Crossfader", MidiChannel: 16, MidiCC: 9, MidiValue: ev.Value);
         }
+
+        // Wildcard LevelDepth Knob (Controla o parâmetro atualmente selecionado/focado)
+        if (ev.Control == PhysicalControl.LevelDepth)
+        {
+            return new ResolvedAction(ActionType.MidiCC, "Wildcard_LevelDepth", MidiChannel: 16, MidiCC: 47, MidiValue: ev.Value);
+        }
         
         if (ev.Control == PhysicalControl.Volume_Left || ev.Control == PhysicalControl.Volume_Right)
         {
@@ -197,6 +203,21 @@ public class ActionRouter
         {
             if (ev.Value == 0) return null;
             return new ResolvedAction(ActionType.MidiCC, "Track_Mute", MidiChannel: 16, MidiCC: 46, MidiValue: 127);
+        }
+
+        // Beat FX Left / Right (Mover seleção de plugin na cadeia)
+        if (ev.Control == PhysicalControl.BeatLeft)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendLeft();
+            return null;
+        }
+
+        if (ev.Control == PhysicalControl.BeatRight)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendRight();
+            return null;
         }
 
         // FxSelect (Criar Pistas)

@@ -13,6 +13,7 @@ public static class KeyboardSimulator
     private const byte VK_UP = 0x26;
     private const byte VK_DOWN = 0x28;
     private const byte VK_LEFT = 0x25;
+    private const byte VK_RIGHT = 0x27;
     private const byte VK_RETURN = 0x0D;
     
     private const byte VK_CONTROL = 0x11;
@@ -35,6 +36,12 @@ public static class KeyboardSimulator
     {
         keybd_event(VK_LEFT, 0, 0, UIntPtr.Zero);
         keybd_event(VK_LEFT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendRight()
+    {
+        keybd_event(VK_RIGHT, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     public static void SendEnter()
