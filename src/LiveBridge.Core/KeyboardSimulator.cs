@@ -19,6 +19,10 @@ public static class KeyboardSimulator
     private const byte VK_CONTROL = 0x11;
     private const byte VK_SHIFT_KEY = 0x10;
     private const byte VK_T = 0x54;
+    private const byte VK_D = 0x44;
+    private const byte VK_DELETE = 0x2E;
+    private const byte VK_Z = 0x5A;
+    private const byte VK_Y = 0x59;
 
     public static void SendUp()
     {
@@ -92,5 +96,35 @@ public static class KeyboardSimulator
     {
         int amount = clicks * 120; // 120 = WHEEL_DELTA
         mouse_event(MOUSEEVENTF_HWHEEL, 0, 0, (uint)amount, UIntPtr.Zero);
+    }
+
+    public static void SendDuplicate()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_D, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_D, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendDelete()
+    {
+        keybd_event(VK_DELETE, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_DELETE, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendUndo()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_Z, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_Z, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendRedo()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_Y, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_Y, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 }

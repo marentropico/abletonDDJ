@@ -594,18 +594,6 @@ public class Program
                 mode = "HotCue";
                 return true;
             }
-            if (data1 >= 16 && data1 <= 23)
-            {
-                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 16));
-                mode = "BeatLoop";
-                return true;
-            }
-            if (data1 >= 32 && data1 <= 39)
-            {
-                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 32));
-                mode = "BeatJump";
-                return true;
-            }
             if (data1 >= 48 && data1 <= 55)
             {
                 control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + (data1 - 48));
@@ -621,18 +609,6 @@ public class Program
             {
                 control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + data1);
                 mode = "HotCue";
-                return true;
-            }
-            if (data1 >= 16 && data1 <= 23)
-            {
-                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 16));
-                mode = "BeatLoop";
-                return true;
-            }
-            if (data1 >= 32 && data1 <= 39)
-            {
-                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 32));
-                mode = "BeatJump";
                 return true;
             }
             if (data1 >= 48 && data1 <= 55)

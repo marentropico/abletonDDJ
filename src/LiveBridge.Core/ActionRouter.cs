@@ -232,6 +232,38 @@ public class ActionRouter
             return null;
         }
 
+        // Loop In Left (Duplicate selected clip)
+        if (ev.Control == PhysicalControl.LoopIn_Left)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendDuplicate();
+            return null;
+        }
+
+        // Loop Out Left (Delete selected clip)
+        if (ev.Control == PhysicalControl.LoopOut_Left)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendDelete();
+            return null;
+        }
+
+        // Loop Call Left Left (Undo)
+        if (ev.Control == PhysicalControl.LoopCallLeft_Left)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendUndo();
+            return null;
+        }
+
+        // Loop Call Right Left (Redo)
+        if (ev.Control == PhysicalControl.LoopCallRight_Left)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendRedo();
+            return null;
+        }
+
         // FxSelect (Criar Pistas)
         if (ev.Control == PhysicalControl.FxSelectDown || ev.Control == PhysicalControl.FxSelectUp)
         {
