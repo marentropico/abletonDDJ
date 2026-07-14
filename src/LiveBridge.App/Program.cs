@@ -1,14 +1,9 @@
-using System.Windows.Forms;
-using Microsoft.Web.WebView2.WinForms;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using System.Threading;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using LiveBridge.Core.Models;
 using LiveBridge.Core;
@@ -207,68 +202,15 @@ public class Program
     // -----------------------------------------------------------------
     // MAIN
     // -----------------------------------------------------------------
-        public static event Action<string>? OnMidiLog;
-
     [STAThread]
     public static void Main(string[] args)
     {
-        
-        
+        var app = new System.Windows.Application();
+        var mainWindow = new MainWindow();
 
-        
+        _ = Task.Run(() => RunProductionMode(mainWindow));
 
-        var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddCors();
-        var app = builder.Build();
-
-        app.UseCors(x => x.AllowAnyMethod().AllowAnyHeader().SetIsOriginAllowed(origin => true));
-        app.UseDefaultFiles();
-        app.UseStaticFiles();
-        app.UseWebSockets();
-
-        app.MapGet("/api/mappings", () => {
-            if (File.Exists(JSON_PATH)) return Results.File(Path.GetFullPath(JSON_PATH), "application/json");
-            return Results.NotFound();
-        });
-
-        app.MapGet("/api/ws", async context => {
-            if (context.WebSockets.IsWebSocketRequest) {
-                var ws = await context.WebSockets.AcceptWebSocketAsync();
-                Action<string> handler = async msg => {
-                    if (ws.State == System.Net.WebSockets.WebSocketState.Open) {
-                        var bytes = System.Text.Encoding.UTF8.GetBytes(msg);
-                        Console.WriteLine("Enviando WS: " + msg); try { await ws.SendAsync(new ArraySegment<byte>(bytes), System.Net.WebSockets.WebSocketMessageType.Text, true, CancellationToken.None); } catch {}
-                    }
-                };
-                Program.OnMidiLog += handler;
-                var buffer = new byte[1024];
-                while (ws.State == System.Net.WebSockets.WebSocketState.Open) {
-                    try {
-                        var res = await ws.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                        if (res.MessageType == System.Net.WebSockets.WebSocketMessageType.Close) break;
-                    } catch { break; }
-                }
-                Program.OnMidiLog -= handler;
-            } else {
-                context.Response.StatusCode = 400;
-            }
-        });
-
-        _ = Task.Run(() => RunProductionMode());
-
-        string url = "http://localhost:5000";
-        Console.WriteLine($"\n[GUI] Interface gráfica rodando em: {url}");
-        
-
-        _ = app.RunAsync(url);
-        Application.SetHighDpiMode(HighDpiMode.SystemAware);
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        var form = new Form { Text = "DDJ-LiveBridge Pro", Width = 1200, Height = 800, StartPosition = FormStartPosition.CenterScreen };
-        var webView = new WebView2 { Dock = DockStyle.Fill };
-        form.Controls.Add(webView); form.TopMost = true; form.Shown += (s, e) => { form.TopMost = false; form.BringToFront(); };
-        form.Load += async (s, e) => { await webView.EnsureCoreWebView2Async(null); webView.CoreWebView2.Navigate(url + "?t=" + DateTime.Now.Ticks); };
-        Application.Run(form);
+        app.Run(mainWindow);
     }
 
     // -----------------------------------------------------------------
@@ -638,7 +580,7 @@ public class Program
         return false;
     }
 
-    private static void RunProductionMode() {
+    private static void RunProductionMode(MainWindow mainWindow) {
     try {
 
         LoadCalibratedMappings();
@@ -683,7 +625,7 @@ public class Program
             {
                 var s = sm.IsShiftActive ? " [SHIFT]" : "";
                 Log($"[OK] {ctrl}{s}  val={raw.Data2}  (0x{raw.Status:X2}/0x{raw.Data1:X2})", ConsoleColor.Green);
-                OnMidiLog?.Invoke($"{{\"control\":\"{ctrl}\",\"value\":{raw.Data2}}}");
+                mainWindow.UpdateMidiControl(ctrl.ToString(), raw.Data2);
             }
             else
             {

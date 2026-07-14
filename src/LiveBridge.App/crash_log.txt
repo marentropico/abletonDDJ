@@ -4,4 +4,4 @@ Melanchall.DryWetMidi.Multimedia.MidiDeviceException: There is no memory in the 
    at Melanchall.DryWetMidi.Multimedia.InputDevice.EnsureHandleIsCreated()
    at Melanchall.DryWetMidi.Multimedia.InputDevice.StartEventsListening()
    at LiveBridge.Midi.InputListener.Start(String deviceName) in W:\Desktop\AbletonDDJ\src\LiveBridge.Midi\InputListener.cs:line 44
-   at LiveBridge.App.Program.RunProductionMode() in W:\Desktop\AbletonDDJ\src\LiveBridge.App\Program.cs:line 717
+   at LiveBridge.App.Program.RunProductionMode(MainWindow mainWindow) in W:\Desktop\AbletonDDJ\src\LiveBridge.App\Program.cs:line 659

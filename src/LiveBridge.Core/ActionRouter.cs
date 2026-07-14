@@ -300,7 +300,7 @@ public class ActionRouter
         // Tempo Slider Left (BPM Control - CC 39)
         if (ev.Control == PhysicalControl.TempoSlider_Left)
         {
-            return new ResolvedAction(ActionType.MidiCC, "BPM_Control", MidiChannel: 16, MidiCC: 39, MidiValue: ev.Value);
+            return new ResolvedAction(ActionType.MidiCC, "BPM_Control", MidiChannel: 16, MidiCC: 39, MidiValue: 127 - ev.Value);
         }
 
         // FxSelect (Criar Pistas)
