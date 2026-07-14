@@ -11,7 +11,6 @@ public class ActionRouter
 {
     private readonly StateManager _state;
     private bool _browserFocused = false;
-    private int _prevCrossfaderVal = 64;
     private readonly Dictionary<PhysicalControl, int> _lastEqValues = new();
 
     private int ParseRelativeDelta(int value)
@@ -83,16 +82,9 @@ public class ActionRouter
         // TASK 2: Mixer & EQs Analógicos (Faders e Knobs)
         // =========================================================
 
-        // Globais e Volumes (Crossfader controls Timeline + Horizontal Scroll Follow)
+        // Globais e Volumes (Crossfader controls Timeline Playhead / Needle)
         if (ev.Control == PhysicalControl.Crossfader)
         {
-            int diff = ev.Value - _prevCrossfaderVal;
-            _prevCrossfaderVal = ev.Value;
-            if (diff != 0)
-            {
-                // Mapeia o movimento do crossfader para rolar a tela horizontalmente
-                KeyboardSimulator.ScrollHorizontal(diff * 2);
-            }
             return new ResolvedAction(ActionType.MidiCC, "Mixer_Crossfader", MidiChannel: 16, MidiCC: 9, MidiValue: ev.Value);
         }
 
@@ -112,6 +104,26 @@ public class ActionRouter
         if (ev.Control == PhysicalControl.ReloopExit_Right)
         {
             return new ResolvedAction(ActionType.MidiCC, "Arrangement_Record_Toggle", MidiChannel: 16, MidiCC: 49, MidiValue: ev.Value);
+        }
+
+        // FX On/Off (Loop Selection helper - Press, Hold and Drag via Crossfader)
+        if (ev.Control == PhysicalControl.FxOnOff)
+        {
+            if (ev.Value == 127) // Press FX On/Off
+            {
+                return new ResolvedAction(ActionType.MidiCC, "FxOnOff_Normal", MidiChannel: 16, MidiCC: 41, MidiValue: 127);
+            }
+            else // Release FX On/Off
+            {
+                var action = new ResolvedAction(ActionType.MidiCC, "FxOnOff_Normal", MidiChannel: 16, MidiCC: 41, MidiValue: 0);
+                
+                // Dispara Ctrl+Shift+L de forma assíncrona após 80ms
+                System.Threading.Tasks.Task.Delay(80).ContinueWith(_ => {
+                    KeyboardSimulator.SendSelectLoop();
+                });
+                
+                return action;
+            }
         }
         
         if (ev.Control == PhysicalControl.Volume_Left || ev.Control == PhysicalControl.Volume_Right)
@@ -262,6 +274,33 @@ public class ActionRouter
             if (ev.Value == 0) return null;
             KeyboardSimulator.SendRedo();
             return null;
+        }
+
+        // Beat Sync Left (Quantize / Metronome)
+        if (ev.Control == PhysicalControl.Sync_Left)
+        {
+            if (ev.Value == 0) return null; // Só no press
+            if (ev.IsShiftActive)
+            {
+                KeyboardSimulator.SendMetronome();
+            }
+            else
+            {
+                KeyboardSimulator.SendQuantize();
+            }
+            return null;
+        }
+
+        // Headphone Mixing (Volume Master alternativo - CC 38)
+        if (ev.Control == PhysicalControl.HeadphoneMixing)
+        {
+            return new ResolvedAction(ActionType.MidiCC, "Master_Volume_Alt", MidiChannel: 16, MidiCC: 38, MidiValue: ev.Value);
+        }
+
+        // Tempo Slider Left (BPM Control - CC 39)
+        if (ev.Control == PhysicalControl.TempoSlider_Left)
+        {
+            return new ResolvedAction(ActionType.MidiCC, "BPM_Control", MidiChannel: 16, MidiCC: 39, MidiValue: ev.Value);
         }
 
         // FxSelect (Criar Pistas)

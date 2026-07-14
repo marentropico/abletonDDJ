@@ -7,6 +7,8 @@ class DDJ_LiveBridge(ControlSurface):
         super(DDJ_LiveBridge, self).__init__(c_instance)
         self._c_instance = c_instance
         self._browser_focused = False
+        self._anchor_time = 0.0
+        self._is_holding_fx = False
         
         self.log_message("DDJ_LiveBridge Inicializado em modo Puro MIDI (Canal 16).")
         
@@ -74,19 +76,39 @@ class DDJ_LiveBridge(ControlSurface):
         self.register_disconnectable(self._knob_filter_r)
         self._knob_filter_r.add_value_listener(lambda v: self._set_device_knob_param(7, v))
 
-        # 4. Volumes (Trim Left controla volume da track selecionada, Trim Right controla Master volume)
+        # 4. Trim Esquerdo (Volume da track selecionada), Trim Direito (PAN da track selecionada)
         self._knob_trim_l = ButtonElement(True, MIDI_CC_TYPE, 15, 21)
         self.register_disconnectable(self._knob_trim_l)
         self._knob_trim_l.add_value_listener(self._set_selected_track_volume)
 
         self._knob_trim_r = ButtonElement(True, MIDI_CC_TYPE, 15, 31)
         self.register_disconnectable(self._knob_trim_r)
-        self._knob_trim_r.add_value_listener(self._set_master_track_volume)
+        self._knob_trim_r.add_value_listener(self._set_selected_track_pan)
 
         # 5. Wildcard Parameter Control (Knob LevelDepth - CC 47)
         self._knob_wildcard = ButtonElement(True, MIDI_CC_TYPE, 15, 47)
         self.register_disconnectable(self._knob_wildcard)
         self._knob_wildcard.add_value_listener(self._do_wildcard_parameter)
+
+        # 8. Master Volume (Knob Mixing / HeadphoneMixing - CC 38)
+        self._knob_master_volume = ButtonElement(True, MIDI_CC_TYPE, 15, 38)
+        self.register_disconnectable(self._knob_master_volume)
+        self._knob_master_volume.add_value_listener(self._set_master_track_volume)
+
+        # 9. BPM Control (Fader de Tempo esquerdo - CC 39)
+        self._knob_bpm = ButtonElement(True, MIDI_CC_TYPE, 15, 39)
+        self.register_disconnectable(self._knob_bpm)
+        self._knob_bpm.add_value_listener(self._do_bpm_control)
+
+        # 10. Crossfader - Agulha da Timeline (CC 9)
+        self._crossfader = ButtonElement(True, MIDI_CC_TYPE, 15, 9)
+        self.register_disconnectable(self._crossfader)
+        self._crossfader.add_value_listener(self._do_crossfader_timeline)
+
+        # 11. FX On/Off - Controle de Loop Selection (CC 41)
+        self._btn_fx_normal = ButtonElement(True, MIDI_CC_TYPE, 15, 41)
+        self.register_disconnectable(self._btn_fx_normal)
+        self._btn_fx_normal.add_value_listener(self._do_fx_normal)
 
         # 6. Pads do Deck Direito para Botões do Plugin (CC 60 a 67)
         self._right_pads = []
@@ -146,6 +168,19 @@ class DDJ_LiveBridge(ControlSurface):
 
     def _set_master_track_volume(self, value):
         self._set_param(self.song.master_track.mixer_device.volume, value)
+
+    def _set_selected_track_pan(self, value):
+        track = self.song.view.selected_track
+        if track:
+            self._set_param(track.mixer_device.panning, value)
+
+    def _do_bpm_control(self, value):
+        if value <= 64:
+            tempo = 20.0 + (value / 64.0) * 100.0
+        else:
+            tempo = 120.0 + ((value - 64) / 63.0) * (999.0 - 120.0)
+        tempo = max(20.0, min(999.0, tempo))
+        self.song.tempo = tempo
 
     def _is_boolean_parameter(self, p):
         if p.is_quantized:
@@ -314,6 +349,39 @@ class DDJ_LiveBridge(ControlSurface):
         if value > 0:
             self.song.record_mode = not self.song.record_mode
             self.log_message("Arrangement Record alterado para: " + str(self.song.record_mode))
+
+    def _do_crossfader_timeline(self, value):
+        # Escala o valor absoluto (0 a 127) para a timeline
+        # O limite padrão é 400 beats (100 compassos), mas se a música for maior, usamos o tamanho total
+        max_beats = max(400.0, self.song.last_event_time)
+        target_time = (value / 127.0) * max_beats
+        self.song.current_song_time = target_time
+
+        # Se estiver arrastando com o FX On/Off pressionado, atualiza o Loop
+        if self._is_holding_fx:
+            self._update_loop_to_current()
+
+    def _update_loop_to_current(self):
+        current = self.song.current_song_time
+        start = min(self._anchor_time, current)
+        length = abs(self._anchor_time - current)
+        # Garante duração mínima para evitar crashes
+        length = max(0.25, length)
+        self.song.loop_start = start
+        self.song.loop_length = length
+
+    def _do_fx_normal(self, value):
+        if value == 127: # Press
+            self._anchor_time = self.song.current_song_time
+            self._is_holding_fx = True
+            self.song.loop = True
+            # Inicializa um loop de tamanho mínimo na posição atual
+            self.song.loop_start = self._anchor_time
+            self.song.loop_length = 0.25
+        else: # Release
+            self._is_holding_fx = False
+
+
 
     def _set_param(self, param, midi_value):
         if param and param.is_enabled:

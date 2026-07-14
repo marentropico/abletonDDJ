@@ -544,6 +544,10 @@ public class Program
             ["BeatLoopMode_Right_Shift"]     = PhysicalControl.PadFX1_Right,
             ["BeatJumpMode_Right_Shift"]     = PhysicalControl.PadFX2_Right,
             ["SamplerMode_Right_Shift"]      = PhysicalControl.KeyShiftMode_Right,
+            ["BeatSync_Left"]                = PhysicalControl.Sync_Left,
+            ["BeatSync_Left_Shift"]          = PhysicalControl.Sync_Left,
+            ["BeatSync_Right"]               = PhysicalControl.Sync_Right,
+            ["BeatSync_Right_Shift"]         = PhysicalControl.Sync_Right,
         };
 
         int count = 0;

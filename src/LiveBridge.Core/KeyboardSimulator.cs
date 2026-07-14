@@ -23,6 +23,9 @@ public static class KeyboardSimulator
     private const byte VK_DELETE = 0x2E;
     private const byte VK_Z = 0x5A;
     private const byte VK_Y = 0x59;
+    private const byte VK_U = 0x55;
+    private const byte VK_O = 0x4F;
+    private const byte VK_L = 0x4C;
 
     public static void SendUp()
     {
@@ -79,6 +82,28 @@ public static class KeyboardSimulator
     private static extern void mouse_event(uint dwFlags, int dx, int dy, uint dwData, UIntPtr dwExtraInfo);
     
     private const uint MOUSEEVENTF_HWHEEL = 0x01000;
+    private const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
+    private const uint MOUSEEVENTF_LEFTUP = 0x0004;
+
+    public static void SendMouseLeftDown()
+    {
+        mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, UIntPtr.Zero);
+    }
+
+    public static void SendMouseLeftUp()
+    {
+        mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, UIntPtr.Zero);
+    }
+
+    public static void SendShiftDown()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+    }
+
+    public static void SendShiftUp()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
 
     public static void SendZoomIn()
     {
@@ -125,6 +150,30 @@ public static class KeyboardSimulator
         keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
         keybd_event(VK_Y, 0, 0, UIntPtr.Zero);
         keybd_event(VK_Y, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendQuantize()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_U, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_U, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendMetronome()
+    {
+        keybd_event(VK_O, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_O, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendSelectLoop()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_L, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_L, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 }
