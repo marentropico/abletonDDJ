@@ -218,38 +218,38 @@ class DDJ_LiveBridge(ControlSurface):
             return None, None
 
         # 1. Map labeled parameters: High, Mid, Low, Filter
-        hi_idx, hi_param = find_param_by_keywords(["gainhi", "high", "hi"])
+        hi_idx, hi_param = find_param_by_keywords(["gainhi", "high", "hi", "agudo", "alto", "4 gain", "3 gain", "treble"])
         if hi_param:
             mapping[0] = hi_param
             used_indices.add(hi_idx)
-            hi2_idx, hi2_param = find_param_by_keywords(["gainhi", "high", "hi"])
+            hi2_idx, hi2_param = find_param_by_keywords(["gainhi", "high", "hi", "agudo", "alto", "4 gain", "3 gain", "treble"])
             if hi2_param:
                 mapping[4] = hi2_param
                 used_indices.add(hi2_idx)
 
-        mid_idx, mid_param = find_param_by_keywords(["gainmid", "mid"])
+        mid_idx, mid_param = find_param_by_keywords(["gainmid", "mid", "médio", "medio", "2 gain", "3 gain"])
         if mid_param:
             mapping[1] = mid_param
             used_indices.add(mid_idx)
-            mid2_idx, mid2_param = find_param_by_keywords(["gainmid", "mid"])
+            mid2_idx, mid2_param = find_param_by_keywords(["gainmid", "mid", "médio", "medio", "2 gain", "3 gain"])
             if mid2_param:
                 mapping[5] = mid2_param
                 used_indices.add(mid2_idx)
 
-        lo_idx, lo_param = find_param_by_keywords(["gainlo", "low", "lo"])
+        lo_idx, lo_param = find_param_by_keywords(["gainlo", "low", "lo", "grave", "baixo", "1 gain", "bass"])
         if lo_param:
             mapping[2] = lo_param
             used_indices.add(lo_idx)
-            lo2_idx, lo2_param = find_param_by_keywords(["gainlo", "low", "lo"])
+            lo2_idx, lo2_param = find_param_by_keywords(["gainlo", "low", "lo", "grave", "baixo", "1 gain", "bass"])
             if lo2_param:
                 mapping[6] = lo2_param
                 used_indices.add(lo2_idx)
 
-        fl_idx, fl_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff"])
+        fl_idx, fl_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff", "frequência", "frequencia", "filtro", "corte"])
         if fl_param:
             mapping[3] = fl_param
             used_indices.add(fl_idx)
-            fl2_idx, fl2_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff"])
+            fl2_idx, fl2_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff", "frequência", "frequencia", "filtro", "corte"])
             if fl2_param:
                 mapping[7] = fl2_param
                 used_indices.add(fl2_idx)

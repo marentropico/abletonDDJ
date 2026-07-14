@@ -1,5 +1,5 @@
-﻿const fs = require('fs');
-let html = fs.readFileSync('C:/Users/User/Desktop/AbletonDDJ/src/LiveBridge.App/wwwroot/index.html', 'utf8');
+const fs = require('fs');
+let html = fs.readFileSync('./src/LiveBridge.App/wwwroot/index.html', 'utf8');
 
 const map = {
     'TRIM (Canal 1)': 'Trim_Left',
@@ -56,5 +56,5 @@ for (const key in map) {
     }
 }
 
-fs.writeFileSync('C:/Users/User/Desktop/AbletonDDJ/src/LiveBridge.App/wwwroot/index.html', html, 'utf8');
+fs.writeFileSync('./src/LiveBridge.App/wwwroot/index.html', html, 'utf8');
 console.log('Replaced ' + count + ' elements');
