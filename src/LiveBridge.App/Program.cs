@@ -46,6 +46,7 @@ public class Program
     private const string VIRTUAL_OUT = "loopMIDI Port";
 
     private static Dictionary<(byte, byte), PhysicalControl> _lookup = new();
+    private static readonly HashSet<PhysicalControl> _pressedWithShift = new();
 
     // -----------------------------------------------------------------
     // LISTA COMPLETA  (usada pelo wizard completo)
@@ -533,6 +534,10 @@ public class Program
         _lookup[(177, 34)] = PhysicalControl.JogWheel_Right;
         _lookup[(145, 54)] = PhysicalControl.JogWheel_Right;
 
+        // Garante os botões BeatLeft e BeatRight sob Shift físico (enviam notas 102 e 107 no status 148)
+        _lookup[(148, 102)] = PhysicalControl.BeatLeft;
+        _lookup[(148, 107)] = PhysicalControl.BeatRight;
+
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($"[Config] {count} controles carregados | Calibração: {doc.RootElement.GetProperty("CalibrationDate").GetString()}\n");
         Console.ResetColor();
@@ -543,8 +548,8 @@ public class Program
         control = PhysicalControl.Unknown;
         mode = "Sampler";
 
-        // Left Deck Pads (Channel 1 -> Status 144, or Channel 8 -> Status 151)
-        if (status == 144 || status == 151)
+        // Left Deck Pads
+        if (status == 151) // Channel 8 (Pads Deck 1)
         {
             if (data1 >= 0 && data1 <= 7)
             {
@@ -559,9 +564,18 @@ public class Program
                 return true;
             }
         }
+        else if (status == 144) // Channel 1 (Keyboard Mode Deck 1)
+        {
+            if (data1 >= 0 && data1 <= 7)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Left + data1);
+                mode = "Keyboard";
+                return true;
+            }
+        }
 
-        // Right Deck Pads (Channel 2 -> Status 145, or Channel 10 -> Status 153)
-        if (status == 145 || status == 153)
+        // Right Deck Pads
+        if (status == 153) // Channel 10 (Pads Deck 2)
         {
             if (data1 >= 0 && data1 <= 7)
             {
@@ -573,6 +587,15 @@ public class Program
             {
                 control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + (data1 - 48));
                 mode = "Sampler";
+                return true;
+            }
+        }
+        else if (status == 145) // Channel 2 (Keyboard Mode Deck 2)
+        {
+            if (data1 >= 0 && data1 <= 7)
+            {
+                control = (PhysicalControl)((int)PhysicalControl.Pad1_Right + data1);
+                mode = "Keyboard";
                 return true;
             }
         }
@@ -623,9 +646,55 @@ public class Program
 
             if (ctrl != PhysicalControl.Unknown)
             {
-                var s = sm.IsShiftActive ? " [SHIFT]" : "";
+                // Determina o estado Shift ativo na hora do processamento
+                bool eventShiftActive = sm.IsShiftActive;
+
+                if (ctrl == PhysicalControl.Shift_Left || ctrl == PhysicalControl.Shift_Right)
+                {
+                    sm.SetShift(ctrl, raw.Data2 > 0);
+
+                    if (sm.IsShiftActive)
+                        KeyboardSimulator.SendShiftDown();
+                    else
+                        KeyboardSimulator.SendShiftUp();
+
+                    mainWindow.UpdateMidiControl(ctrl.ToString(), raw.Data2, raw.Status);
+                    return;
+                }
+
+                if (raw.Data2 > 0) // Press ou CC/Knob move
+                {
+                    if (eventShiftActive)
+                        _pressedWithShift.Add(ctrl);
+                    else
+                        _pressedWithShift.Remove(ctrl);
+                }
+                else // Release (raw.Data2 == 0)
+                {
+                    if (_pressedWithShift.Contains(ctrl))
+                    {
+                        eventShiftActive = true;
+                        _pressedWithShift.Remove(ctrl);
+                    }
+                }
+
+                var s = eventShiftActive ? " [SHIFT]" : "";
                 Log($"[OK] {ctrl}{s}  val={raw.Data2}  (0x{raw.Status:X2}/0x{raw.Data1:X2})", ConsoleColor.Green);
-                mainWindow.UpdateMidiControl(ctrl.ToString(), raw.Data2);
+                mainWindow.UpdateMidiControl(ctrl.ToString(), raw.Data2, raw.Status);
+
+                var mode = padMode;
+                var ev   = new ControlEvent(ctrl, raw.Data2, eventShiftActive, mode);
+                var act  = ar.Resolve(ev);
+                if (act == null) return;
+
+                if (act.Type == ActionType.ModeChange)
+                {
+                    var p = act.Command.Split(':');
+                    if (p.Length == 2) sm.SetMode(p[0], p[1]);
+                    return;
+                }
+
+                oe.Emit(act);
             }
             else
             {
@@ -633,26 +702,6 @@ public class Program
                 oe.SendRawMidi(raw.Status, raw.Data1, raw.Data2);
                 return;
             }
-
-            if (ctrl == PhysicalControl.Shift_Left || ctrl == PhysicalControl.Shift_Right)
-            {
-                sm.SetShift(ctrl, raw.Data2 > 0);
-                return;
-            }
-
-            var mode = padMode;
-            var ev   = new ControlEvent(ctrl, raw.Data2, sm.IsShiftActive, mode);
-            var act  = ar.Resolve(ev);
-            if (act == null) return;
-
-            if (act.Type == ActionType.ModeChange)
-            {
-                var p = act.Command.Split(':');
-                if (p.Length == 2) sm.SetMode(p[0], p[1]);
-                return;
-            }
-
-            oe.Emit(act);
         };
 
                 

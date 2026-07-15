@@ -8,6 +8,43 @@ public static class KeyboardSimulator
     [DllImport("user32.dll", SetLastError = true)]
     private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
+    [DllImport("user32.dll")]
+    private static extern short GetAsyncKeyState(int vKey);
+
+    private const int VK_SHIFT = 0x10;
+
+    public static bool IsShiftKeyDown()
+    {
+        return (GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0;
+    }
+
+    public static void SendArrowKey(string direction, bool shift)
+    {
+        byte vKey = direction switch
+        {
+            "Left" => VK_LEFT,
+            "Right" => VK_RIGHT,
+            "Up" => VK_UP,
+            "Down" => VK_DOWN,
+            _ => 0
+        };
+
+        if (vKey == 0) return;
+
+        if (shift)
+        {
+            keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+            keybd_event(vKey, 0, 0, UIntPtr.Zero);
+            keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        }
+        else
+        {
+            keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+            keybd_event(vKey, 0, 0, UIntPtr.Zero);
+            keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        }
+    }
+
     private const uint KEYEVENTF_KEYUP = 0x0002;
     
     private const byte VK_UP = 0x26;
@@ -175,5 +212,37 @@ public static class KeyboardSimulator
         keybd_event(VK_L, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendShiftLeftArrow()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_LEFT, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_LEFT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendShiftRightArrow()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_RIGHT, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendShiftUpArrow()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_UP, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_UP, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendShiftDownArrow()
+    {
+        keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_DOWN, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_DOWN, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 }

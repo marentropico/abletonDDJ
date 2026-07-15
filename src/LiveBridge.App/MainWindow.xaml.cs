@@ -17,8 +17,8 @@ public partial class MainWindow : Window
     private readonly Dictionary<string, double> _jogAngles = new() { ["JogWheel_Left"] = 0, ["JogWheel_Right"] = 0 };
     private Dictionary<string, JsonElement> _calibrationMappings = new();
     private readonly HashSet<string> _activeToggles = new();
-    private bool _isShiftLeftActive = false;
-    private bool _isShiftRightActive = false;
+    private readonly HashSet<string> _pressedWithShift = new();
+    private bool _isShiftActive = false;
 
     // Banco de dados estático de mapeamentos do Ableton Live (idêntico ao app.js)
     private static readonly Dictionary<string, (string Title, string Desc, string Shift)> MappingInfo = new()
@@ -110,8 +110,6 @@ public partial class MainWindow : Window
         InitializeComponent();
         Loaded += (s, e) => {
             MapVisualControls(this);
-            UpdateMidiControl("HotCueMode_Left", 127);
-            UpdateMidiControl("HotCueMode_Right", 127);
         };
         LoadCalibrationMappings();
     }
@@ -158,11 +156,17 @@ public partial class MainWindow : Window
     }
 
     // Método exposto para receber atualizações MIDI vindas do InputListener
-    public void UpdateMidiControl(string control, int value)
+    public void UpdateMidiControl(string control, int value, int status = 0)
     {
         Dispatcher.Invoke(() =>
         {
             LogConsole.Text = $"Recebido: {control} | Valor: {value}";
+
+            // Lógica para rastrear o estado do SHIFT
+            if (control == "Shift_Left" || control == "Shift_Right")
+            {
+                _isShiftActive = value > 0;
+            }
             
             // Lógica especial de flash do Browse Encoder
             if (control == "BrowseEncoder_TurnLeft" || control == "BrowseEncoder_TurnRight")
@@ -189,8 +193,15 @@ public partial class MainWindow : Window
                 return;
             }
 
+            // Redireciona eventos do Jog Wheel para seu respectivo canvas do deck (JogWheel_Left ou JogWheel_Right)
+            string controlName = control;
+            if (controlName.StartsWith("JogWheel_"))
+            {
+                controlName = (controlName.Contains("Right") || controlName.EndsWith("_Right")) ? "JogWheel_Right" : "JogWheel_Left";
+            }
+
             // Localiza o Canvas associado ao controle
-            if (!_controlsMap.TryGetValue(control, out var canvas)) return;
+            if (!_controlsMap.TryGetValue(controlName, out var canvas)) return;
 
             // Detectar o tipo do controle analisando o nome ou seus filhos
             bool isKnob = canvas.Children.OfType<Line>().Any(l => l.Name == "" || l.Name == null) && canvas.Children.OfType<Ellipse>().Count() >= 2;
@@ -204,20 +215,59 @@ public partial class MainWindow : Window
                 if (borderChild != null)
                 {
                     bool isBlueBtn = canvas.Name.Contains("Play") || canvas.Name.Contains("FxOnOff");
-                    bool isOrangeBtn = canvas.Name.Contains("Sync") || canvas.Name.Contains("Load") || canvas.Name.Contains("Cue") || canvas.Name.Contains("Loop");
+                    bool isOrangeBtn = canvas.Name.Contains("Sync") || canvas.Name.Contains("Load") || canvas.Name.Contains("Cue") || canvas.Name.Contains("Loop") || canvas.Name.Contains("Mode");
 
+                    // Determina se o botão é do tipo alternador (Toggle)
+                    bool isToggleType = canvas.Name.Contains("Play") || canvas.Name.Contains("Sync") || canvas.Name.Contains("FxOnOff");
+
+                    bool eventShiftActive = _isShiftActive;
                     if (value > 0)
                     {
-                        Color glowColor = Colors.White;
-                        if (isBlueBtn)
+                        if (eventShiftActive)
+                            _pressedWithShift.Add(canvas.Name);
+                        else
+                            _pressedWithShift.Remove(canvas.Name);
+
+                        if (isToggleType && !eventShiftActive)
                         {
-                            glowColor = Color.FromRgb(46, 166, 255);
-                            borderChild.Fill = (Brush)FindResource("blueGrad");
+                            if (_activeToggles.Contains(canvas.Name))
+                                _activeToggles.Remove(canvas.Name);
+                            else
+                                _activeToggles.Add(canvas.Name);
                         }
-                        else if (isOrangeBtn)
+                    }
+                    else // value == 0
+                    {
+                        if (_pressedWithShift.Contains(canvas.Name))
                         {
-                            glowColor = Color.FromRgb(255, 159, 28);
-                            borderChild.Fill = (Brush)FindResource("orangeGrad");
+                            eventShiftActive = true;
+                            _pressedWithShift.Remove(canvas.Name);
+                        }
+                    }
+
+                    bool shouldLightUp = isToggleType ? _activeToggles.Contains(canvas.Name) : (value > 0);
+
+                    if (shouldLightUp)
+                    {
+                        Color glowColor = Colors.White;
+                        if (eventShiftActive)
+                        {
+                            // Shift ativo -> Brilho roxo neon premium
+                            glowColor = Color.FromRgb(212, 40, 255);
+                            borderChild.Fill = (Brush)FindResource("purpleGrad");
+                        }
+                        else
+                        {
+                            if (isBlueBtn)
+                            {
+                                glowColor = Color.FromRgb(46, 166, 255);
+                                borderChild.Fill = (Brush)FindResource("blueGrad");
+                            }
+                            else if (isOrangeBtn)
+                            {
+                                glowColor = Color.FromRgb(255, 159, 28);
+                                borderChild.Fill = (Brush)FindResource("orangeGrad");
+                            }
                         }
                         
                         borderChild.Effect = new DropShadowEffect { BlurRadius = 15, Color = glowColor, ShadowDepth = 0, Opacity = 0.95 };
@@ -230,7 +280,7 @@ public partial class MainWindow : Window
                         // Restaura o preenchimento padrão
                         if (borderChild is Rectangle)
                         {
-                            borderChild.Fill = (Brush)FindResource("btnGrad");
+                            borderChild.Fill = canvas.Name.Contains("Pad") ? (Brush)FindResource("padGrad") : (Brush)FindResource("btnGrad");
                         }
                         else // Ellipse
                         {
@@ -280,12 +330,16 @@ public partial class MainWindow : Window
             }
             else if (isJog)
             {
-                // Jog Wheel
-                double delta = 0;
-                if (value > 0 && value < 64) delta = value;
-                else if (value >= 64) delta = -(128 - value);
+                // Rotação apenas para eventos de movimento contínuo (CC 176/177)
+                bool isRotationEvent = (status == 176 || status == 177);
+                if (isRotationEvent)
+                {
+                    double delta = 0;
+                    if (value > 0 && value < 64) delta = value;
+                    else if (value >= 64) delta = -(128 - value);
 
-                _jogAngles[canvas.Name] += (delta * 3.0);
+                    _jogAngles[canvas.Name] += (delta * 3.0);
+                }
 
                 double cx = canvas.Name == "JogWheel_Left" ? 255.0 : 1325.0;
                 double cy = 385.0;

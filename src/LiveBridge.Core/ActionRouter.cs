@@ -229,18 +229,20 @@ public class ActionRouter
             return new ResolvedAction(ActionType.MidiCC, "Track_Mute", MidiChannel: 16, MidiCC: 46, MidiValue: 127);
         }
 
-        // Beat FX Left / Right (Mover seleção de plugin na cadeia)
+        // Beat FX Left / Right (Mover seleção de plugin na cadeia / Seleciona horizontalmente se Shift estiver fisicamente mantido)
         if (ev.Control == PhysicalControl.BeatLeft)
         {
             if (ev.Value == 0) return null;
-            KeyboardSimulator.SendLeft();
+            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
+            KeyboardSimulator.SendArrowKey("Left", isShift);
             return null;
         }
 
         if (ev.Control == PhysicalControl.BeatRight)
         {
             if (ev.Value == 0) return null;
-            KeyboardSimulator.SendRight();
+            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
+            KeyboardSimulator.SendArrowKey("Right", isShift);
             return null;
         }
 
@@ -317,26 +319,37 @@ public class ActionRouter
         // Browse Encoder Click
         if (ev.Control == PhysicalControl.BrowseEncoder_Click && ev.Value == 127)
         {
-            if (ev.IsShiftActive)
-                KeyboardSimulator.SendLeft(); // Shift + Click -> Voltar pasta (Seta Esquerda)
+            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
+            if (isShift)
+            {
+                // Temporariamente solta o Shift virtual para enviar apenas o sinal da Seta Esquerda (Voltar pasta)
+                KeyboardSimulator.SendShiftUp();
+                KeyboardSimulator.SendLeft();
+                // Se o Shift do teclado ainda estiver fisicamente ativo, restabelece o Shift virtual
+                if (KeyboardSimulator.IsShiftKeyDown() || ev.IsShiftActive)
+                    KeyboardSimulator.SendShiftDown();
+            }
             else
+            {
                 KeyboardSimulator.SendEnter(); // Click -> Abrir pasta / Carregar (Enter)
+            }
             return null;
         }
 
-        // Browse Encoder Turn (Universal Navigation)
+        // Browse Encoder Turn (Universal Navigation / Seleciona verticalmente se Shift estiver fisicamente mantido)
         if (ev.Control == PhysicalControl.BrowseEncoder_Turn)
         {
             int delta = ParseRelativeDelta(ev.Value);
+            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
 
             // Envia setas virtuais para navegar nas pastas ou tracks
             if (delta > 0)
             {
-                for (int i = 0; i < delta; i++) KeyboardSimulator.SendDown();
+                for (int i = 0; i < delta; i++) KeyboardSimulator.SendArrowKey("Down", isShift);
             }
             else if (delta < 0)
             {
-                for (int i = 0; i < Math.Abs(delta); i++) KeyboardSimulator.SendUp();
+                for (int i = 0; i < Math.Abs(delta); i++) KeyboardSimulator.SendArrowKey("Up", isShift);
             }
             return null;
         }

@@ -40,6 +40,10 @@
             <GradientStop Color="#3a2225" Offset="0.0"/>
             <GradientStop Color="#1a1011" Offset="1.0"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="purpleGrad" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#e080ff" Offset="0.0"/>
+            <GradientStop Color="#a000e0" Offset="1.0"/>
+        </LinearGradientBrush>
         <LinearGradientBrush x:Key="capGrad" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#e9eaec" Offset="0.0"/>
             <GradientStop Color="#a8aaad" Offset="1.0"/>
@@ -93,6 +97,9 @@
         <TextBlock Canvas.Left="170.0" Canvas.Top="5.3500000000000005" Width="300" TextAlignment="Center" FontSize="9" Text="SYNC" Foreground="#d8dade" FontFamily="Arial"/>
         <TextBlock Canvas.Left="170.0" Canvas.Top="84.05" Width="300" TextAlignment="Center" FontSize="7" Text="TEMPO RANGE" Foreground="#8f9297" FontFamily="Arial"/>
         <Canvas x:Name="JogWheel_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="Jog Wheel (Deck 1) — gire para dar scratch; borda para bend de pitch">
+            <Canvas.RenderTransform>
+                <TranslateTransform Y="-30"/>
+            </Canvas.RenderTransform>
             <Ellipse Canvas.Left="45.0" Canvas.Top="175.0" Width="420.0" Height="420.0" Fill="{StaticResource jogOuterGrad}" Stroke="#0a0a0a" StrokeThickness="2"/>
             <Ellipse Canvas.Left="59.0" Canvas.Top="189.0" Width="392.0" Height="392.0" Stroke="#4a4d52" StrokeThickness="1" Opacity="0.6"/>
             <Line X1="435.0" Y1="385.0" X2="449.0" Y2="385.0" Stroke="#5c5f64" StrokeThickness="2"/>
@@ -150,28 +157,44 @@
             <Ellipse Canvas.Left="82.0" Canvas.Top="646.0" Width="52.0" Height="52.0" Fill="{StaticResource blueGrad}" Stroke="#0a3f66" StrokeThickness="1"/>
         </Canvas>
         <TextBlock Canvas.Left="-42.0" Canvas.Top="704.35" Width="300" TextAlignment="Center" FontSize="9" Text="PLAY/PAUSE" Foreground="#d8dade" FontFamily="Arial"/>
-        <TextBlock Canvas.Left="48.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="HOT CUE" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="48.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="HOT CUE" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="HotCueMode_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO HOT CUE (Deck 1) — SHIFT: KEYBOARD — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="177" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="48.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="KEYBOARD" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad1_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="HOT CUE (Deck 1) — SHIFT: KEYBOARD — pad de performance, linha 1">
             <Rectangle Canvas.Left="165" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad5_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="HOT CUE (Deck 1) — SHIFT: KEYBOARD — pad de performance, linha 2">
             <Rectangle Canvas.Left="165" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="122.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT LOOP" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="122.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT LOOP" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="BeatLoopMode_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO BEAT LOOP (Deck 1) — SHIFT: PAD FX 1 — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="251" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="122.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="PAD FX 1" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad2_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT LOOP (Deck 1) — SHIFT: PAD FX1 — pad de performance, linha 1">
             <Rectangle Canvas.Left="239" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad6_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT LOOP (Deck 1) — SHIFT: PAD FX1 — pad de performance, linha 2">
             <Rectangle Canvas.Left="239" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="196.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT JUMP" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="196.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT JUMP" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="BeatJumpMode_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO BEAT JUMP (Deck 1) — SHIFT: PAD FX 2 — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="325" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="196.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="PAD FX 2" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad3_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT JUMP (Deck 1) — SHIFT: PAD FX2 — pad de performance, linha 1">
             <Rectangle Canvas.Left="313" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad7_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT JUMP (Deck 1) — SHIFT: PAD FX2 — pad de performance, linha 2">
             <Rectangle Canvas.Left="313" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="270.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="SAMPLER" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="270.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="SAMPLER" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="SamplerMode_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO SAMPLER (Deck 1) — SHIFT: KEY SHIFT — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="399" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="270.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="KEY SHIFT" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad4_Left" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="SAMPLER (Deck 1) — SHIFT: KEY SHIFT — pad de performance, linha 1">
             <Rectangle Canvas.Left="387" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
@@ -402,6 +425,9 @@
         <TextBlock Canvas.Left="1240.0" Canvas.Top="5.3500000000000005" Width="300" TextAlignment="Center" FontSize="9" Text="SYNC" Foreground="#d8dade" FontFamily="Arial"/>
         <TextBlock Canvas.Left="1240.0" Canvas.Top="84.05" Width="300" TextAlignment="Center" FontSize="7" Text="TEMPO RANGE" Foreground="#8f9297" FontFamily="Arial"/>
         <Canvas x:Name="JogWheel_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="Jog Wheel (Deck 2) — gire para dar scratch; borda para bend de pitch">
+            <Canvas.RenderTransform>
+                <TranslateTransform Y="-30"/>
+            </Canvas.RenderTransform>
             <Ellipse Canvas.Left="1115.0" Canvas.Top="175.0" Width="420.0" Height="420.0" Fill="{StaticResource jogOuterGrad}" Stroke="#0a0a0a" StrokeThickness="2"/>
             <Ellipse Canvas.Left="1129.0" Canvas.Top="189.0" Width="392.0" Height="392.0" Stroke="#4a4d52" StrokeThickness="1" Opacity="0.6"/>
             <Line X1="1505.0" Y1="385.0" X2="1519.0" Y2="385.0" Stroke="#5c5f64" StrokeThickness="2"/>
@@ -459,28 +485,44 @@
             <Ellipse Canvas.Left="1152.0" Canvas.Top="646.0" Width="52.0" Height="52.0" Fill="{StaticResource blueGrad}" Stroke="#0a3f66" StrokeThickness="1"/>
         </Canvas>
         <TextBlock Canvas.Left="1028.0" Canvas.Top="704.35" Width="300" TextAlignment="Center" FontSize="9" Text="PLAY/PAUSE" Foreground="#d8dade" FontFamily="Arial"/>
-        <TextBlock Canvas.Left="1118.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="HOT CUE" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="1118.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="HOT CUE" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="HotCueMode_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO HOT CUE (Deck 2) — SHIFT: KEYBOARD — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="1247" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="1118.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="KEYBOARD" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad1_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="HOT CUE (Deck 2) — SHIFT: KEYBOARD — pad de performance, linha 1">
             <Rectangle Canvas.Left="1235" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad5_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="HOT CUE (Deck 2) — SHIFT: KEYBOARD — pad de performance, linha 2">
             <Rectangle Canvas.Left="1235" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="1192.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT LOOP" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="1192.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT LOOP" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="BeatLoopMode_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO BEAT LOOP (Deck 2) — SHIFT: PAD FX 1 — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="1321" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="1192.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="PAD FX 1" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad2_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT LOOP (Deck 2) — SHIFT: PAD FX1 — pad de performance, linha 1">
             <Rectangle Canvas.Left="1309" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad6_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT LOOP (Deck 2) — SHIFT: PAD FX1 — pad de performance, linha 2">
             <Rectangle Canvas.Left="1309" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="1266.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT JUMP" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="1266.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="BEAT JUMP" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="BeatJumpMode_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO BEAT JUMP (Deck 2) — SHIFT: PAD FX 2 — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="1395" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="1266.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="PAD FX 2" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad3_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT JUMP (Deck 2) — SHIFT: PAD FX2 — pad de performance, linha 1">
             <Rectangle Canvas.Left="1383" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
         <Canvas x:Name="Pad7_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="BEAT JUMP (Deck 2) — SHIFT: PAD FX2 — pad de performance, linha 2">
             <Rectangle Canvas.Left="1383" Canvas.Top="660" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
-        <TextBlock Canvas.Left="1340.0" Canvas.Top="595.2" Width="300" TextAlignment="Center" FontSize="8" Text="SAMPLER" Foreground="#d8dade" FontFamily="Arial"/>
+        <TextBlock Canvas.Left="1340.0" Canvas.Top="570" Width="300" TextAlignment="Center" FontSize="8" Text="SAMPLER" Foreground="#d8dade" FontFamily="Arial"/>
+        <Canvas x:Name="SamplerMode_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="MODO SAMPLER (Deck 2) — SHIFT: KEY SHIFT — seleciona o modo dos pads">
+            <Rectangle Canvas.Left="1469" Canvas.Top="582" Width="42" Height="10" RadiusX="2" RadiusY="2" Fill="{StaticResource btnGrad}" Stroke="#050505" StrokeThickness="1"/>
+        </Canvas>
+        <TextBlock Canvas.Left="1340.0" Canvas.Top="595" Width="300" TextAlignment="Center" FontSize="6.5" Text="KEY SHIFT" Foreground="#ff9f1c" FontFamily="Arial"/>
         <Canvas x:Name="Pad4_Right" Cursor="Hand" Background="Transparent" MouseLeftButtonDown="Element_MouseLeftButtonDown" MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave" Tag="SAMPLER (Deck 2) — SHIFT: KEY SHIFT — pad de performance, linha 1">
             <Rectangle Canvas.Left="1457" Canvas.Top="610" Width="66" Height="42" RadiusX="6" RadiusY="6" Fill="{StaticResource padGrad}" Stroke="Black" StrokeThickness="1"/>
         </Canvas>
