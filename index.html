@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AbleToDJ — Pioneer DDJ-400 × Ableton Live Bridge</title>
+<meta name="description" content="AbleToDJ transforma sua Pioneer DDJ-400 numa superfície de controle nativa do Ableton Live: EQ físico, hot cues, pads, BPM e navegação, sem tocar no mouse.">
+<meta property="og:title" content="AbleToDJ — Pioneer DDJ-400 × Ableton Live Bridge">
+<meta property="og:description" content="A ponte que faltava entre sua DDJ-400 e o Ableton Live. Baixe o instalador e toque.">
+<meta property="og:image" content="https://raw.githubusercontent.com/marentropico/abletonDDJ/main/assets/banner.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E0E10'/%3E%3Crect x='8' y='8' width='48' height='48' fill='%23FFE600'/%3E%3Crect x='16' y='28' width='32' height='8' fill='%230E0E10'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E10;
+    --ink-2:#18181B;
+    --ink-3:#212124;
+    --yellow:#FFE600;
+    --yellow-dim:#C9B400;
+    --paper:#F5F4EF;
+    --muted:#96958D;
+    --line:rgba(245,244,239,0.10);
+    --line-strong:rgba(245,244,239,0.18);
+    --glass-bg:rgba(245,244,239,0.045);
+    --radius-glass:14px;
+    --radius-hard:3px;
+    --shadow-hard:6px 6px 0 #000;
+    --shadow-hard-sm:3px 3px 0 #000;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ::selection{background:var(--yellow);color:#000;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  h1,h2,h3{
+    font-family:'Archivo Black', 'Archivo', sans-serif;
+    text-transform:uppercase;
+    line-height:0.98;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:8px;height:8px;
+    background:var(--yellow);
+    display:inline-block;
+    flex:none;
+  }
+  .lede{
+    font-size:clamp(16px,1.6vw,19px);
+    color:var(--muted);
+    max-width:52ch;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  /* ---------- background glow blobs (glass grounding) ---------- */
+  .glow{position:absolute; border-radius:50%; pointer-events:none; z-index:0;}
+  .glow-yellow{background:radial-gradient(circle, rgba(255,230,0,0.20), rgba(255,230,0,0) 70%);}
+  .glow-white{background:radial-gradient(circle, rgba(245,244,239,0.10), rgba(245,244,239,0) 70%);}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(14,14,16,0.72);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-mark{
+    width:26px; height:26px; background:var(--yellow);
+    position:relative; flex:none;
+  }
+  .brand-mark::after{
+    content:''; position:absolute; left:15%; top:44%; width:70%; height:22%;
+    background:var(--ink);
+  }
+  .brand-word{
+    font-family:'Archivo Black', sans-serif;
+    font-size:17px; letter-spacing:-0.02em;
+    text-transform:uppercase;
+  }
+  .brand-word span{color:var(--yellow);}
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; text-transform:uppercase; letter-spacing:0.1em;
+    text-decoration:none; color:var(--muted);
+    padding:6px 0; border-bottom:2px solid transparent;
+    transition:color .15s, border-color .15s;
+  }
+  .nav-links a:hover, .nav-links a.active{color:var(--paper); border-color:var(--yellow);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .nav-version{
+    font-family:'JetBrains Mono', monospace; font-size:11px;
+    color:var(--ink); background:var(--yellow);
+    padding:4px 8px; letter-spacing:0.05em; font-weight:700;
+  }
+  .nav-toggle{display:none; background:none; border:1px solid var(--line-strong); color:var(--paper); width:38px;height:38px; cursor:pointer; align-items:center; justify-content:center;}
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:''; display:block; width:16px; height:2px; background:var(--paper); position:relative;
+  }
+  .nav-toggle span::before{position:absolute; top:-5px;}
+  .nav-toggle span::after{position:absolute; top:5px;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700; font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; text-decoration:none;
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 22px;
+    border-radius:var(--radius-hard);
+    cursor:pointer; white-space:nowrap;
+    transition:transform .12s ease, box-shadow .12s ease, background .15s, color .15s, border-color .15s;
+  }
+  .btn svg{flex:none;}
+  .btn-primary{
+    background:var(--yellow); color:var(--ink);
+    border:2px solid #000;
+    box-shadow:var(--shadow-hard);
+  }
+  .btn-primary:hover{transform:translate(2px,2px); box-shadow:var(--shadow-hard-sm);}
+  .btn-primary:active{transform:translate(5px,5px); box-shadow:0 0 0 #000;}
+  .btn-ghost{
+    background:var(--glass-bg);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    color:var(--paper);
+    border:1.5px solid var(--line-strong);
+  }
+  .btn-ghost:hover{border-color:var(--yellow); color:var(--yellow);}
+  .btn-block{width:100%; justify-content:center;}
+  .btn-sub{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px;
+    color:var(--muted); letter-spacing:0.04em; margin-top:10px;
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; align-items:flex-start;}
+  .cta-col{display:flex; flex-direction:column;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; padding:88px 0 60px; overflow:hidden;}
+  .hero .glow-yellow{width:640px; height:640px; top:-260px; right:-160px;}
+  .hero .glow-white{width:420px; height:420px; bottom:-200px; left:-140px;}
+  .hero-inner{position:relative; z-index:1;}
+  .hero-title{
+    font-size:clamp(40px, 7vw, 84px);
+    max-width:15ch;
+  }
+  .hero-title .hl{color:var(--yellow);}
+  .hero-copy{
+    display:flex; gap:48px; flex-wrap:wrap;
+    margin-top:26px; align-items:flex-end; justify-content:space-between;
+  }
+  .hero-lede-col{max-width:560px;}
+  .hero-lede-col .lede{margin-top:14px;}
+  .hero-cta{margin-top:26px;}
+
+  /* ---------- hardware panel frame (signature element) ---------- */
+  .frame{
+    position:relative;
+    background:linear-gradient(160deg,#2c2c30 0%, #17171a 55%, #121214 100%);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:8px;
+    padding:18px;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .screw{
+    position:absolute; width:9px; height:9px; border-radius:50%;
+    background:radial-gradient(circle at 32% 32%, #e4e4e2, #8a8a88 55%, #303030 100%);
+    z-index:2;
+  }
+  .screw::after{
+    content:''; position:absolute; top:50%; left:12%; width:76%; height:1px;
+    background:rgba(0,0,0,0.55); transform:rotate(38deg);
+  }
+  .screw.tl{top:10px; left:10px;} .screw.tr{top:10px; right:10px;}
+  .screw.bl{bottom:10px; left:10px;} .screw.br{bottom:10px; right:10px;}
+  .frame-label{
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'JetBrains Mono', monospace; font-size:11px;
+    color:var(--muted); text-transform:uppercase; letter-spacing:0.08em;
+    padding:0 4px 12px; margin-top:2px;
+  }
+  .led{width:7px; height:7px; border-radius:50%; background:var(--yellow); display:inline-block; margin-right:7px; box-shadow:0 0 8px rgba(255,230,0,0.8);}
+  .screen{
+    position:relative; border-radius:4px; overflow:hidden; background:#050506;
+    border:1px solid rgba(0,0,0,0.6);
+  }
+  .screen img{width:100%; height:100%; object-fit:cover; display:block;}
+  .screen::after{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(115deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 22%, rgba(255,255,255,0) 40%);
+  }
+  .hero-frame{margin-top:52px;}
+  .hero-frame .screen{aspect-ratio:1832/1000;}
+  .hero-frame .screen img{object-fit:cover;}
+
+  /* ---------- ticker ---------- */
+  .ticker{
+    overflow:hidden; background:var(--yellow);
+    border-top:2px solid #000; border-bottom:2px solid #000;
+  }
+  .ticker-track{display:flex; width:max-content; animation:scroll 32s linear infinite;}
+  .ticker-track span{
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:13px;
+    text-transform:uppercase; letter-spacing:0.1em; color:#000;
+    padding:13px 30px; white-space:nowrap; border-right:2px solid rgba(0,0,0,0.15);
+  }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---------- sections shared ---------- */
+  section{position:relative; padding:96px 0;}
+  .section-head{margin-bottom:52px; max-width:640px;}
+  .section-head h2{font-size:clamp(28px,4vw,42px); margin-top:14px;}
+  .section-head .lede{margin-top:14px;}
+  .divider{border:none; border-top:1px solid var(--line); margin:0;}
+
+  /* ---------- features ---------- */
+  .features-grid{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line); border:1px solid var(--line);
+    position:relative; z-index:1;
+  }
+  .feature-card{
+    background:var(--glass-bg);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    padding:30px 26px; min-height:200px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .feature-tag{
+    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700;
+    letter-spacing:0.1em; color:var(--yellow);
+    border:1px solid rgba(255,230,0,0.35); width:fit-content;
+    padding:3px 8px; border-radius:3px;
+  }
+  .feature-card h3{
+    font-family:'Archivo', sans-serif; font-weight:800; text-transform:none;
+    font-size:18px; letter-spacing:0; line-height:1.25;
+  }
+  .feature-card p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.6;}
+
+  /* ---------- architecture ---------- */
+  .arch-glow{width:520px; height:520px; top:20%; left:50%; transform:translateX(-50%);}
+  .arch-flow{
+    display:flex; align-items:stretch; gap:0; position:relative; z-index:1;
+    flex-wrap:wrap;
+  }
+  .arch-node{
+    flex:1 1 220px;
+    background:var(--glass-bg);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line-strong); border-radius:var(--radius-glass);
+    padding:26px 22px;
+  }
+  .arch-num{
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:13px;
+    color:var(--ink); background:var(--yellow); width:28px; height:28px;
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .arch-node h3{
+    font-family:'Archivo', sans-serif; font-weight:800; text-transform:none;
+    font-size:16.5px; letter-spacing:0; margin-bottom:8px;
+  }
+  .arch-node .mono-small{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--yellow-dim); letter-spacing:0.05em; display:block; margin-bottom:10px; text-transform:uppercase;}
+  .arch-node p{margin:0; color:var(--muted); font-size:13.5px; line-height:1.6;}
+  .arch-arrow{
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 44px; color:var(--yellow); font-size:20px;
+  }
+
+  /* ---------- demo / screenshots ---------- */
+  .demo-main{margin-bottom:22px;}
+  .demo-main .screen{aspect-ratio:1178/663;}
+  .demo-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .demo-caption{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-top:14px; gap:12px; flex-wrap:wrap;
+  }
+  .demo-caption h3{
+    font-family:'Archivo', sans-serif; font-weight:800; text-transform:none;
+    font-size:16px; letter-spacing:0;
+  }
+  .demo-caption p{margin:6px 0 0; color:var(--muted); font-size:13.5px; max-width:60ch;}
+  .demo-grid .screen{height:320px; display:flex; align-items:center; justify-content:center; background:#050506;}
+  .demo-grid .screen img{width:auto; height:100%; max-width:100%; object-fit:contain;}
+
+  /* ---------- requirements ---------- */
+  .req-panel{
+    background:var(--glass-bg);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line-strong); border-radius:var(--radius-glass);
+    position:relative; z-index:1;
+    overflow:hidden;
+  }
+  .req-row{
+    display:grid; grid-template-columns:180px 1fr;
+    padding:22px 26px; border-bottom:1px solid var(--line);
+    gap:8px;
+  }
+  .req-row:last-child{border-bottom:none;}
+  .req-key{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--yellow);
+    letter-spacing:0.08em; text-transform:uppercase; padding-top:2px;
+  }
+  .req-val{font-size:15px; color:var(--paper);}
+  .req-val span{display:block; color:var(--muted); font-size:13px; margin-top:3px; font-family:'JetBrains Mono',monospace;}
+  .req-action{display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:14px;}
+  .btn-sm{padding:9px 14px; font-size:11px;}
+  .req-credit{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted);}
+  .req-credit a{color:var(--yellow); text-decoration:none; border-bottom:1px solid rgba(255,230,0,0.35);}
+  .req-credit a:hover{border-color:var(--yellow);}
+
+  /* ---------- compatibility / disclaimer ---------- */
+  .compat-note{margin-top:26px; position:relative; z-index:1;}
+  .compat-note .compat-lede{color:var(--muted); font-size:14px; max-width:64ch; margin:0 0 20px;}
+  .compat-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .compat-card{background:var(--glass-bg); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); padding:24px 26px;}
+  .compat-card h4{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.1em;
+    text-transform:uppercase; margin:0 0 16px; display:flex; align-items:center; gap:9px; color:var(--paper);
+  }
+  .compat-dot{width:8px; height:8px; border-radius:50%; flex:none;}
+  .compat-dot.on{background:var(--yellow);}
+  .compat-dot.off{background:transparent; border:1.5px solid var(--muted);}
+  .compat-card ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+  .compat-card li{font-size:14px; color:var(--paper); padding-left:17px; position:relative; line-height:1.5;}
+  .compat-card li::before{content:'—'; position:absolute; left:0; color:var(--muted);}
+  .compat-card.off li{color:var(--muted);}
+
+  /* ---------- feedback ---------- */
+  .feedback-panel{
+    background:var(--glass-bg);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line-strong); border-radius:var(--radius-glass);
+    padding:46px 42px; position:relative; z-index:1;
+    display:flex; justify-content:space-between; align-items:center; gap:36px; flex-wrap:wrap;
+  }
+  .feedback-panel h2{font-size:clamp(24px,3.4vw,34px); max-width:15ch;}
+  .feedback-copy{max-width:420px;}
+  .feedback-copy .lede{margin-top:12px;}
+  .feedback-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* ---------- install steps ---------- */
+  .steps{list-style:none; margin:0; padding:0; position:relative; z-index:1;}
+  .step{
+    display:grid; grid-template-columns:56px 1fr; gap:22px;
+    padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .step:first-child{padding-top:0;}
+  .step:last-child{border-bottom:none;}
+  .step-num{
+    font-family:'Archivo Black', sans-serif; font-size:30px; color:var(--yellow);
+    line-height:1;
+  }
+  .step-body h3{
+    font-family:'Archivo', sans-serif; font-weight:800; text-transform:none;
+    font-size:16.5px; letter-spacing:0; margin-bottom:6px;
+  }
+  .step-body p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:62ch;}
+  .step-body code{
+    font-family:'JetBrains Mono',monospace; background:rgba(255,255,255,0.08);
+    padding:2px 6px; border-radius:3px; font-size:13px; color:var(--yellow);
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    background:var(--yellow); color:var(--ink);
+    border-top:2px solid #000; border-bottom:2px solid #000;
+    padding:80px 0;
+  }
+  .final-cta .eyebrow{color:var(--ink);}
+  .final-cta .eyebrow::before{background:var(--ink);}
+  .final-cta h2{font-size:clamp(30px,5vw,52px); max-width:16ch;}
+  .final-cta .lede{color:#3a3520; max-width:48ch;}
+  .final-cta .btn-ghost{
+    background:rgba(0,0,0,0.05); border-color:rgba(0,0,0,0.35); color:var(--ink);
+  }
+  .final-cta .btn-ghost:hover{border-color:#000; color:#000; background:rgba(0,0,0,0.1);}
+  .final-cta-inner{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap;}
+  .final-cta .btn-sub{color:#4a4526;}
+
+  /* ---------- footer ---------- */
+  footer{padding:44px 0 60px;}
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+    padding-top:28px; border-top:1px solid var(--line);
+  }
+  .footer-links{display:flex; gap:22px; list-style:none; margin:0; padding:0;}
+  .footer-links a{
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted);
+    text-decoration:none; letter-spacing:0.06em; text-transform:uppercase;
+  }
+  .footer-links a:hover{color:var(--yellow);}
+  .footer-note{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); letter-spacing:0.04em;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;}
+  .footer-license{max-width:52ch; color:var(--muted); font-size:13.5px; line-height:1.6;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .ticker-track{animation:none;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .btn-primary:hover, .btn-primary:active{transform:none;}
+  }
+
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .features-grid{grid-template-columns:1fr 1fr;}
+    .demo-grid{grid-template-columns:1fr;}
+    .arch-flow{flex-direction:column;}
+    .arch-arrow{transform:rotate(90deg); flex:0 0 34px;}
+    .final-cta-inner{align-items:flex-start;}
+  }
+  @media (max-width:640px){
+    .features-grid{grid-template-columns:1fr;}
+    .compat-grid{grid-template-columns:1fr;}
+    .feedback-panel{padding:32px 26px;}
+    .hero{padding:56px 0 40px;}
+    section{padding:64px 0;}
+    .req-row{grid-template-columns:1fr; gap:4px;}
+    .step{grid-template-columns:40px 1fr; gap:14px;}
+    .step-num{font-size:24px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-word">Able<span>To</span>DJ</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#funcionalidades">Funcionalidades</a></li>
+      <li><a href="#arquitetura">Arquitetura</a></li>
+      <li><a href="#demonstracao">Demonstração</a></li>
+      <li><a href="#requisitos">Requisitos</a></li>
+      <li><a href="#instalacao">Instalação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-version mono">v1.0.0</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="glow glow-yellow"></span>
+    <span class="glow glow-white"></span>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Pioneer DDJ-400 × Ableton Live · Bridge WPF + MIDI + Python</span>
+      <h1 class="hero-title">A DDJ-400 FINALMENTE FALA <span class="hl">ABLETON</span>.</h1>
+
+      <div class="hero-copy">
+        <div class="hero-lede-col">
+          <p class="lede">AbleToDJ é a ponte que faltava: mapeia cada botão, EQ, encoder e pad da sua Pioneer DDJ-400 para controle nativo e físico dentro do Ableton Live — sem mouse, sem gambiarra, sem latência perceptível.</p>
+        </div>
+        <div class="cta-row">
+          <div class="cta-col">
+            <a class="btn btn-primary" href="https://github.com/marentropico/abletonDDJ/releases/download/v1.0.0/AbleToDJ_Installer.exe">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M12 3v13"/><path d="M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
+              Baixar instalador
+            </a>
+            <span class="btn-sub">AbleToDJ_Installer.exe · Windows 10/11 · 64-bit</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/marentropico/abletonDDJ">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.28 7.77 10.78.57.1.78-.25.78-.55v-2.1c-3.16.69-3.83-1.36-3.83-1.36-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.52-.29-5.17-1.26-5.17-5.61 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.36-2.65 5.31-5.18 5.6.41.35.77 1.04.77 2.11v3.13c0 .3.21.66.79.55A11.26 11.26 0 0 0 23.25 11.75C23.25 5.48 18.27.5 12 .5Z"/></svg>
+            Ver no GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="frame hero-frame">
+        <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+        <div class="frame-label"><span><span class="led"></span>AbleToDJ — Preview</span><span>PNG · assets/banner.png</span></div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/marentropico/abletonDDJ/main/assets/banner.png" alt="Banner do AbleToDJ, ponte entre a Pioneer DDJ-400 e o Ableton Live" loading="eager">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker" role="presentation" aria-hidden="true">
+    <div class="ticker-track">
+      <span>HOT CUE</span><span>SAMPLER · DRUM RACK</span><span>BEAT LOOP / JUMP</span><span>EQ FÍSICO HI·MID·LOW</span><span>BPM &amp; PITCH SYNC</span><span>BROWSE ENCODER</span><span>loopMIDI BRIDGE</span><span>WPF + C# + PYTHON</span>
+      <span>HOT CUE</span><span>SAMPLER · DRUM RACK</span><span>BEAT LOOP / JUMP</span><span>EQ FÍSICO HI·MID·LOW</span><span>BPM &amp; PITCH SYNC</span><span>BROWSE ENCODER</span><span>loopMIDI BRIDGE</span><span>WPF + C# + PYTHON</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="funcionalidades">
+    <span class="glow glow-yellow" style="width:480px;height:480px; top:0; right:-200px;"></span>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">O que a ponte controla</span>
+        <h2>Funcionalidades principais</h2>
+        <p class="lede">Tudo o que você já faz com o mouse no Live, sua DDJ-400 agora faz fisicamente.</p>
+      </div>
+
+      <div class="features-grid reveal">
+        <div class="feature-card">
+          <span class="feature-tag">MIXER / EQ</span>
+          <h3>Mixer &amp; EQ físicos completos</h3>
+          <p>Mapeamento tátil de Trim, EQ (High, Mid, Low) e Filter para os dois decks, com controle fino de ganho e frequência direto nos knobs.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">NAV / BROWSE</span>
+          <h3>Navegação e workflow integrados</h3>
+          <p>O Browse Encoder rola faixas e pastas do Ableton; um clique carrega ou abre o item selecionado, sem tirar a mão do controlador.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">BPM / JOG</span>
+          <h3>Controle de BPM e timeline</h3>
+          <p>O slider de Pitch/Tempo é associado ao BPM do Live; os jog wheels controlam zoom no Arrangement e needle drop com precisão física.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">PADS</span>
+          <h3>3 modos de performance pads</h3>
+          <p>Hot Cue dispara e interrompe clipes; Sampler transforma os pads em disparadores do Drum Rack (C1–G1); Beat Loop/Jump manipula loops nativamente.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">SHORTCUTS</span>
+          <h3>Simulador de atalhos de teclado</h3>
+          <p>Duplicar clipe, deletar, undo/redo, quantizar e ligar o metrônomo — ações automatizadas enviadas direto ao sistema operacional.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag">GUI / WPF</span>
+          <h3>Painel visual interativo</h3>
+          <p>Interface WPF que espelha a superfície física da DDJ-400 e mostra o mapeamento ativo em tempo real, direto no seu desktop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ARCHITECTURE -->
+  <section id="arquitetura">
+    <span class="glow glow-white arch-glow"></span>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como a ponte funciona</span>
+        <h2>Arquitetura em três camadas</h2>
+        <p class="lede">Do sinal MIDI bruto da controladora ao controle nativo do Live — três componentes trabalhando em conjunto.</p>
+      </div>
+
+      <div class="arch-flow reveal">
+        <div class="arch-node">
+          <span class="arch-num">01</span>
+          <span class="mono-small">C# · WPF</span>
+          <h3>LiveBridge.App</h3>
+          <p>O aplicativo principal: monitora os inputs da controladora via MIDI, processa emulações de teclas e traduz sinais contínuos e sensíveis ao toque.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="arch-num">02</span>
+          <span class="mono-small">Python · loopMIDI</span>
+          <h3>DDJ_LiveBridge</h3>
+          <p>Script Remoto nativo do Ableton Live, roda em segundo plano na User Library e interpreta os comandos da ponte por meio do loopMIDI.</p>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-node">
+          <span class="arch-num">03</span>
+          <span class="mono-small">Setup Wizard</span>
+          <h3>AbleToDJ.Installer</h3>
+          <p>Assistente automatizado que empacota a aplicação e configura os arquivos e Remote Scripts nas pastas corretas do sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- DEMO -->
+  <section id="demonstracao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Demonstração visual</span>
+        <h2>Veja a ponte em ação</h2>
+        <p class="lede">Do instalador ao painel de controle, passando pela configuração dentro do próprio Ableton Live.</p>
+      </div>
+
+      <div class="demo-main reveal">
+        <div class="frame">
+          <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+          <div class="frame-label"><span><span class="led"></span>Painel Ponte AbleToDJ</span><span>print-app.png</span></div>
+          <div class="screen">
+            <img src="https://raw.githubusercontent.com/marentropico/abletonDDJ/main/assets/print-app.png" alt="Interface WPF do AbleToDJ mostrando o mapeamento em tempo real da DDJ-400" loading="lazy">
+          </div>
+        </div>
+        <div class="demo-caption">
+          <div>
+            <h3>O painel ponte do AbleToDJ</h3>
+            <p>Uma interface de estúdio completa no seu desktop para monitorar comandos, recalibrar sensores de toque e gerenciar as portas de entrada e saída MIDI.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-grid reveal">
+        <div>
+          <div class="frame">
+            <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+            <div class="frame-label"><span><span class="led"></span>Setup Wizard</span><span>wizard.png</span></div>
+            <div class="screen">
+              <img src="https://raw.githubusercontent.com/marentropico/abletonDDJ/main/assets/wizard-instala%C3%A7%C3%A3o.png" alt="Assistente de instalação automatizado do AbleToDJ" loading="lazy">
+            </div>
+          </div>
+          <div class="demo-caption">
+            <div>
+              <h3>Assistente de instalação automatizado</h3>
+              <p>Copia o programa ponte para <span class="mono">AppData\Local\AbleToDJ</span>, cria atalhos e implanta os scripts Python na User Library do Ableton Live.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="frame">
+            <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+            <div class="frame-label"><span><span class="led"></span>Preferências MIDI</span><span>config.png</span></div>
+            <div class="screen">
+              <img src="https://raw.githubusercontent.com/marentropico/abletonDDJ/main/assets/configura%C3%A7%C3%A3o-ableton.png" alt="Configuração da superfície de controle DDJ_LiveBridge no Ableton Live" loading="lazy">
+            </div>
+          </div>
+          <div class="demo-caption">
+            <div>
+              <h3>Configuração no Ableton Live</h3>
+              <p>Basta selecionar a superfície de controle <span class="mono">DDJ_LiveBridge</span> e apontar as portas de entrada/saída para o loopMIDI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- REQUIREMENTS -->
+  <section id="requisitos">
+    <span class="glow glow-yellow" style="width:420px;height:420px; top:10%; left:-200px;"></span>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Antes de instalar</span>
+        <h2>Pré-requisitos</h2>
+      </div>
+
+      <div class="req-panel reveal">
+        <div class="req-row">
+          <span class="req-key">Sistema</span>
+          <span class="req-val">Windows 10 ou 11 <span>64 bits</span></span>
+        </div>
+        <div class="req-row">
+          <span class="req-key">Hardware</span>
+          <span class="req-val">Controladora Pioneer DDJ-400 <span>conectada via USB</span></span>
+        </div>
+        <div class="req-row">
+          <span class="req-key">Software</span>
+          <span class="req-val">Ableton Live 10, 11 ou 12 <span>instalado no sistema</span></span>
+        </div>
+        <div class="req-row">
+          <span class="req-key">MIDI</span>
+          <div class="req-val">
+            loopMIDI instalado <span>com uma porta chamada "loopMIDI Port" ativa para a ponte virtual</span>
+            <div class="req-action">
+              <a class="btn btn-ghost btn-sm" href="https://www.tobias-erichsen.de/wp-content/uploads/2020/01/loopMIDISetup_1_0_16_27.zip">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"><path d="M12 3v13"/><path d="M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
+                Baixar loopMIDI
+              </a>
+              <span class="req-credit">Criado por <a href="https://www.tobias-erichsen.de/software/loopmidi.html">Tobias Erichsen</a> · não faz parte do AbleToDJ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="compat-note">
+        <p class="compat-lede">O AbleToDJ está em desenvolvimento ativo. A meta é expandir o suporte para mais DAWs e modelos de controladora com o tempo.</p>
+        <div class="compat-grid">
+          <div class="compat-card">
+            <h4><span class="compat-dot on"></span>Testado até agora</h4>
+            <ul>
+              <li>Ableton Live 12 Lite</li>
+              <li>Ableton Live 12 Suite</li>
+              <li>Windows 10 e 11 (64-bit)</li>
+            </ul>
+          </div>
+          <div class="compat-card off">
+            <h4><span class="compat-dot off"></span>Ainda não disponível</h4>
+            <ul>
+              <li>macOS</li>
+              <li>Linux</li>
+              <li>Outras DAWs e controladoras — em desenvolvimento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- INSTALL STEPS -->
+  <section id="instalacao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Instalação rápida</span>
+        <h2>Cinco passos até o primeiro set</h2>
+      </div>
+
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Baixe o instalador</h3>
+            <p><code>AbleToDJ_Installer.exe</code> — use o botão abaixo ou pegue a release direto no GitHub.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Execute o instalador</h3>
+            <p>Se possível, rode como Administrador — isso garante a criação de atalhos e diretórios corretamente.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Aguarde a extração</h3>
+            <p>Confira se a caixa de seleção para iniciar o AbleToDJ automaticamente está marcada antes de concluir.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Ative a superfície no Live</h3>
+            <p>Abra o Ableton Live, acesse as preferências de MIDI e ative a superfície de controle <code>DDJ_LiveBridge</code> nas portas do loopMIDI.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">05</span>
+          <div class="step-body">
+            <h3>Divirta-se</h3>
+            <p>Sua DDJ-400 agora fala Ableton. Plugue, carregue as faixas e toque.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap final-cta-inner reveal">
+      <div>
+        <span class="eyebrow">v1.0.0 · disponível agora</span>
+        <h2>Pronto pra ligar a DDJ-400 no Live?</h2>
+        <p class="lede">Baixe o instalador, siga os cinco passos e sua controladora vira uma superfície nativa do Ableton em minutos.</p>
+      </div>
+      <div class="cta-row">
+        <div class="cta-col">
+          <a class="btn btn-primary" href="https://github.com/marentropico/abletonDDJ/releases/download/v1.0.0/AbleToDJ_Installer.exe">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M12 3v13"/><path d="M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
+            Baixar instalador
+          </a>
+          <span class="btn-sub">Windows 10/11 · 64-bit</span>
+        </div>
+        <a class="btn btn-ghost" href="https://github.com/marentropico/abletonDDJ/releases/tag/v1.0.0">
+          Ver release no GitHub ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="contato">
+    <span class="glow glow-white" style="width:400px;height:400px; bottom:-160px; right:-140px;"></span>
+    <div class="wrap">
+      <div class="feedback-panel reveal">
+        <div class="feedback-copy">
+          <span class="eyebrow">Contato</span>
+          <h2 style="margin-top:14px;">Achou um bug? Tem uma ideia?</h2>
+          <p class="lede">O AbleToDJ ainda está crescendo — feedback de quem usa na prática é o que mais ajuda a priorizar o roadmap.</p>
+        </div>
+        <div class="feedback-actions">
+          <a class="btn btn-primary" href="mailto:marcosfigueroa.br@gmail.com?subject=Feedback%20AbleToDJ">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="square" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M4 6l8 7 8-7"/></svg>
+            Deixar feedback
+          </a>
+          <a class="btn btn-ghost" href="https://instagram.com/marentropico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="square" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="0.7" fill="currentColor" stroke="none"/></svg>
+            @marentropico
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-license">
+          <span class="eyebrow" style="margin-bottom:10px; display:inline-flex;">Licença</span>
+          <p style="margin:10px 0 0;">Projeto desenvolvido para fins didáticos e uso profissional de performance de DJ no Ableton Live. Sinta-se livre para estender, mapear novos botões e contribuir.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/marentropico/abletonDDJ">Repositório</a></li>
+          <li><a href="https://github.com/marentropico/abletonDDJ/releases/tag/v1.0.0">Releases</a></li>
+          <li><a href="https://github.com/marentropico/abletonDDJ/blob/main/README.md">Documentação</a></li>
+          <li><a href="https://github.com/marentropico/abletonDDJ/issues">Issues</a></li>
+        </ul>
+      </div>
+      <div class="footer-inner">
+        <span class="footer-note">AbleToDJ · WPF + C# + Python + MIDI · por <a href="https://instagram.com/marentropico" style="color:var(--muted);">@marentropico</a></span>
+        <span class="footer-note">Não afiliado à Ableton AG ou à AlphaTheta/Pioneer DJ.</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // menu mobile
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.cssText += open ? '' : 'position:absolute; top:100%; left:0; right:0; flex-direction:column; background:#0E0E10; border-bottom:1px solid rgba(245,244,239,0.1); padding:18px 24px; gap:16px;';
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // active nav link on scroll
+  const sections = document.querySelectorAll('main section[id], main header[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+  }
+</script>
+
+</body>
+</html>
