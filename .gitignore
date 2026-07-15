@@ -25,3 +25,9 @@ WebView2/
 # OS specific files
 .DS_Store
 Thumbs.db
+
+# Project outputs & compiled installers
+AbleToDJ_Installer.exe
+PublishInstaller/
+WPF_ReadyToRun/
+*.zip

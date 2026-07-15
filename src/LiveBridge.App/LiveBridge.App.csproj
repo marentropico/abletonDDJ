@@ -5,12 +5,20 @@
     <ProjectReference Include="..\LiveBridge.Midi\LiveBridge.Midi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Resources\icon.png" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>AbleToDJ</AssemblyName>
+    <ApplicationIcon>..\..\icon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Product>AbleToDJ</Product>
   </PropertyGroup>
 
 </Project>

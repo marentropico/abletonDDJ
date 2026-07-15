@@ -1,5 +1,6 @@
-﻿$source = "$PSScriptRoot\src\AbletonScript\DDJ_LiveBridge"
-$target = "$env:USERPROFILE\Documents\Ableton\User Library\Remote Scripts\DDJ_LiveBridge"
+$source = "$PSScriptRoot\src\AbletonScript\DDJ_LiveBridge"
+$documents = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::MyDocuments)
+$target = "$documents\Ableton\User Library\Remote Scripts\DDJ_LiveBridge"
 
 if (Test-Path $target) {
     Write-Host "Limpando diretório remoto antigo..." -ForegroundColor Yellow

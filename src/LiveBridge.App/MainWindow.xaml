@@ -1,7 +1,8 @@
 <Window x:Class="LiveBridge.App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Pioneer DJ DDJ-400 — Réplica Visual Nativa" 
+        Title="AbleToDJ — Pioneer DDJ-400 Ableton Bridge" 
+        Icon="pack://application:,,,/AbleToDJ;component/Resources/icon.png"
         Width="1200" Height="800"
         Background="#08080a"
         WindowStartupLocation="CenterScreen">
