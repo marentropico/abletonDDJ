@@ -1,9 +1,16 @@
 # Mapping Protocol (Esquema JSON)
 
-Para que o mapeamento entre a controladora física e o Ableton não fique "chumbado" (hardcoded) no C#, usaremos um arquivo de configuração JSON. 
-Isso permite que no futuro possamos criar uma interface (UI) onde o próprio usuário customize os comportamentos, salvando-os neste formato.
+> [!IMPORTANT]
+> **Nota de Implementação Real vs. Planejada:**
+> O protocolo JSON dinâmico descrito abaixo (agrupando controles por decks, zonas de trabalho e ações configuráveis) trata-se de uma **proposta de arquitetura futura**.
+>
+> Na implementação atual:
+> 1. O mapeamento de comportamento (rotas das ações de teclado, CCs e comandos do Ableton) está **hardcoded** diretamente no C# na classe [ActionRouter](file:///w:/Desktop/AbletonDDJ/src/LiveBridge.Core/ActionRouter.cs).
+> 2. O arquivo JSON real utilizado pelo programa ([mappings_calibrated.json](file:///w:/Desktop/AbletonDDJ/docs/mappings_calibrated.json)) atua exclusivamente como **Calibração Física de Hardware**, mapeando os status e notas MIDI brutas da controladora física para os nomes abstratos de controle (como `Play_Left`, `Cue_Left`).
 
-## Estrutura Básica do JSON
+Abaixo está documentada a estrutura original que foi idealizada para o arquivo JSON de mapeamento dinâmico planejado:
+
+## Estrutura Básica do JSON Planejado
 
 O JSON de mapeamento agrupará as configurações primeiro pelo **Deck/Zona** e depois pelo **Modo** (State).
 

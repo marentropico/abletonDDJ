@@ -87,7 +87,7 @@ Vários botões físicos da DDJ-400 simulam atalhos padrão do Ableton Live para
 - **Loop Call ▶ (Deck Esquerdo)**: Refazer ação (simula `Ctrl + Y`).
 - **Beat Sync (Deck Esquerdo)**:
   - **Normal**: Quantiza notas MIDI (simula `Ctrl + U`).
-  - **Shift**: Liga/Desliga o metrônomo do Ableton (simula `Ctrl + Option + M`).
+  - **Shift**: Liga/Desliga o metrônomo do Ableton (simula a tecla 'O', atalho padrão do metrônomo).
 
 ---
 

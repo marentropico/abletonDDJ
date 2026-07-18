@@ -33,5 +33,5 @@ Para trabalhar na linha do tempo.
 
 ## O Papel do `StateManager` no C#
 
-A classe `StateManager` é Singleton ou injetada como Singleton via Injeção de Dependência (DI).
+A classe `StateManager` é instanciada diretamente no ponto de entrada do programa (`Program.cs`) e fornecida ao `ActionRouter` no modo de produção. Ela gerencia o estado global e local de cada deck.
 Ela contém a árvore de estado atual. Sempre que o `InputListener` capta um evento, ele passa esse evento e o estado atual para o `ActionRouter` tomar a decisão, garantindo assim comportamentos diferentes para o mesmo botão baseados no estado da máquina.

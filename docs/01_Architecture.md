@@ -37,8 +37,14 @@ A saída de dados limpos.
 - Para o Ableton: Envia os sinais MIDI processados para a porta loopMIDI.
 - Para a DDJ-400 (Feedback Visual): Envia mensagens SysEx ou NoteOn/Off de volta para o hardware da Pioneer para acender/piscar LEDs conforme as mudanças de estado no C# (ex: acender os Pads quando o Modo Drum Rack for selecionado).
 
+### 5. Interface Gráfica (WPF GUI)
+Embora a lógica do middleware seja executada em uma thread de background, o aplicativo possui uma interface gráfica desenvolvida em WPF.
+- **Responsabilidade**: Renderizar uma controladora virtual da DDJ-400 na tela do usuário.
+- **Funcionamento**: A interface reage a eventos MIDI em tempo real (mudando o preenchimento de botões e rotacionando faders, knobs e jogs virtuais) e fornece um painel lateral interativo que serve como manual de consulta rápida e monitor de calibração quando o usuário clica sobre qualquer botão na GUI.
+
 ## Tecnologias Envolvidas
-- **Linguagem (Middleware)**: C# (.NET 10) - Console App.
+- **Linguagem (Middleware)**: C# (.NET 10) - Aplicação Desktop WPF (Windows Presentation Foundation) com arquitetura em thread de background.
 - **Linguagem (Control Surface)**: Python (Ableton Remote Scripts API).
 - **MIDI IO**: `Melanchall.DryWetMidi`
 - **Virtualização MIDI**: Requer `loopMIDI` (Tobias Erichsen).
+- **Comunicação Legada**: Contém um arquivo `UdpServer.py` (inativo na versão atual, que utiliza puramente comunicação MIDI na porta virtual via loopMIDI no Canal 16).
