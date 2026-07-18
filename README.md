@@ -2,6 +2,11 @@
 
 ![Banner](assets/banner.png)
 
+[![Versão](https://img.shields.io/badge/versão-v1.0.1-FFE600?style=flat-square&labelColor=0E0E10)](https://github.com/marentropico/abletonDDJ/releases/tag/v1.0.1)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D4?style=flat-square&logo=windows&logoColor=white)](https://github.com/marentropico/abletonDDJ/releases/download/v1.0.1/AbleToDJ_Installer.exe)
+[![Download](https://img.shields.io/badge/⬇︎%20Baixar%20Instalador-2.75%20MB-22c55e?style=flat-square)](https://github.com/marentropico/abletonDDJ/releases/download/v1.0.1/AbleToDJ_Installer.exe)
+[![Landing Page](https://img.shields.io/badge/🌐%20Landing%20Page-abletodj-FFE600?style=flat-square&labelColor=0E0E10)](https://marentropico.github.io/abletonDDJ)
+
 **AbleToDJ** é uma ponte de integração avançada (WPF + MIDI + Python) que permite mapear e controlar o **Ableton Live** utilizando a controladora **Pioneer DDJ-400**. O projeto transforma a DDJ-400 em um dispositivo de performance física definitivo para DJs e produtores dentro do Ableton Live, combinando comandos nativos de scripts remotos, emulação inteligente de teclado e roteamento de sinal MIDI.
 
 ---
@@ -12,8 +17,8 @@
 * 🎧 **Navegação e Workflow Integrados:** Use o seletor rotativo (`Browse Encoder`) para rolar pelas faixas e pastas do Ableton e clique para carregar ou abrir.
 * 🎚️ **Controle de BPM e Timeline:** Slider de Pitch/Tempo associado ao controle de BPM do Ableton e jog wheels físicos para controle preciso de Zoom no Arrangement e needle drop.
 * 🎹 **Modos dos Performance Pads:**
-  * **Hot Cue:** Disparo e interrupção física de clipes diretamente nas trilhas de áudio.
-  * **Sampler:** Transforma os pads em disparadores do Drum Rack (Notas de C1 a G1).
+  * **Hot Cue:** Teclado cromático linear — 16 pads cobrem uma oitava completa cromaticamente (C→D#, E→G, G#→B, C+1→D#+1). Oitava herdada do modo Sampler.
+  * **Sampler:** Teclado musical cromático de duas mãos com **layout de piano** — notas naturais na linha de baixo, sustenidos na linha de cima, e controle de oitava dinâmico nos Pads 4 e 8 do deck direito.
   * **Beat Loop & Beat Jump:** Controle e manipulação física de loops de forma nativa e momentânea.
 * ⌨️ **Simulador de Atalhos de Teclado:** Ações automatizadas enviadas ao sistema operacional como Duplicar Clipe, Deletar, Undo/Redo, Quantizar e ligar/desligar Metrônomo.
 * 💻 **Interface Visual Interativa (WPF):** Painel gráfico limpo que simula a superfície física da DDJ-400 e mostra o mapeamento ativo em tempo real.
@@ -35,7 +40,7 @@ graph TD
 
 1. **LiveBridge.App (C# / WPF):** O aplicativo principal que monitora os inputs da controladora via MIDI, processa emulações de teclas e traduz sinais contínuos/sensíveis ao toque.
 2. **DDJ_LiveBridge (Python):** O Script Remoto nativo do Ableton Live que roda em segundo plano na User Library, interpretando comandos da ponte por meio do loopMIDI.
-3. **AbleToDJ.Installer (Instalador WPF):** Assistente automatizado responsável por empacotar a aplicação e configurar os arquivos e Remote Scripts nas pastas corretas do sistema.
+3. **Inno Setup Installer:** Instalador nativo Windows (~2.75 MB) que empacota a aplicação e configura os Remote Scripts nas pastas corretas do sistema, com registro de desinstalação no Painel de Controle.
 
 ---
 
