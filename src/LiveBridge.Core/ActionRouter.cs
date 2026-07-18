@@ -292,6 +292,22 @@ public class ActionRouter
             return null;
         }
 
+        // Loop Call Left Right (Narrow Grid - Ctrl+1)
+        if (ev.Control == PhysicalControl.LoopCallLeft_Right)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendNarrowGrid();
+            return null;
+        }
+
+        // Loop Call Right Right (Widen Grid - Ctrl+2)
+        if (ev.Control == PhysicalControl.LoopCallRight_Right)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendWidenGrid();
+            return null;
+        }
+
         // Beat Sync Left (Quantize / Metronome)
         if (ev.Control == PhysicalControl.Sync_Left)
         {
@@ -431,40 +447,7 @@ public class ActionRouter
             return new ResolvedAction(ActionType.MidiNote, $"Keyboard_{deck}_{padIndex}", MidiChannel: 1, MidiNote: noteNumber, MidiValue: val);
         }
 
-        // 2. Keyboard Mode (Shift + HotCue) — Ferramentas de Arranjo e Edição
-        if (mode == "Keyboard")
-        {
-            if (val == 0) return null; // Apenas executa no PRESS, não no RELEASE
-
-            if (padIndex == 7) // Pad 8
-            {
-                KeyboardSimulator.SendSplitClip();
-                return null;
-            }
-            if (padIndex == 0) // Pad 1
-            {
-                KeyboardSimulator.SendUp();
-                return null;
-            }
-            if (padIndex == 1) // Pad 2
-            {
-                KeyboardSimulator.SendDown();
-                return null;
-            }
-            if (padIndex == 2) // Pad 3
-            {
-                KeyboardSimulator.SendConsolidate();
-                return null;
-            }
-            if (padIndex == 3) // Pad 4
-            {
-                KeyboardSimulator.SendDuplicate();
-                return null;
-            }
-            return null; // Demais pads sem função por enquanto
-        }
-
-        // 3. Hot Cue Mode — Teclado Cromático Linear (layout: linha de baixo → cima, esquerdo → direito)
+        // 2. Hot Cue Mode — Teclado Cromático Linear (layout: linha de baixo → cima, esquerdo → direito)
         // Sequência: C, C#, D, D#, E, F, F#, G | G#, A, A#, B, C(+1), C#(+1), D(+1), D#(+1)
         // Nota: usa a mesma oitava definida no modo Sampler. Sem controle de oitava neste modo.
         if (mode == "HotCue")
