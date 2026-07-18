@@ -1,150 +1,865 @@
 {
-  "_meta": {
-    "version": "1.0.0",
-    "description": "Registro completo de todos os controles físicos da Pioneer DDJ-400. Fonte da verdade para o modal de mapeamento do AbleToDJ.",
-    "totalControls": 120,
-    "categories": ["Transport", "Pads", "Mixer", "Navigation", "Editing", "BeatFX", "JogWheel"]
-  },
-
-  "controls": {
-
-    "Play_Left":              { "display": "Play / Pause (Deck Esq)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Toca / Pausa reprodução global" },
-    "Play_Left_Shift":        { "display": "Shift + Play (Deck Esq)", "category": "Transport", "isShift": true,  "calibrated": true, "action": "Stop All Clips (para todos os clipes)" },
-    "Play_Right":             { "display": "Play / Pause (Deck Dir)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Toca / Pausa reprodução global" },
-    "Play_Right_Shift":       { "display": "Shift + Play (Deck Dir)", "category": "Transport", "isShift": true,  "calibrated": true, "action": "Stop All Clips (para todos os clipes)" },
-
-    "Cue_Left":               { "display": "Cue (Deck Esq)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Play a partir da posição da agulha (Continue)" },
-    "Cue_Left_Shift":         { "display": "Shift + Cue (Deck Esq)", "category": "Transport", "isShift": true,  "calibrated": true, "action": "Back to Arrangement (volta para a timeline)" },
-    "Cue_Right":              { "display": "Cue (Deck Dir)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Play a partir da posição da agulha (Continue)" },
-    "Cue_Right_Shift":        { "display": "Shift + Cue (Deck Dir)", "category": "Transport", "isShift": true,  "calibrated": true, "action": "Back to Arrangement (volta para a timeline)" },
-
-    "ReloopExit_Left":        { "display": "Reloop/Exit (Deck Esq)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Gravação contextual de slot de clipe (Record/Overdub)" },
-    "ReloopExit_Left_Shift":  { "display": "Shift + Reloop/Exit (Deck Esq)", "category": "Transport", "isShift": true, "calibrated": true, "action": null },
-    "ReloopExit_Right":       { "display": "Reloop/Exit (Deck Dir)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Gravação de Arrangement (liga/desliga record na timeline)" },
-    "ReloopExit_Right_Shift": { "display": "Shift + Reloop/Exit (Deck Dir)", "category": "Transport", "isShift": true, "calibrated": true, "action": null },
-
-    "BeatSync_Left":          { "display": "Beat Sync (Deck Esq)", "category": "Transport", "isShift": false, "calibrated": true, "action": "Quantiza notas MIDI (Ctrl+U)" },
-    "BeatSync_Left_Shift":    { "display": "Shift + Beat Sync (Deck Esq)", "category": "Transport", "isShift": true,  "calibrated": true, "action": "Liga/Desliga Metrônomo" },
-    "BeatSync_Right":         { "display": "Beat Sync (Deck Dir)", "category": "Transport", "isShift": false, "calibrated": true, "action": null },
-    "BeatSync_Right_Shift":   { "display": "Shift + Beat Sync (Deck Dir)", "category": "Transport", "isShift": true,  "calibrated": true, "action": null },
-
-    "LoopIn_Left":            { "display": "Loop In (Deck Esq)", "category": "Editing", "isShift": false, "calibrated": true, "action": "Duplicar clipe/pista selecionada (Ctrl+D)" },
-    "LoopIn_Left_Shift":      { "display": "Shift + Loop In (Deck Esq)", "category": "Editing", "isShift": true,  "calibrated": true, "action": null },
-    "LoopIn_Right":           { "display": "Loop In (Deck Dir)", "category": "Editing", "isShift": false, "calibrated": true, "action": null },
-    "LoopIn_Right_Shift":     { "display": "Shift + Loop In (Deck Dir)", "category": "Editing", "isShift": true,  "calibrated": true, "action": null },
-
-    "LoopOut_Left":           { "display": "Loop Out (Deck Esq)", "category": "Editing", "isShift": false, "calibrated": true, "action": "Deletar clipe/pista selecionada (Delete)" },
-    "LoopOut_Left_Shift":     { "display": "Shift + Loop Out (Deck Esq)", "category": "Editing", "isShift": true,  "calibrated": true, "action": null },
-    "LoopOut_Right":          { "display": "Loop Out (Deck Dir)", "category": "Editing", "isShift": false, "calibrated": true, "action": null },
-    "LoopOut_Right_Shift":    { "display": "Shift + Loop Out (Deck Dir)", "category": "Editing", "isShift": true,  "calibrated": true, "action": null },
-
-    "LoopCallLeft_Left":      { "display": "Loop Call ◀ (Deck Esq)", "category": "Editing", "isShift": false, "calibrated": true, "action": "Desfazer (Ctrl+Z)" },
-    "LoopCallLeft_Left_Shift":{ "display": "Shift + Loop Call ◀ (Deck Esq)", "category": "Editing", "isShift": true, "calibrated": true, "action": null },
-    "LoopCallLeft_Right":     { "display": "Loop Call ◀ (Deck Dir)", "category": "Editing", "isShift": false, "calibrated": true, "action": null },
-    "LoopCallLeft_Right_Shift":{ "display": "Shift + Loop Call ◀ (Deck Dir)", "category": "Editing", "isShift": true, "calibrated": true, "action": null },
-
-    "LoopCallRight_Left":     { "display": "Loop Call ▶ (Deck Esq)", "category": "Editing", "isShift": false, "calibrated": true, "action": "Refazer (Ctrl+Y)" },
-    "LoopCallRight_Left_Shift":{ "display": "Shift + Loop Call ▶ (Deck Esq)", "category": "Editing", "isShift": true, "calibrated": true, "action": null },
-    "LoopCallRight_Right":    { "display": "Loop Call ▶ (Deck Dir)", "category": "Editing", "isShift": false, "calibrated": true, "action": null },
-    "LoopCallRight_Right_Shift":{ "display": "Shift + Loop Call ▶ (Deck Dir)", "category": "Editing", "isShift": true, "calibrated": true, "action": null },
-
-    "HotCueMode_Left":        { "display": "Hot Cue Mode (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Teclado Cromático Linear nos pads (Canal 1)" },
-    "HotCueMode_Left_Shift":  { "display": "Shift + Hot Cue Mode (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "HotCueMode_Right":       { "display": "Hot Cue Mode (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Teclado Cromático Linear nos pads (Canal 1)" },
-    "HotCueMode_Right_Shift": { "display": "Shift + Hot Cue Mode (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-
-    "BeatLoopMode_Left":      { "display": "Beat Loop Mode (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Beat Loop nos pads (MIDI CC 70-77 Ch16)" },
-    "BeatLoopMode_Left_Shift":{ "display": "Shift + Beat Loop Mode (Deck Esq)", "category": "Pads", "isShift": true, "calibrated": true, "action": null },
-    "BeatLoopMode_Right":     { "display": "Beat Loop Mode (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Beat Loop nos pads (MIDI CC 80-87 Ch16)" },
-    "BeatLoopMode_Right_Shift":{ "display": "Shift + Beat Loop Mode (Deck Dir)", "category": "Pads", "isShift": true, "calibrated": true, "action": null },
-
-    "BeatJumpMode_Left":      { "display": "Beat Jump Mode (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Beat Jump nos pads (MIDI CC 90-97 Ch16)" },
-    "BeatJumpMode_Left_Shift":{ "display": "Shift + Beat Jump Mode (Deck Esq)", "category": "Pads", "isShift": true, "calibrated": true, "action": null },
-    "BeatJumpMode_Right":     { "display": "Beat Jump Mode (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Beat Jump nos pads (MIDI CC 100-107 Ch16)" },
-    "BeatJumpMode_Right_Shift":{ "display": "Shift + Beat Jump Mode (Deck Dir)", "category": "Pads", "isShift": true, "calibrated": true, "action": null },
-
-    "SamplerMode_Left":       { "display": "Sampler Mode (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Teclado Cromático de Piano nos pads (Canal 1)" },
-    "SamplerMode_Left_Shift": { "display": "Shift + Sampler Mode (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "SamplerMode_Right":      { "display": "Sampler Mode (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Ativa modo Teclado Cromático de Piano nos pads (Canal 1)" },
-    "SamplerMode_Right_Shift":{ "display": "Shift + Sampler Mode (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-
-    "Pad1_Left":              { "display": "Pad 1 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo (HotCue/Sampler/BeatLoop/BeatJump)" },
-    "Pad1_Left_Shift":        { "display": "Shift + Pad 1 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad2_Left":              { "display": "Pad 2 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad2_Left_Shift":        { "display": "Shift + Pad 2 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad3_Left":              { "display": "Pad 3 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad3_Left_Shift":        { "display": "Shift + Pad 3 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad4_Left":              { "display": "Pad 4 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad4_Left_Shift":        { "display": "Shift + Pad 4 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad5_Left":              { "display": "Pad 5 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad5_Left_Shift":        { "display": "Shift + Pad 5 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad6_Left":              { "display": "Pad 6 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad6_Left_Shift":        { "display": "Shift + Pad 6 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad7_Left":              { "display": "Pad 7 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad7_Left_Shift":        { "display": "Shift + Pad 7 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad8_Left":              { "display": "Pad 8 (Deck Esq)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad8_Left_Shift":        { "display": "Shift + Pad 8 (Deck Esq)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-
-    "Pad1_Right":             { "display": "Pad 1 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad1_Right_Shift":       { "display": "Shift + Pad 1 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad2_Right":             { "display": "Pad 2 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad2_Right_Shift":       { "display": "Shift + Pad 2 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad3_Right":             { "display": "Pad 3 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad3_Right_Shift":       { "display": "Shift + Pad 3 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad4_Right":             { "display": "Pad 4 (Deck Dir) — Subir Oitava (Sampler)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Subir oitava global (modo Sampler)" },
-    "Pad4_Right_Shift":       { "display": "Shift + Pad 4 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad5_Right":             { "display": "Pad 5 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad5_Right_Shift":       { "display": "Shift + Pad 5 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad6_Right":             { "display": "Pad 6 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad6_Right_Shift":       { "display": "Shift + Pad 6 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad7_Right":             { "display": "Pad 7 (Deck Dir)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Depende do modo ativo" },
-    "Pad7_Right_Shift":       { "display": "Shift + Pad 7 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-    "Pad8_Right":             { "display": "Pad 8 (Deck Dir) — Descer Oitava (Sampler)", "category": "Pads", "isShift": false, "calibrated": true, "action": "Descer oitava global (modo Sampler)" },
-    "Pad8_Right_Shift":       { "display": "Shift + Pad 8 (Deck Dir)", "category": "Pads", "isShift": true,  "calibrated": true, "action": null },
-
-    "Trim_Left":              { "display": "Trim Knob (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Volume da pista selecionada" },
-    "Trim_Right":             { "display": "Trim Knob (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "PAN da pista selecionada" },
-    "EQ_High_Left":           { "display": "EQ High (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 1 do plugin selecionado" },
-    "EQ_Mid_Left":            { "display": "EQ Mid (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 2 do plugin selecionado" },
-    "EQ_Low_Left":            { "display": "EQ Low (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 3 do plugin selecionado" },
-    "Filter_Left":            { "display": "Filter Knob (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 4 do plugin selecionado" },
-    "EQ_High_Right":          { "display": "EQ High (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 5 do plugin selecionado" },
-    "EQ_Mid_Right":           { "display": "EQ Mid (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 6 do plugin selecionado" },
-    "EQ_Low_Right":           { "display": "EQ Low (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 7 do plugin selecionado" },
-    "Filter_Right":           { "display": "Filter Knob (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Parâmetro 8 do plugin selecionado" },
-    "VolumeSlider_Left":      { "display": "Channel Fader (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": null },
-    "VolumeSlider_Right":     { "display": "Channel Fader (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": null },
-    "Crossfader":             { "display": "Crossfader", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Navega pela timeline do Arrangement (posição da agulha)" },
-    "HeadphoneCue_Left":      { "display": "Headphone Cue (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Liga/Desliga SOLO da pista selecionada" },
-    "HeadphoneCue_Right":     { "display": "Headphone Cue (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Liga/Desliga MUTE da pista selecionada" },
-    "HeadphoneMixing":        { "display": "Headphone Mixing Knob", "category": "Mixer", "isShift": false, "calibrated": true, "action": "Volume Master alternativo do projeto" },
-    "MasterCue":              { "display": "Master Cue Button", "category": "Mixer", "isShift": false, "calibrated": true, "action": null },
-    "TempoSlider_Left":       { "display": "Tempo Slider (Deck Esq)", "category": "Mixer", "isShift": false, "calibrated": true, "action": "BPM global do projeto" },
-    "TempoSlider_Right":      { "display": "Tempo Slider (Deck Dir)", "category": "Mixer", "isShift": false, "calibrated": true, "action": null },
-
-    "BrowseEncoder_TurnLeft": { "display": "Selector Knob (Girar Esq)", "category": "Navigation", "isShift": false, "calibrated": true, "action": "Navega para cima no Browser / Tracks (seta Cima)" },
-    "BrowseEncoder_TurnRight":{ "display": "Selector Knob (Girar Dir)", "category": "Navigation", "isShift": false, "calibrated": true, "action": "Navega para baixo no Browser / Tracks (seta Baixo)" },
-    "BrowseEncoder_Click":    { "display": "Selector Knob (Clicar)", "category": "Navigation", "isShift": false, "calibrated": true, "action": "Abrir pasta / Carregar efeito/sample (Enter)" },
-    "Load_Left":              { "display": "Load Deck A", "category": "Navigation", "isShift": false, "calibrated": true, "action": "Alterna foco entre Pistas e Browser do Ableton" },
-    "Load_Left_Shift":        { "display": "Shift + Load Deck A", "category": "Navigation", "isShift": true,  "calibrated": true, "action": null },
-    "Load_Right":             { "display": "Load Deck B", "category": "Navigation", "isShift": false, "calibrated": true, "action": "Alterna a tela entre Session View e Arrangement View" },
-    "Load_Right_Shift":       { "display": "Shift + Load Deck B", "category": "Navigation", "isShift": true,  "calibrated": true, "action": null },
-
-    "BeatLeft":               { "display": "Beat ◀ (Beat FX)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Navega para dispositivo/efeito anterior na pista (seta Esq)" },
-    "BeatRight":              { "display": "Beat ▶ (Beat FX)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Navega para próximo dispositivo/efeito na pista (seta Dir)" },
-    "FxSelect":               { "display": "FX Select Button", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Cria nova Pista de Áudio (Ctrl+T)" },
-    "FxSelect_Shift":         { "display": "Shift + FX Select", "category": "BeatFX", "isShift": true, "calibrated": false, "action": "Cria nova Pista MIDI (Ctrl+Shift+T)" },
-    "FxChannelSelect":        { "display": "FX Channel Select (Slider)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": null },
-    "LevelDepth":             { "display": "Level/Depth Knob", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Controla o parâmetro atualmente focado/selecionado (Wildcard CC 47)" },
-    "FxOnOff":                { "display": "FX ON/OFF Button", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Segurar + Crossfader: seleciona região de loop. Soltar: ativa loop (Ctrl+Shift+L)" },
-
-    "JogWheel_Outer_TurnLeft":       { "display": "Jog Wheel Borda (Girar Esq — Deck Esq)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": "Navegação fina na timeline (Scrubbing)" },
-    "JogWheel_Outer_TurnRight":      { "display": "Jog Wheel Borda (Girar Dir — Deck Esq)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": "Navegação fina na timeline (Scrubbing)" },
-    "JogWheel_Outer_TurnLeft_Right": { "display": "Jog Wheel Borda (Girar Esq — Deck Dir)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": "Zoom In no Arrangement View" },
-    "JogWheel_Outer_TurnRight_Right":{ "display": "Jog Wheel Borda (Girar Dir — Deck Dir)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": "Zoom Out no Arrangement View" },
-    "JogWheel_Top_Touch":            { "display": "Jog Wheel Topo (Tocar — Deck Esq)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": null },
-    "JogWheel_Top_Touch_Right":      { "display": "Jog Wheel Topo (Tocar — Deck Dir)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": null },
-    "JogWheel_Top_Scratch":          { "display": "Jog Wheel Topo (Girar — Deck Esq)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": null },
-    "JogWheel_Top_Scratch_Right":    { "display": "Jog Wheel Topo (Girar — Deck Dir)", "category": "JogWheel", "isShift": false, "calibrated": true, "action": null }
-  }
+    "_meta":  {
+                  "version":  "1.0.0",
+                  "description":  "Registro completo de todos os controles físicos da Pioneer DDJ-400. Fonte da verdade para o modal de mapeamento do AbleToDJ.",
+                  "totalControls":  120,
+                  "categories":  [
+                                     "Transport",
+                                     "Pads",
+                                     "Mixer",
+                                     "Navigation",
+                                     "Editing",
+                                     "BeatFX",
+                                     "JogWheel"
+                                 ]
+              },
+    "controls":  {
+                     "Play_Left":  {
+                                       "display":  "Play / Pause (Deck Esq)",
+                                       "category":  "Transport",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Toca / Pausa reprodução global"
+                                   },
+                     "Play_Left_Shift":  {
+                                             "display":  "Shift + Play (Deck Esq)",
+                                             "category":  "Transport",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  "Stop All Clips (para todos os clipes)"
+                                         },
+                     "Play_Right":  {
+                                        "display":  "Play / Pause (Deck Dir)",
+                                        "category":  "Transport",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Toca / Pausa reprodução global"
+                                    },
+                     "Play_Right_Shift":  {
+                                              "display":  "Shift + Play (Deck Dir)",
+                                              "category":  "Transport",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  "Stop All Clips (para todos os clipes)"
+                                          },
+                     "Cue_Left":  {
+                                      "display":  "Cue (Deck Esq)",
+                                      "category":  "Transport",
+                                      "isShift":  false,
+                                      "calibrated":  true,
+                                      "action":  "Play a partir da posição da agulha (Continue)"
+                                  },
+                     "Cue_Left_Shift":  {
+                                            "display":  "Shift + Cue (Deck Esq)",
+                                            "category":  "Transport",
+                                            "isShift":  true,
+                                            "calibrated":  true,
+                                            "action":  "Back to Arrangement (volta para a timeline)"
+                                        },
+                     "Cue_Right":  {
+                                       "display":  "Cue (Deck Dir)",
+                                       "category":  "Transport",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Play a partir da posição da agulha (Continue)"
+                                   },
+                     "Cue_Right_Shift":  {
+                                             "display":  "Shift + Cue (Deck Dir)",
+                                             "category":  "Transport",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  "Back to Arrangement (volta para a timeline)"
+                                         },
+                     "ReloopExit_Left":  {
+                                             "display":  "Reloop/Exit (Deck Esq)",
+                                             "category":  "Transport",
+                                             "isShift":  false,
+                                             "calibrated":  true,
+                                             "action":  "Gravação contextual de slot de clipe (Record/Overdub)"
+                                         },
+                     "ReloopExit_Left_Shift":  {
+                                                   "display":  "Shift + Reloop/Exit (Deck Esq)",
+                                                   "category":  "Transport",
+                                                   "isShift":  true,
+                                                   "calibrated":  true,
+                                                   "action":  null
+                                               },
+                     "ReloopExit_Right":  {
+                                              "display":  "Reloop/Exit (Deck Dir)",
+                                              "category":  "Transport",
+                                              "isShift":  false,
+                                              "calibrated":  true,
+                                              "action":  "Gravação de Arrangement (liga/desliga record na timeline)"
+                                          },
+                     "ReloopExit_Right_Shift":  {
+                                                    "display":  "Shift + Reloop/Exit (Deck Dir)",
+                                                    "category":  "Transport",
+                                                    "isShift":  true,
+                                                    "calibrated":  true,
+                                                    "action":  null
+                                                },
+                     "BeatSync_Left":  {
+                                           "display":  "Beat Sync (Deck Esq)",
+                                           "category":  "Transport",
+                                           "isShift":  false,
+                                           "calibrated":  true,
+                                           "action":  "Quantiza notas MIDI (Ctrl+U)"
+                                       },
+                     "BeatSync_Left_Shift":  {
+                                                 "display":  "Shift + Beat Sync (Deck Esq)",
+                                                 "category":  "Transport",
+                                                 "isShift":  true,
+                                                 "calibrated":  true,
+                                                 "action":  "Liga/Desliga Metrônomo"
+                                             },
+                     "BeatSync_Right":  {
+                                            "display":  "Beat Sync (Deck Dir)",
+                                            "category":  "Transport",
+                                            "isShift":  false,
+                                            "calibrated":  true,
+                                            "action":  null
+                                        },
+                     "BeatSync_Right_Shift":  {
+                                                  "display":  "Shift + Beat Sync (Deck Dir)",
+                                                  "category":  "Transport",
+                                                  "isShift":  true,
+                                                  "calibrated":  true,
+                                                  "action":  null
+                                              },
+                     "LoopIn_Left":  {
+                                         "display":  "Loop In (Deck Esq)",
+                                         "category":  "Editing",
+                                         "isShift":  false,
+                                         "calibrated":  true,
+                                         "action":  "Duplicar clipe/pista selecionada (Ctrl+D)"
+                                     },
+                     "LoopIn_Left_Shift":  {
+                                               "display":  "Shift + Loop In (Deck Esq)",
+                                               "category":  "Editing",
+                                               "isShift":  true,
+                                               "calibrated":  true,
+                                               "action":  null
+                                           },
+                     "LoopIn_Right":  {
+                                          "display":  "Loop In (Deck Dir)",
+                                          "category":  "Editing",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  null
+                                      },
+                     "LoopIn_Right_Shift":  {
+                                                "display":  "Shift + Loop In (Deck Dir)",
+                                                "category":  "Editing",
+                                                "isShift":  true,
+                                                "calibrated":  true,
+                                                "action":  null
+                                            },
+                     "LoopOut_Left":  {
+                                          "display":  "Loop Out (Deck Esq)",
+                                          "category":  "Editing",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  "Deletar clipe/pista selecionada (Delete)"
+                                      },
+                     "LoopOut_Left_Shift":  {
+                                                "display":  "Shift + Loop Out (Deck Esq)",
+                                                "category":  "Editing",
+                                                "isShift":  true,
+                                                "calibrated":  true,
+                                                "action":  null
+                                            },
+                     "LoopOut_Right":  {
+                                           "display":  "Loop Out (Deck Dir)",
+                                           "category":  "Editing",
+                                           "isShift":  false,
+                                           "calibrated":  true,
+                                           "action":  null
+                                       },
+                     "LoopOut_Right_Shift":  {
+                                                 "display":  "Shift + Loop Out (Deck Dir)",
+                                                 "category":  "Editing",
+                                                 "isShift":  true,
+                                                 "calibrated":  true,
+                                                 "action":  null
+                                             },
+                     "LoopCallLeft_Left":  {
+                                               "display":  "Loop Call ◀ (Deck Esq)",
+                                               "category":  "Editing",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  "Desfazer (Ctrl+Z)"
+                                           },
+                     "LoopCallLeft_Left_Shift":  {
+                                                     "display":  "Shift + Loop Call ◀ (Deck Esq)",
+                                                     "category":  "Editing",
+                                                     "isShift":  true,
+                                                     "calibrated":  true,
+                                                     "action":  null
+                                                 },
+                     "LoopCallLeft_Right":  {
+                                                "display":  "Loop Call ◀ (Deck Dir)",
+                                                "category":  "Editing",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  null
+                                            },
+                     "LoopCallLeft_Right_Shift":  {
+                                                      "display":  "Shift + Loop Call ◀ (Deck Dir)",
+                                                      "category":  "Editing",
+                                                      "isShift":  true,
+                                                      "calibrated":  true,
+                                                      "action":  null
+                                                  },
+                     "LoopCallRight_Left":  {
+                                                "display":  "Loop Call ▶ (Deck Esq)",
+                                                "category":  "Editing",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  "Refazer (Ctrl+Y)"
+                                            },
+                     "LoopCallRight_Left_Shift":  {
+                                                      "display":  "Shift + Loop Call ▶ (Deck Esq)",
+                                                      "category":  "Editing",
+                                                      "isShift":  true,
+                                                      "calibrated":  true,
+                                                      "action":  null
+                                                  },
+                     "LoopCallRight_Right":  {
+                                                 "display":  "Loop Call ▶ (Deck Dir)",
+                                                 "category":  "Editing",
+                                                 "isShift":  false,
+                                                 "calibrated":  true,
+                                                 "action":  null
+                                             },
+                     "LoopCallRight_Right_Shift":  {
+                                                       "display":  "Shift + Loop Call ▶ (Deck Dir)",
+                                                       "category":  "Editing",
+                                                       "isShift":  true,
+                                                       "calibrated":  true,
+                                                       "action":  null
+                                                   },
+                     "HotCueMode_Left":  {
+                                             "display":  "Hot Cue Mode (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  false,
+                                             "calibrated":  true,
+                                             "action":  "Ativa modo Teclado Cromático Linear nos pads (Canal 1)"
+                                         },
+                     "HotCueMode_Left_Shift":  {
+                                                   "display":  "Shift + Hot Cue Mode (Deck Esq)",
+                                                   "category":  "Pads",
+                                                   "isShift":  true,
+                                                   "calibrated":  true,
+                                                   "action":  null
+                                               },
+                     "HotCueMode_Right":  {
+                                              "display":  "Hot Cue Mode (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  false,
+                                              "calibrated":  true,
+                                              "action":  "Ativa modo Teclado Cromático Linear nos pads (Canal 1)"
+                                          },
+                     "HotCueMode_Right_Shift":  {
+                                                    "display":  "Shift + Hot Cue Mode (Deck Dir)",
+                                                    "category":  "Pads",
+                                                    "isShift":  true,
+                                                    "calibrated":  true,
+                                                    "action":  null
+                                                },
+                     "BeatLoopMode_Left":  {
+                                               "display":  "Beat Loop Mode (Deck Esq)",
+                                               "category":  "Pads",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  "Ativa modo Beat Loop nos pads (MIDI CC 70-77 Ch16)"
+                                           },
+                     "BeatLoopMode_Left_Shift":  {
+                                                     "display":  "Shift + Beat Loop Mode (Deck Esq)",
+                                                     "category":  "Pads",
+                                                     "isShift":  true,
+                                                     "calibrated":  true,
+                                                     "action":  null
+                                                 },
+                     "BeatLoopMode_Right":  {
+                                                "display":  "Beat Loop Mode (Deck Dir)",
+                                                "category":  "Pads",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  "Ativa modo Beat Loop nos pads (MIDI CC 80-87 Ch16)"
+                                            },
+                     "BeatLoopMode_Right_Shift":  {
+                                                      "display":  "Shift + Beat Loop Mode (Deck Dir)",
+                                                      "category":  "Pads",
+                                                      "isShift":  true,
+                                                      "calibrated":  true,
+                                                      "action":  null
+                                                  },
+                     "BeatJumpMode_Left":  {
+                                               "display":  "Beat Jump Mode (Deck Esq)",
+                                               "category":  "Pads",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  "Ativa modo Beat Jump nos pads (MIDI CC 90-97 Ch16)"
+                                           },
+                     "BeatJumpMode_Left_Shift":  {
+                                                     "display":  "Shift + Beat Jump Mode (Deck Esq)",
+                                                     "category":  "Pads",
+                                                     "isShift":  true,
+                                                     "calibrated":  true,
+                                                     "action":  null
+                                                 },
+                     "BeatJumpMode_Right":  {
+                                                "display":  "Beat Jump Mode (Deck Dir)",
+                                                "category":  "Pads",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  "Ativa modo Beat Jump nos pads (MIDI CC 100-107 Ch16)"
+                                            },
+                     "BeatJumpMode_Right_Shift":  {
+                                                      "display":  "Shift + Beat Jump Mode (Deck Dir)",
+                                                      "category":  "Pads",
+                                                      "isShift":  true,
+                                                      "calibrated":  true,
+                                                      "action":  null
+                                                  },
+                     "SamplerMode_Left":  {
+                                              "display":  "Sampler Mode (Deck Esq)",
+                                              "category":  "Pads",
+                                              "isShift":  false,
+                                              "calibrated":  true,
+                                              "action":  "Ativa modo Teclado Cromático de Piano nos pads (Canal 1)"
+                                          },
+                     "SamplerMode_Left_Shift":  {
+                                                    "display":  "Shift + Sampler Mode (Deck Esq)",
+                                                    "category":  "Pads",
+                                                    "isShift":  true,
+                                                    "calibrated":  true,
+                                                    "action":  null
+                                                },
+                     "SamplerMode_Right":  {
+                                               "display":  "Sampler Mode (Deck Dir)",
+                                               "category":  "Pads",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  "Ativa modo Teclado Cromático de Piano nos pads (Canal 1)"
+                                           },
+                     "SamplerMode_Right_Shift":  {
+                                                     "display":  "Shift + Sampler Mode (Deck Dir)",
+                                                     "category":  "Pads",
+                                                     "isShift":  true,
+                                                     "calibrated":  true,
+                                                     "action":  null
+                                                 },
+                     "Pad1_Left":  {
+                                       "display":  "Pad 1 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo (HotCue/Sampler/BeatLoop/BeatJump)"
+                                   },
+                     "Pad1_Left_Shift":  {
+                                             "display":  "Shift + Pad 1 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad2_Left":  {
+                                       "display":  "Pad 2 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad2_Left_Shift":  {
+                                             "display":  "Shift + Pad 2 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad3_Left":  {
+                                       "display":  "Pad 3 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad3_Left_Shift":  {
+                                             "display":  "Shift + Pad 3 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad4_Left":  {
+                                       "display":  "Pad 4 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad4_Left_Shift":  {
+                                             "display":  "Shift + Pad 4 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad5_Left":  {
+                                       "display":  "Pad 5 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad5_Left_Shift":  {
+                                             "display":  "Shift + Pad 5 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad6_Left":  {
+                                       "display":  "Pad 6 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad6_Left_Shift":  {
+                                             "display":  "Shift + Pad 6 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad7_Left":  {
+                                       "display":  "Pad 7 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad7_Left_Shift":  {
+                                             "display":  "Shift + Pad 7 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad8_Left":  {
+                                       "display":  "Pad 8 (Deck Esq)",
+                                       "category":  "Pads",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Depende do modo ativo"
+                                   },
+                     "Pad8_Left_Shift":  {
+                                             "display":  "Shift + Pad 8 (Deck Esq)",
+                                             "category":  "Pads",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Pad1_Right":  {
+                                        "display":  "Pad 1 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad1_Right_Shift":  {
+                                              "display":  "Shift + Pad 1 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad2_Right":  {
+                                        "display":  "Pad 2 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad2_Right_Shift":  {
+                                              "display":  "Shift + Pad 2 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad3_Right":  {
+                                        "display":  "Pad 3 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad3_Right_Shift":  {
+                                              "display":  "Shift + Pad 3 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad4_Right":  {
+                                        "display":  "Pad 4 (Deck Dir) — Subir Oitava (Sampler)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Subir oitava global (modo Sampler)"
+                                    },
+                     "Pad4_Right_Shift":  {
+                                              "display":  "Shift + Pad 4 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad5_Right":  {
+                                        "display":  "Pad 5 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad5_Right_Shift":  {
+                                              "display":  "Shift + Pad 5 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad6_Right":  {
+                                        "display":  "Pad 6 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad6_Right_Shift":  {
+                                              "display":  "Shift + Pad 6 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad7_Right":  {
+                                        "display":  "Pad 7 (Deck Dir)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Depende do modo ativo"
+                                    },
+                     "Pad7_Right_Shift":  {
+                                              "display":  "Shift + Pad 7 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Pad8_Right":  {
+                                        "display":  "Pad 8 (Deck Dir) — Descer Oitava (Sampler)",
+                                        "category":  "Pads",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Descer oitava global (modo Sampler)"
+                                    },
+                     "Pad8_Right_Shift":  {
+                                              "display":  "Shift + Pad 8 (Deck Dir)",
+                                              "category":  "Pads",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "Trim_Left":  {
+                                       "display":  "Trim Knob (Deck Esq)",
+                                       "category":  "Mixer",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Volume da pista selecionada"
+                                   },
+                     "Trim_Right":  {
+                                        "display":  "Trim Knob (Deck Dir)",
+                                        "category":  "Mixer",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "PAN da pista selecionada"
+                                    },
+                     "EQ_High_Left":  {
+                                          "display":  "EQ High (Deck Esq)",
+                                          "category":  "Mixer",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  "Parâmetro 1 do plugin selecionado"
+                                      },
+                     "EQ_Mid_Left":  {
+                                         "display":  "EQ Mid (Deck Esq)",
+                                         "category":  "Mixer",
+                                         "isShift":  false,
+                                         "calibrated":  true,
+                                         "action":  "Parâmetro 2 do plugin selecionado"
+                                     },
+                     "EQ_Low_Left":  {
+                                         "display":  "EQ Low (Deck Esq)",
+                                         "category":  "Mixer",
+                                         "isShift":  false,
+                                         "calibrated":  true,
+                                         "action":  "Parâmetro 3 do plugin selecionado"
+                                     },
+                     "Filter_Left":  {
+                                         "display":  "Filter Knob (Deck Esq)",
+                                         "category":  "Mixer",
+                                         "isShift":  false,
+                                         "calibrated":  true,
+                                         "action":  "Parâmetro 4 do plugin selecionado"
+                                     },
+                     "EQ_High_Right":  {
+                                           "display":  "EQ High (Deck Dir)",
+                                           "category":  "Mixer",
+                                           "isShift":  false,
+                                           "calibrated":  true,
+                                           "action":  "Parâmetro 5 do plugin selecionado"
+                                       },
+                     "EQ_Mid_Right":  {
+                                          "display":  "EQ Mid (Deck Dir)",
+                                          "category":  "Mixer",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  "Parâmetro 6 do plugin selecionado"
+                                      },
+                     "EQ_Low_Right":  {
+                                          "display":  "EQ Low (Deck Dir)",
+                                          "category":  "Mixer",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  "Parâmetro 7 do plugin selecionado"
+                                      },
+                     "Filter_Right":  {
+                                          "display":  "Filter Knob (Deck Dir)",
+                                          "category":  "Mixer",
+                                          "isShift":  false,
+                                          "calibrated":  true,
+                                          "action":  "Parâmetro 8 do plugin selecionado"
+                                      },
+                     "VolumeSlider_Left":  {
+                                               "display":  "Channel Fader (Deck Esq)",
+                                               "category":  "Mixer",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  null
+                                           },
+                     "VolumeSlider_Right":  {
+                                                "display":  "Channel Fader (Deck Dir)",
+                                                "category":  "Mixer",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  null
+                                            },
+                     "Crossfader":  {
+                                        "display":  "Crossfader",
+                                        "category":  "Mixer",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Navega pela timeline do Arrangement (posição da agulha)"
+                                    },
+                     "HeadphoneCue_Left":  {
+                                               "display":  "Headphone Cue (Deck Esq)",
+                                               "category":  "Mixer",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  "Liga/Desliga SOLO da pista selecionada"
+                                           },
+                     "HeadphoneCue_Right":  {
+                                                "display":  "Headphone Cue (Deck Dir)",
+                                                "category":  "Mixer",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  "Liga/Desliga MUTE da pista selecionada"
+                                            },
+                     "HeadphoneMixing":  {
+                                             "display":  "Headphone Mixing Knob",
+                                             "category":  "Mixer",
+                                             "isShift":  false,
+                                             "calibrated":  true,
+                                             "action":  "Volume Master alternativo do projeto"
+                                         },
+                     "MasterCue":  {
+                                       "display":  "Master Cue Button",
+                                       "category":  "Mixer",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  null
+                                   },
+                     "TempoSlider_Left":  {
+                                              "display":  "Tempo Slider (Deck Esq)",
+                                              "category":  "Mixer",
+                                              "isShift":  false,
+                                              "calibrated":  true,
+                                              "action":  "BPM global do projeto"
+                                          },
+                     "TempoSlider_Right":  {
+                                               "display":  "Tempo Slider (Deck Dir)",
+                                               "category":  "Mixer",
+                                               "isShift":  false,
+                                               "calibrated":  true,
+                                               "action":  null
+                                           },
+                     "BrowseEncoder_TurnLeft":  {
+                                                    "display":  "Selector Knob (Girar Esq)",
+                                                    "category":  "Navigation",
+                                                    "isShift":  false,
+                                                    "calibrated":  true,
+                                                    "action":  "Navega para cima no Browser / Tracks (seta Cima)"
+                                                },
+                     "BrowseEncoder_TurnRight":  {
+                                                     "display":  "Selector Knob (Girar Dir)",
+                                                     "category":  "Navigation",
+                                                     "isShift":  false,
+                                                     "calibrated":  true,
+                                                     "action":  "Navega para baixo no Browser / Tracks (seta Baixo)"
+                                                 },
+                     "BrowseEncoder_Click":  {
+                                                 "display":  "Selector Knob (Clicar)",
+                                                 "category":  "Navigation",
+                                                 "isShift":  false,
+                                                 "calibrated":  true,
+                                                 "action":  "Abrir pasta / Carregar efeito/sample (Enter)"
+                                             },
+                     "Load_Left":  {
+                                       "display":  "Load Deck A",
+                                       "category":  "Navigation",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Alterna foco entre Pistas e Browser do Ableton"
+                                   },
+                     "Load_Left_Shift":  {
+                                             "display":  "Shift + Load Deck A",
+                                             "category":  "Navigation",
+                                             "isShift":  true,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "Load_Right":  {
+                                        "display":  "Load Deck B",
+                                        "category":  "Navigation",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Alterna a tela entre Session View e Arrangement View"
+                                    },
+                     "Load_Right_Shift":  {
+                                              "display":  "Shift + Load Deck B",
+                                              "category":  "Navigation",
+                                              "isShift":  true,
+                                              "calibrated":  true,
+                                              "action":  null
+                                          },
+                     "BeatLeft":  {
+                                      "display":  "Beat ◀ (Beat FX)",
+                                      "category":  "BeatFX",
+                                      "isShift":  false,
+                                      "calibrated":  true,
+                                      "action":  "Navega para dispositivo/efeito anterior na pista (seta Esq)"
+                                  },
+                     "BeatRight":  {
+                                       "display":  "Beat ▶ (Beat FX)",
+                                       "category":  "BeatFX",
+                                       "isShift":  false,
+                                       "calibrated":  true,
+                                       "action":  "Navega para próximo dispositivo/efeito na pista (seta Dir)"
+                                   },
+                     "FxSelect":  {
+                                      "display":  "FX Select Button",
+                                      "category":  "BeatFX",
+                                      "isShift":  false,
+                                      "calibrated":  true,
+                                      "action":  "Cria nova Pista de Áudio (Ctrl+T)"
+                                  },
+                     "FxSelect_Shift":  {
+                                            "display":  "Shift + FX Select",
+                                            "category":  "BeatFX",
+                                            "isShift":  true,
+                                            "calibrated":  true,
+                                            "action":  "Cria nova Pista MIDI (Ctrl+Shift+T)"
+                                        },
+                     "FxChannelSelect":  {
+                                             "display":  "FX Channel Select (Slider)",
+                                             "category":  "BeatFX",
+                                             "isShift":  false,
+                                             "calibrated":  true,
+                                             "action":  null
+                                         },
+                     "LevelDepth":  {
+                                        "display":  "Level/Depth Knob",
+                                        "category":  "BeatFX",
+                                        "isShift":  false,
+                                        "calibrated":  true,
+                                        "action":  "Controla o parâmetro atualmente focado/selecionado (Wildcard CC 47)"
+                                    },
+                     "FxOnOff":  {
+                                     "display":  "FX ON/OFF Button",
+                                     "category":  "BeatFX",
+                                     "isShift":  false,
+                                     "calibrated":  true,
+                                     "action":  "Segurar + Crossfader: seleciona região de loop. Soltar: ativa loop (Ctrl+Shift+L)"
+                                 },
+                     "JogWheel_Outer_TurnLeft":  {
+                                                     "display":  "Jog Wheel Borda (Girar Esq — Deck Esq)",
+                                                     "category":  "JogWheel",
+                                                     "isShift":  false,
+                                                     "calibrated":  true,
+                                                     "action":  "Navegação fina na timeline (Scrubbing)"
+                                                 },
+                     "JogWheel_Outer_TurnRight":  {
+                                                      "display":  "Jog Wheel Borda (Girar Dir — Deck Esq)",
+                                                      "category":  "JogWheel",
+                                                      "isShift":  false,
+                                                      "calibrated":  true,
+                                                      "action":  "Navegação fina na timeline (Scrubbing)"
+                                                  },
+                     "JogWheel_Outer_TurnLeft_Right":  {
+                                                           "display":  "Jog Wheel Borda (Girar Esq — Deck Dir)",
+                                                           "category":  "JogWheel",
+                                                           "isShift":  false,
+                                                           "calibrated":  true,
+                                                           "action":  "Zoom In no Arrangement View"
+                                                       },
+                     "JogWheel_Outer_TurnRight_Right":  {
+                                                            "display":  "Jog Wheel Borda (Girar Dir — Deck Dir)",
+                                                            "category":  "JogWheel",
+                                                            "isShift":  false,
+                                                            "calibrated":  true,
+                                                            "action":  "Zoom Out no Arrangement View"
+                                                        },
+                     "JogWheel_Top_Touch":  {
+                                                "display":  "Jog Wheel Topo (Tocar — Deck Esq)",
+                                                "category":  "JogWheel",
+                                                "isShift":  false,
+                                                "calibrated":  true,
+                                                "action":  null
+                                            },
+                     "JogWheel_Top_Touch_Right":  {
+                                                      "display":  "Jog Wheel Topo (Tocar — Deck Dir)",
+                                                      "category":  "JogWheel",
+                                                      "isShift":  false,
+                                                      "calibrated":  true,
+                                                      "action":  null
+                                                  },
+                     "JogWheel_Top_Scratch":  {
+                                                  "display":  "Jog Wheel Topo (Girar — Deck Esq)",
+                                                  "category":  "JogWheel",
+                                                  "isShift":  false,
+                                                  "calibrated":  true,
+                                                  "action":  null
+                                              },
+                     "JogWheel_Top_Scratch_Right":  {
+                                                        "display":  "Jog Wheel Topo (Girar — Deck Dir)",
+                                                        "category":  "JogWheel",
+                                                        "isShift":  false,
+                                                        "calibrated":  true,
+                                                        "action":  null
+                                                    }
+                 }
 }

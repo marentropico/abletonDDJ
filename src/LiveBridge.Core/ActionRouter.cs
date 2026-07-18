@@ -348,7 +348,14 @@ public class ActionRouter
             }
             else
             {
-                KeyboardSimulator.SendEnter(); // Click -> Abrir pasta / Carregar (Enter)
+                if (!_browserFocused)
+                {
+                    KeyboardSimulator.SendSelectClipUnderNeedle();
+                }
+                else
+                {
+                    KeyboardSimulator.SendEnter();
+                }
             }
             return null;
         }

@@ -54,6 +54,7 @@ public static class KeyboardSimulator
     private const byte VK_RETURN = 0x0D;
     
     private const byte VK_CONTROL = 0x11;
+    private const byte VK_MENU = 0x12; // Alt key
     private const byte VK_SHIFT_KEY = 0x10;
     private const byte VK_T = 0x54;
     private const byte VK_D = 0x44;
@@ -244,5 +245,16 @@ public static class KeyboardSimulator
         keybd_event(VK_DOWN, 0, 0, UIntPtr.Zero);
         keybd_event(VK_DOWN, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
+    public static void SendSelectClipUnderNeedle()
+    {
+        // Envia Ctrl + Alt + I (conforme especificado no TODO do usuário para seleção de clip)
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(VK_MENU, 0, 0, UIntPtr.Zero); // Alt
+        keybd_event(0x49, 0, 0, UIntPtr.Zero); // I
+        keybd_event(0x49, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 }
