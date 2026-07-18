@@ -195,6 +195,7 @@ public partial class SettingsWindow : Window
 
             LearnStatus.Text = $"✔ Capturado: 0x{status:X2} / 0x{data1:X2} ({status}/{data1}) — pressione Confirmar ou Cancelar";
             BtnLearn.Content     = "✔ Confirmar";
+            BtnLearn.Visibility  = Visibility.Visible;
             BtnCancelLearn.Visibility = Visibility.Visible;
         });
     }
