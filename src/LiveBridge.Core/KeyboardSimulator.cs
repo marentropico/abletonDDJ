@@ -35,6 +35,7 @@ public static class KeyboardSimulator
         keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
+    private const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
     private const uint KEYEVENTF_KEYUP = 0x0002;
     
     private const byte VK_UP = 0x26;
@@ -57,26 +58,26 @@ public static class KeyboardSimulator
 
     public static void SendUp()
     {
-        keybd_event(VK_UP, 0, 0, UIntPtr.Zero);
-        keybd_event(VK_UP, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_UP, 0, KEYEVENTF_EXTENDEDKEY, UIntPtr.Zero);
+        keybd_event(VK_UP, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     public static void SendDown()
     {
-        keybd_event(VK_DOWN, 0, 0, UIntPtr.Zero);
-        keybd_event(VK_DOWN, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_DOWN, 0, KEYEVENTF_EXTENDEDKEY, UIntPtr.Zero);
+        keybd_event(VK_DOWN, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     public static void SendLeft()
     {
-        keybd_event(VK_LEFT, 0, 0, UIntPtr.Zero);
-        keybd_event(VK_LEFT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_LEFT, 0, KEYEVENTF_EXTENDEDKEY, UIntPtr.Zero);
+        keybd_event(VK_LEFT, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     public static void SendRight()
     {
-        keybd_event(VK_RIGHT, 0, 0, UIntPtr.Zero);
-        keybd_event(VK_RIGHT, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_RIGHT, 0, KEYEVENTF_EXTENDEDKEY, UIntPtr.Zero);
+        keybd_event(VK_RIGHT, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     public static void SendEnter()
