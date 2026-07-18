@@ -2,5 +2,4 @@
   <Project Path="LiveBridge.App/LiveBridge.App.csproj" />
   <Project Path="LiveBridge.Core/LiveBridge.Core.csproj" />
   <Project Path="LiveBridge.Midi/LiveBridge.Midi.csproj" />
-  <Project Path="AbleToDJ.Installer/AbleToDJ.Installer.csproj" />
 </Solution>
