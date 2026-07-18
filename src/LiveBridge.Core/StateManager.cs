@@ -14,10 +14,28 @@ public class StateManager
     private bool _isShiftRightActive;
     private string _modeLeft = "SessionBrowser";
     private string _modeRight = "Mixing";
+    private int _currentOctave = 3;
 
     public bool IsShiftActive
     {
         get { lock (_lock) return _isShiftLeftActive || _isShiftRightActive; }
+    }
+
+    public int CurrentOctave
+    {
+        get { lock (_lock) return _currentOctave; }
+    }
+
+    public void OctaveUp()
+    {
+        lock (_lock) { if (_currentOctave < 8) _currentOctave++; }
+        Console.WriteLine($"[StateManager] Oitava: {_currentOctave}");
+    }
+
+    public void OctaveDown()
+    {
+        lock (_lock) { if (_currentOctave > 0) _currentOctave--; }
+        Console.WriteLine($"[StateManager] Oitava: {_currentOctave}");
     }
 
     public string ModeLeft

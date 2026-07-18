@@ -204,8 +204,25 @@ public class ActionRouter
         if (ev.Control == PhysicalControl.Load_Left)
         {
             if (ev.Value == 0) return null;
+
+            // Ignora o clique se o Shift físico estiver ativo (Related Tracks não está implementado na lógica C#)
+            // Isso evita desregulagem do estado interno _browserFocused
+            if (ev.IsShiftActive) return null;
+
             _browserFocused = !_browserFocused;
-            return new ResolvedAction(ActionType.MidiCC, "Focus_Toggle", MidiChannel: 16, MidiCC: 43, MidiValue: _browserFocused ? 127 : 0);
+
+            if (_browserFocused)
+            {
+                // Após focar o browser, aguarda um curto tempo para o Ableton processar
+                // e envia a Seta Direita para cair direto no Content Pane (lista de arquivos/efeitos)
+                System.Threading.Tasks.Task.Delay(100).ContinueWith(_ => {
+                    KeyboardSimulator.SendRight();
+                });
+            }
+
+            // Enviamos 127 SEMPRE no press, pois o listener em Python reage a qualquer valor > 0.
+            // Se enviássemos 0 na alternância, o Python ignoraria o sinal e exigiria dois cliques para funcionar.
+            return new ResolvedAction(ActionType.MidiCC, "Focus_Toggle", MidiChannel: 16, MidiCC: 43, MidiValue: 127);
         }
 
         // Load Right (Toggle Session / Arrangement)
@@ -391,9 +408,24 @@ public class ActionRouter
         // 1. Sampler Mode (Public MIDI channel for Drum Racks: Ch 1 for Left, Ch 2 for Right)
         if (mode == "Sampler")
         {
-            int note = 36 + padIndex; // C1 (36) to G1 (43)
-            int channel = deck == "Left" ? 1 : 2;
-            return new ResolvedAction(ActionType.MidiNote, $"Sampler_{deck}_{padIndex}", MidiChannel: channel, MidiNote: note, MidiValue: val);
+            // Layout cromático: linha de cima = acidentes, linha de baixo = naturais
+            // null = pad sem função (Mi e Si não têm sustenido; Pad 4/8 Direito = oitava)
+            int?[] leftNotes  = { 1, 3, null, 6,  0, 2, 4,  5  }; // C#, D#, -, F#, C, D, E, F
+            int?[] rightNotes = { 8, 10, null, null, 7, 9, 11, null }; // G#, A#, -, OctUp, G, A, B, OctDown
+
+            // Pads 4 (índice 3) e 8 (índice 7) do Deck Direito controlam a oitava global
+            if (deck == "Right")
+            {
+                if (padIndex == 3) { if (val > 0) _state.OctaveUp();   return null; }
+                if (padIndex == 7) { if (val > 0) _state.OctaveDown(); return null; }
+            }
+
+            int?[] map = deck == "Left" ? leftNotes : rightNotes;
+            int? semitone = map[padIndex];
+            if (semitone == null) return null; // Pad sem função (Mi#, Si# ou oitava)
+
+            int noteNumber = _state.CurrentOctave * 12 + semitone.Value;
+            return new ResolvedAction(ActionType.MidiNote, $"Keyboard_{deck}_{padIndex}", MidiChannel: 1, MidiNote: noteNumber, MidiValue: val);
         }
 
         // 2. Hot Cue Mode (Clip Launch on Track 1 for Left, Track 2 for Right)
