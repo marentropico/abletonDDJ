@@ -350,7 +350,7 @@ public class ActionRouter
             {
                 if (!_browserFocused)
                 {
-                    KeyboardSimulator.SendSelectClipUnderNeedle();
+                    KeyboardSimulator.SendSplitClip();
                 }
                 else
                 {

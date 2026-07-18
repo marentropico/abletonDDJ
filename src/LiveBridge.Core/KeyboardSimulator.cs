@@ -247,14 +247,13 @@ public static class KeyboardSimulator
         keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
-    public static void SendSelectClipUnderNeedle()
+    public static void SendSplitClip()
     {
-        // Envia Ctrl + Alt + I (conforme especificado no TODO do usuário para seleção de clip)
+        // Envia Ctrl + E (Split). É a melhor aproximação nativa para 
+        // "selecionar" um trecho focado sem usar o mouse na timeline.
         keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
-        keybd_event(VK_MENU, 0, 0, UIntPtr.Zero); // Alt
-        keybd_event(0x49, 0, 0, UIntPtr.Zero); // I
-        keybd_event(0x49, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-        keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(0x45, 0, 0, UIntPtr.Zero); // Tecla E
+        keybd_event(0x45, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 }

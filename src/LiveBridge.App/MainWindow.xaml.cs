@@ -77,7 +77,7 @@ public partial class MainWindow : Window
         ["LoopOut_Right"]       = ("Loop Out (Deck 2)",     "Sem mapeamento ativo nesta build.", "Sem mapeamento ativo."),
         ["LoopCallLeft_Right"]  = ("Loop Call \u25c1 (Deck 2)", "Sem mapeamento ativo nesta build.", "Sem mapeamento ativo."),
         ["LoopCallRight_Right"] = ("Loop Call \u25b7 (Deck 2)", "Sem mapeamento ativo nesta build.", "Sem mapeamento ativo."),
-        ["BrowseEncoder_Click"] = ("Browse Selector (Click)", "No Browser: Abre pasta/carrega efeito (Enter).\nNa Timeline: Seleciona clipe sob a agulha (Ctrl+Alt+I).", "Volta um diretório / recolhe pasta atual (Seta Esquerda)."),
+        ["BrowseEncoder_Click"] = ("Browse Selector (Click)", "No Browser: Abre pasta/carrega efeito (Enter).\nNa Timeline: Corta/Seleciona clipe sob a agulha (Ctrl+E).", "Volta um diretório / recolhe pasta atual (Seta Esquerda)."),
 
         // ── Beat FX ─────────────────────────────────────────────
         ["BeatLeft"]       = ("Beat \u25c0 (FX)", "Navega para o dispositivo/efeito anterior na cadeia da pista ativa (Seta Esquerda).", "Com Shift físico: navega expandindo seleção (Shift+Seta)."),
