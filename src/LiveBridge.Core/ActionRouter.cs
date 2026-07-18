@@ -12,6 +12,10 @@ public class ActionRouter
     private readonly StateManager _state;
     private bool _browserFocused = false;
     private readonly Dictionary<PhysicalControl, int> _lastEqValues = new();
+    
+    // Jog Wheel Nudge Throttling
+    private int _jogLeftAccumulator = 0;
+    private DateTime _lastJogLeftTime = DateTime.MinValue;
 
     private int ParseRelativeDelta(int value)
     {
@@ -174,16 +178,42 @@ public class ActionRouter
         // WORKFLOW & JOGS & BROWSER (Simulação de teclado ou API direta)
         // =========================================================
 
-        // Left Jog (Outer Ring) -> CC 40 (Relative Fine-Tuning de Timeline + Scroll Follow)
-        if (ev.Control == PhysicalControl.JogWheel_Left)
+        // Left Jog Turn -> Drag/Nudge Selection (Shift) or ScrollHorizontal
+        if (ev.Control == PhysicalControl.JogWheel_Turn_Left)
         {
             int delta = ParseRelativeDelta(ev.Value);
-            KeyboardSimulator.ScrollHorizontal(delta * 2);
-            return new ResolvedAction(ActionType.MidiCC, "Jog_Left_Fine", MidiChannel: 16, MidiCC: 40, MidiValue: ev.Value);
+            if (delta == 0) return null;
+
+            if (ev.IsShiftActive)
+            {
+                // Drag (Nudge) com Throttling para não entupir o buffer do teclado
+                _jogLeftAccumulator += delta;
+                
+                // Dispara no max a cada 50ms, acumulando pelo menos 3 ticks para reduzir sensibilidade
+                if (Math.Abs(_jogLeftAccumulator) >= 3 && (DateTime.Now - _lastJogLeftTime).TotalMilliseconds > 50)
+                {
+                    if (_jogLeftAccumulator > 0) KeyboardSimulator.SendRight();
+                    else KeyboardSimulator.SendLeft();
+                    
+                    _jogLeftAccumulator = 0;
+                    _lastJogLeftTime = DateTime.Now;
+                }
+                return null;
+            }
+            else
+            {
+                KeyboardSimulator.ScrollHorizontal(delta * 2);
+                return new ResolvedAction(ActionType.MidiCC, "Jog_Left_Fine", MidiChannel: 16, MidiCC: 40, MidiValue: ev.Value);
+            }
+        }
+        
+        if (ev.Control == PhysicalControl.JogWheel_Touch_Left)
+        {
+            return null;
         }
 
-        // Right Jog -> Simula teclas + e - para Zoom do Arrangement
-        if (ev.Control == PhysicalControl.JogWheel_Right)
+        // Right Jog Turn -> Simula teclas + e - para Zoom do Arrangement
+        if (ev.Control == PhysicalControl.JogWheel_Turn_Right)
         {
             int delta = ParseRelativeDelta(ev.Value);
 
@@ -197,6 +227,11 @@ public class ActionRouter
                 for (int i = 0; i < delta; i++)
                     KeyboardSimulator.SendZoomOut();
             }
+            return null;
+        }
+        
+        if (ev.Control == PhysicalControl.JogWheel_Touch_Right)
+        {
             return null;
         }
 

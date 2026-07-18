@@ -483,14 +483,14 @@ public class Program
             ["BrowseEncoder_TurnLeft"]       = PhysicalControl.BrowseEncoder_Turn,
             ["BrowseEncoder_TurnRight"]      = PhysicalControl.BrowseEncoder_Turn,
             ["BrowseEncoder_Click"]          = PhysicalControl.BrowseEncoder_Click,
-            ["JogWheel_Outer_TurnLeft"]      = PhysicalControl.JogWheel_Left,
-            ["JogWheel_Outer_TurnRight"]     = PhysicalControl.JogWheel_Left,
-            ["JogWheel_Top_Touch"]           = PhysicalControl.JogWheel_Left,
-            ["JogWheel_Top_Scratch"]         = PhysicalControl.JogWheel_Left,
-            ["JogWheel_Outer_TurnLeft_Right"]  = PhysicalControl.JogWheel_Right,
-            ["JogWheel_Outer_TurnRight_Right"] = PhysicalControl.JogWheel_Right,
-            ["JogWheel_Top_Touch_Right"]     = PhysicalControl.JogWheel_Right,
-            ["JogWheel_Top_Scratch_Right"]   = PhysicalControl.JogWheel_Right,
+            ["JogWheel_Outer_TurnLeft"]      = PhysicalControl.JogWheel_Turn_Left,
+            ["JogWheel_Outer_TurnRight"]     = PhysicalControl.JogWheel_Turn_Left,
+            ["JogWheel_Top_Touch"]           = PhysicalControl.JogWheel_Touch_Left,
+            ["JogWheel_Top_Scratch"]         = PhysicalControl.JogWheel_Turn_Left,
+            ["JogWheel_Outer_TurnLeft_Right"]  = PhysicalControl.JogWheel_Turn_Right,
+            ["JogWheel_Outer_TurnRight_Right"] = PhysicalControl.JogWheel_Turn_Right,
+            ["JogWheel_Top_Touch_Right"]     = PhysicalControl.JogWheel_Touch_Right,
+            ["JogWheel_Top_Scratch_Right"]   = PhysicalControl.JogWheel_Turn_Right,
             ["VolumeSlider_Left"]            = PhysicalControl.Volume_Left,
             ["VolumeSlider_Right"]           = PhysicalControl.Volume_Right,
             ["HotCueMode_Left_Shift"]        = PhysicalControl.KeyboardMode_Left,
@@ -528,13 +528,13 @@ public class Program
         _lookup[(145, 63)] = PhysicalControl.Shift_Right;
 
         // Garante Jog Wheels robustamente (pois enviam CC33, CC34 e NoteOn54 simultaneamente)
-        _lookup[(176, 33)] = PhysicalControl.JogWheel_Left;
-        _lookup[(176, 34)] = PhysicalControl.JogWheel_Left;
-        _lookup[(144, 54)] = PhysicalControl.JogWheel_Left;
+        _lookup[(176, 33)] = PhysicalControl.JogWheel_Turn_Left;
+        _lookup[(176, 34)] = PhysicalControl.JogWheel_Turn_Left;
+        _lookup[(144, 54)] = PhysicalControl.JogWheel_Touch_Left;
         
-        _lookup[(177, 33)] = PhysicalControl.JogWheel_Right;
-        _lookup[(177, 34)] = PhysicalControl.JogWheel_Right;
-        _lookup[(145, 54)] = PhysicalControl.JogWheel_Right;
+        _lookup[(177, 33)] = PhysicalControl.JogWheel_Turn_Right;
+        _lookup[(177, 34)] = PhysicalControl.JogWheel_Turn_Right;
+        _lookup[(145, 54)] = PhysicalControl.JogWheel_Touch_Right;
 
         // Garante os botões BeatLeft e BeatRight sob Shift físico (enviam notas 102 e 107 no status 148)
         _lookup[(148, 102)] = PhysicalControl.BeatLeft;

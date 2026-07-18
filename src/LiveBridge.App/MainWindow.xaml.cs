@@ -343,8 +343,8 @@ public partial class MainWindow : Window
             }
             else if (isJog)
             {
-                // Rotação apenas para eventos de movimento contínuo (CC 176/177)
-                bool isRotationEvent = (status == 176 || status == 177);
+                // Rotação apenas para eventos de Turn (CC)
+                bool isRotationEvent = control.Contains("Turn") || control.Contains("Scratch") || control.EndsWith("_Turn_Left") || control.EndsWith("_Turn_Right");
                 if (isRotationEvent)
                 {
                     double delta = 0;

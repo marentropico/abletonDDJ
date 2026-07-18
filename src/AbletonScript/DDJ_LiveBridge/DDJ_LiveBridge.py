@@ -2,6 +2,68 @@ import Live
 from ableton.v2.control_surface import ControlSurface, MIDI_CC_TYPE
 from ableton.v2.control_surface.elements import ButtonElement
 
+DEVICE_MAPPING_DICTIONARY = {
+    "Eq8": [
+        "4 Gain A", "3 Gain A", "2 Gain A", "1 Gain A",
+        "4 Frequency A", "3 Frequency A", "2 Frequency A", "1 Frequency A"
+    ],
+    "ChannelEq": [
+        "High", "Mid", "Low", "Mid Freq",
+        "Output", None, None, None
+    ],
+    "AutoFilter": [
+        "Frequency", "Resonance", "LFO Rate", "LFO Amount",
+        "Env. Modulation", None, None, None
+    ],
+    "Saturator": [
+        "Drive", "Base", "Freq", "Depth",
+        "Color", "Width", "Output", "Dry/Wet"
+    ],
+    "DrumBuss": [
+        "Drive", "Crunch", "Transients", "Boom",
+        "Freq", "Decay", None, "Dry/Wet"
+    ],
+    "Reverb": [
+        "DecayTime", "Size", "PreDelay", "Reflect",
+        "Diffuse", "Chorus Rate", "Chorus Amount", "Dry/Wet"
+    ],
+    "Delay": [
+        "L Sync Rate", "R Sync Rate", "Feedback", "Filter Freq",
+        "Filter Width", None, None, "Dry/Wet"
+    ],
+    "Echo": [
+        "L Sync Rate", "R Sync Rate", "Feedback", "Reverb",
+        "Noise", None, None, "Dry/Wet"
+    ],
+    "GlueCompressor": [
+        "Threshold", "Ratio", "Attack", "Release",
+        "Makeup", None, None, "Dry/Wet"
+    ],
+    "Utility": [
+        "Gain", "Width", "Panorama", "Bass Mono Freq",
+        "Mono", "Bass Mono", "PhaseLeft", "PhaseRight"
+    ],
+    "AudioEffectGroupDevice": ["Macro 1", "Macro 2", "Macro 3", "Macro 4", "Macro 5", "Macro 6", "Macro 7", "Macro 8"],
+    "InstrumentGroupDevice": ["Macro 1", "Macro 2", "Macro 3", "Macro 4", "Macro 5", "Macro 6", "Macro 7", "Macro 8"],
+    "DrumGroupDevice": ["Macro 1", "Macro 2", "Macro 3", "Macro 4", "Macro 5", "Macro 6", "Macro 7", "Macro 8"],
+    "Simpler": [
+        "S Start", "S Length", "Ve Freq", "Ve Resonance",
+        "L Freq", "L Amount", "Pe Amount", "Volume"
+    ],
+    "Operator": [
+        "Osc-A Level", "Osc-B Level", "Filter Freq", "Filter Res",
+        "Time", "Tone", "Spread", "Volume"
+    ],
+    "Wavetable": [
+        "Osc 1 Pos", "Osc 2 Pos", "Filter 1 Freq", "Filter 1 Res",
+        "Filter 2 Freq", "Filter 2 Res", "Unison Amt", "Volume"
+    ],
+    "Drift": [
+        "Osc 1 Shape", "Osc 2 Shape", "Filter Freq", "Filter Res",
+        "LFO Rate", "LFO Amount", "Env 2 Amt", "Volume"
+    ]
+}
+
 class DDJ_LiveBridge(ControlSurface):
     def __init__(self, c_instance):
         super(DDJ_LiveBridge, self).__init__(c_instance)
@@ -9,6 +71,9 @@ class DDJ_LiveBridge(ControlSurface):
         self._browser_focused = False
         self._anchor_time = 0.0
         self._is_holding_fx = False
+        
+        self._cached_device = None
+        self._cached_mapping = [None] * 8
         
         self.log_message("DDJ_LiveBridge Inicializado em modo Puro MIDI (Canal 16).")
         
@@ -196,6 +261,9 @@ class DDJ_LiveBridge(ControlSurface):
         if not device:
             return [None] * 8
             
+        if self._cached_device == device:
+            return self._cached_mapping
+            
         params = []
         for p in device.parameters:
             if p.name.lower() == "device on":
@@ -205,65 +273,25 @@ class DDJ_LiveBridge(ControlSurface):
             params.append(p)
             
         mapping = [None] * 8
-        used_indices = set()
+        c_name = device.class_name
         
-        def find_param_by_keywords(keywords):
-            for i, p in enumerate(params):
-                if i in used_indices:
+        if c_name in DEVICE_MAPPING_DICTIONARY:
+            target_names = DEVICE_MAPPING_DICTIONARY[c_name]
+            for slot, target_name in enumerate(target_names):
+                if target_name is None:
                     continue
-                p_name_lower = p.name.lower()
-                for kw in keywords:
-                    if kw in p_name_lower:
-                        return i, p
-            return None, None
-
-        # 1. Map labeled parameters: High, Mid, Low, Filter
-        hi_idx, hi_param = find_param_by_keywords(["gainhi", "high", "hi", "agudo", "alto", "4 gain", "3 gain", "treble"])
-        if hi_param:
-            mapping[0] = hi_param
-            used_indices.add(hi_idx)
-            hi2_idx, hi2_param = find_param_by_keywords(["gainhi", "high", "hi", "agudo", "alto", "4 gain", "3 gain", "treble"])
-            if hi2_param:
-                mapping[4] = hi2_param
-                used_indices.add(hi2_idx)
-
-        mid_idx, mid_param = find_param_by_keywords(["gainmid", "mid", "médio", "medio", "2 gain", "3 gain"])
-        if mid_param:
-            mapping[1] = mid_param
-            used_indices.add(mid_idx)
-            mid2_idx, mid2_param = find_param_by_keywords(["gainmid", "mid", "médio", "medio", "2 gain", "3 gain"])
-            if mid2_param:
-                mapping[5] = mid2_param
-                used_indices.add(mid2_idx)
-
-        lo_idx, lo_param = find_param_by_keywords(["gainlo", "low", "lo", "grave", "baixo", "1 gain", "bass"])
-        if lo_param:
-            mapping[2] = lo_param
-            used_indices.add(lo_idx)
-            lo2_idx, lo2_param = find_param_by_keywords(["gainlo", "low", "lo", "grave", "baixo", "1 gain", "bass"])
-            if lo2_param:
-                mapping[6] = lo2_param
-                used_indices.add(lo2_idx)
-
-        fl_idx, fl_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff", "frequência", "frequencia", "filtro", "corte"])
-        if fl_param:
-            mapping[3] = fl_param
-            used_indices.add(fl_idx)
-            fl2_idx, fl2_param = find_param_by_keywords(["freq", "frequency", "filter", "cutoff", "frequência", "frequencia", "filtro", "corte"])
-            if fl2_param:
-                mapping[7] = fl2_param
-                used_indices.add(fl2_idx)
-
-        # 2. Fill remaining slots with unmatched parameters in order
-        for i, p in enumerate(params):
-            if i in used_indices:
-                continue
-            for slot in range(8):
-                if mapping[slot] is None:
-                    mapping[slot] = p
-                    used_indices.add(i)
-                    break
-                    
+                # Busca o parametro pelo nome exato (case-insensitive)
+                for p in params:
+                    if p.name.lower() == target_name.lower():
+                        mapping[slot] = p
+                        break
+        else:
+            # Fallback para VSTs ou plugins desconhecidos: 1 a 8 na ordem
+            for i in range(min(8, len(params))):
+                mapping[i] = params[i]
+                
+        self._cached_device = device
+        self._cached_mapping = mapping
         return mapping
 
     def _set_device_knob_param(self, knob_idx, value):

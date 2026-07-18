@@ -15,7 +15,8 @@ public enum PhysicalControl
     // --- Deck Left ---
     Play_Left,
     Cue_Left,
-    JogWheel_Left,
+    JogWheel_Turn_Left,
+    JogWheel_Touch_Left,
     Pad1_Left, Pad2_Left, Pad3_Left, Pad4_Left,
     Pad5_Left, Pad6_Left, Pad7_Left, Pad8_Left,
     EQ_High_Left, EQ_Mid_Left, EQ_Low_Left,
@@ -43,7 +44,8 @@ public enum PhysicalControl
     // --- Deck Right ---
     Play_Right,
     Cue_Right,
-    JogWheel_Right,
+    JogWheel_Turn_Right,
+    JogWheel_Touch_Right,
     Pad1_Right, Pad2_Right, Pad3_Right, Pad4_Right,
     Pad5_Right, Pad6_Right, Pad7_Right, Pad8_Right,
     EQ_High_Right, EQ_Mid_Right, EQ_Low_Right,
