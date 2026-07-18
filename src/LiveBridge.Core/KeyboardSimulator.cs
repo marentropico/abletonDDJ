@@ -31,19 +31,8 @@ public static class KeyboardSimulator
 
         if (vKey == 0) return;
 
-        if (shift)
-        {
-            keybd_event(VK_SHIFT_KEY, 0, 0, UIntPtr.Zero);
-            keybd_event(vKey, 0, 0, UIntPtr.Zero);
-            keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-            keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-        }
-        else
-        {
-            keybd_event(VK_SHIFT_KEY, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-            keybd_event(vKey, 0, 0, UIntPtr.Zero);
-            keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
-        }
+        keybd_event(vKey, 0, 0, UIntPtr.Zero);
+        keybd_event(vKey, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
     private const uint KEYEVENTF_KEYUP = 0x0002;
