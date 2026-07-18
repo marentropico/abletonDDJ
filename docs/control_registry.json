@@ -132,7 +132,8 @@
 
     "BeatLeft":               { "display": "Beat ◀ (Beat FX)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Navega para dispositivo/efeito anterior na pista (seta Esq)" },
     "BeatRight":              { "display": "Beat ▶ (Beat FX)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Navega para próximo dispositivo/efeito na pista (seta Dir)" },
-    "FxSelect":               { "display": "FX Select ▽/△", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Cria nova Pista de Áudio (Ctrl+T)" },
+    "FxSelect":               { "display": "FX Select Button", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Cria nova Pista de Áudio (Ctrl+T)" },
+    "FxSelect_Shift":         { "display": "Shift + FX Select", "category": "BeatFX", "isShift": true, "calibrated": false, "action": "Cria nova Pista MIDI (Ctrl+Shift+T)" },
     "FxChannelSelect":        { "display": "FX Channel Select (Slider)", "category": "BeatFX", "isShift": false, "calibrated": true, "action": null },
     "LevelDepth":             { "display": "Level/Depth Knob", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Controla o parâmetro atualmente focado/selecionado (Wildcard CC 47)" },
     "FxOnOff":                { "display": "FX ON/OFF Button", "category": "BeatFX", "isShift": false, "calibrated": true, "action": "Segurar + Crossfader: seleciona região de loop. Soltar: ativa loop (Ctrl+Shift+L)" },

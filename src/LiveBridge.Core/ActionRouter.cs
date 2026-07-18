@@ -323,7 +323,7 @@ public class ActionRouter
         }
 
         // FxSelect (Criar Pistas)
-        if (ev.Control == PhysicalControl.FxSelectDown || ev.Control == PhysicalControl.FxSelectUp)
+        if (ev.Control == PhysicalControl.FxSelect)
         {
             if (ev.Value == 0) return null;
             if (ev.IsShiftActive)

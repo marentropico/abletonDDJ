@@ -174,6 +174,7 @@ public class Program
         new("BeatLeft",           "BEAT <",                                                        false, false),
         new("BeatRight",          "BEAT >",                                                        false, false),
         new("FxSelect",           "FX SELECT",                                                    false, false),
+        new("FxSelect_Shift",     "SHIFT -> FX SELECT",                                           false, true),
         new("FxChannelSelect",    "FX CHANNEL SELECT (comute 1->2->Master)",                        true,  false),
         new("LevelDepth",         "LEVEL/DEPTH (mín->máx)",                                        true,  false),
         new("FxOnOff",            "FX ON/OFF",                                                    false, false),
@@ -198,6 +199,7 @@ public class Program
         "BeatLoopMode_Right_Shift",
         "BeatJumpMode_Right_Shift",
         "SamplerMode_Right_Shift",
+        "FxSelect_Shift",
     };
 
     // -----------------------------------------------------------------

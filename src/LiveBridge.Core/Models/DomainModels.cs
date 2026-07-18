@@ -84,7 +84,7 @@ public enum PhysicalControl
     // --- Beat FX ---
     BeatLeft,
     BeatRight,
-    FxSelectDown, FxSelectUp,
+    FxSelect,
     FxChannelSelect,
     LevelDepth,
     FxOnOff

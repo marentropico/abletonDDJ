@@ -65,10 +65,8 @@ Os canais físicos de volume foram intencionalmente omitidos devido a desgastes 
 | **Selector Knob (Clicar)** | **Entrar / Abrir:** Abre uma pasta expandindo-a ou carrega um sample/efeito na pista ativa (simula tecla `Enter`). |
 | **Shift + Selector Knob (Clicar)** | **Voltar:** Recolhe a pasta atual ou volta uma pasta no histórico (simula seta Esquerda). |
 | **LOAD Deck B** | **Alternador de Tela:** Alterna o foco de tela entre a **Session View** (clipes) e a **Arrangement View** (timeline). |
-| **FxSelect Down (▽)** | Cria uma nova **Pista de Áudio** no projeto (`Ctrl + T`). |
-| **FxSelect Up (△)** | Cria uma nova **Pista de Áudio** no projeto (`Ctrl + T`). |
-| **Shift + FxSelect Down (▽)** | Cria uma nova **Pista MIDI** no projeto (`Ctrl + Shift + T`). |
-| **Shift + FxSelect Up (△)** | Cria uma nova **Pista MIDI** no projeto (`Ctrl + Shift + T`). |
+| **FX SELECT** | Cria uma nova **Pista de Áudio** no projeto (`Ctrl + T`). |
+| **Shift + FX SELECT** | Cria uma nova **Pista MIDI** no projeto (`Ctrl + Shift + T`). |
 
 ---
 
