@@ -323,6 +323,14 @@ public class ActionRouter
             return null;
         }
 
+        // Beat Sync Right (Escape)
+        if (ev.Control == PhysicalControl.Sync_Right)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendEsc();
+            return null;
+        }
+
         // Headphone Mixing (Volume Master alternativo - CC 38)
         if (ev.Control == PhysicalControl.HeadphoneMixing)
         {

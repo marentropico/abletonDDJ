@@ -128,6 +128,12 @@ public static class KeyboardSimulator
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
+    public static void SendEsc()
+    {
+        keybd_event(0x1B, 0, 0, UIntPtr.Zero); // VK_ESCAPE
+        keybd_event(0x1B, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
     private const byte VK_OEM_PLUS = 0xBB;
     private const byte VK_OEM_MINUS = 0xBD;
 
