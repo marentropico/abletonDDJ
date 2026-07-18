@@ -277,4 +277,13 @@ public static class KeyboardSimulator
         keybd_event(0x45, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
+
+    public static void SendLoopSelection()
+    {
+        // Envia Ctrl + L (Loop Selection)
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(0x4C, 0, 0, UIntPtr.Zero); // Tecla L
+        keybd_event(0x4C, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
 }

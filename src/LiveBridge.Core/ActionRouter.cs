@@ -310,6 +310,22 @@ public class ActionRouter
             KeyboardSimulator.SendDelete();
             return null;
         }
+        
+        // Loop In Right (Loop Selection - Ctrl+L)
+        if (ev.Control == PhysicalControl.LoopIn_Right)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendLoopSelection();
+            return null;
+        }
+
+        // Loop Out Right (Consolidate - Ctrl+J)
+        if (ev.Control == PhysicalControl.LoopOut_Right)
+        {
+            if (ev.Value == 0) return null;
+            KeyboardSimulator.SendConsolidate();
+            return null;
+        }
 
         // Loop Call Left Left (Undo)
         if (ev.Control == PhysicalControl.LoopCallLeft_Left)
