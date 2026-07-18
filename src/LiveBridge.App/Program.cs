@@ -667,10 +667,13 @@ public class Program
                 {
                     sm.SetShift(ctrl, raw.Data2 > 0);
 
-                    if (sm.IsShiftActive)
-                        KeyboardSimulator.SendShiftDown();
-                    else
-                        KeyboardSimulator.SendShiftUp();
+                    if (ctrl == PhysicalControl.Shift_Right)
+                    {
+                        if (raw.Data2 > 0)
+                            KeyboardSimulator.SendShiftDown();
+                        else
+                            KeyboardSimulator.SendShiftUp();
+                    }
 
                     mainWindow.UpdateMidiControl(ctrl.ToString(), raw.Data2, raw.Status);
                     return;

@@ -246,20 +246,17 @@ public class ActionRouter
             return new ResolvedAction(ActionType.MidiCC, "Track_Mute", MidiChannel: 16, MidiCC: 46, MidiValue: 127);
         }
 
-        // Beat FX Left / Right (Mover seleção de plugin na cadeia / Seleciona horizontalmente se Shift estiver fisicamente mantido)
         if (ev.Control == PhysicalControl.BeatLeft)
         {
             if (ev.Value == 0) return null;
-            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
-            KeyboardSimulator.SendArrowKey("Left", isShift);
+            KeyboardSimulator.SendLeft();
             return null;
         }
 
         if (ev.Control == PhysicalControl.BeatRight)
         {
             if (ev.Value == 0) return null;
-            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
-            KeyboardSimulator.SendArrowKey("Right", isShift);
+            KeyboardSimulator.SendRight();
             return null;
         }
 
@@ -364,16 +361,15 @@ public class ActionRouter
         if (ev.Control == PhysicalControl.BrowseEncoder_Turn)
         {
             int delta = ParseRelativeDelta(ev.Value);
-            bool isShift = ev.IsShiftActive || KeyboardSimulator.IsShiftKeyDown();
 
             // Envia setas virtuais para navegar nas pastas ou tracks
             if (delta > 0)
             {
-                for (int i = 0; i < delta; i++) KeyboardSimulator.SendArrowKey("Down", isShift);
+                for (int i = 0; i < delta; i++) KeyboardSimulator.SendDown();
             }
-            else if (delta < 0)
+            else
             {
-                for (int i = 0; i < Math.Abs(delta); i++) KeyboardSimulator.SendArrowKey("Up", isShift);
+                for (int i = 0; i < Math.Abs(delta); i++) KeyboardSimulator.SendUp();
             }
             return null;
         }

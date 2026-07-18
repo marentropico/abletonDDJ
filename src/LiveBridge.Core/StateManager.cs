@@ -18,7 +18,7 @@ public class StateManager
 
     public bool IsShiftActive
     {
-        get { lock (_lock) return _isShiftLeftActive || _isShiftRightActive; }
+        get { lock (_lock) return _isShiftLeftActive; }
     }
 
     public int CurrentOctave
