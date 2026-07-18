@@ -428,12 +428,18 @@ public class ActionRouter
             return new ResolvedAction(ActionType.MidiNote, $"Keyboard_{deck}_{padIndex}", MidiChannel: 1, MidiNote: noteNumber, MidiValue: val);
         }
 
-        // 2. Hot Cue Mode (Clip Launch on Track 1 for Left, Track 2 for Right)
+        // 2. Hot Cue Mode — Teclado Cromático Linear (layout: linha de baixo → cima, esquerdo → direito)
+        // Sequência: C, C#, D, D#, E, F, F#, G | G#, A, A#, B, C(+1), C#(+1), D(+1), D#(+1)
+        // Nota: usa a mesma oitava definida no modo Sampler. Sem controle de oitava neste modo.
         if (mode == "HotCue")
         {
-            int cc = deck == "Left" ? 50 + padIndex : 60 + padIndex;
-            int ccVal = isShift ? 1 : 127; // 1 = Stop/Delete, 127 = Launch
-            return new ResolvedAction(ActionType.MidiCC, $"ClipLaunch_{deck}_{padIndex}", MidiChannel: 16, MidiCC: cc, MidiValue: val > 0 ? ccVal : 0);
+            // padIndex 4-7 = linha de baixo (Pads 5-8), padIndex 0-3 = linha de cima (Pads 1-4)
+            int[] leftNotes  = {  4,  5,  6,  7,  0,  1,  2,  3 }; // E, F, F#, G, C, C#, D, D#
+            int[] rightNotes = { 12, 13, 14, 15,  8,  9, 10, 11 }; // C+1, C#+1, D+1, D#+1, G#, A, A#, B
+
+            int semitone   = deck == "Left" ? leftNotes[padIndex] : rightNotes[padIndex];
+            int noteNumber = _state.CurrentOctave * 12 + semitone;
+            return new ResolvedAction(ActionType.MidiNote, $"HotKey_{deck}_{padIndex}", MidiChannel: 1, MidiNote: noteNumber, MidiValue: val);
         }
 
         // 3. Beat Loop Mode (Dynamic native Looper control)
