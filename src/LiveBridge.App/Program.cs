@@ -628,6 +628,18 @@ public class Program
 
         il.OnRawMidiEvent += (raw) =>
         {
+            // ── MIDI Learn interception ──
+            if (mainWindow.MidiLearnTarget != null)
+            {
+                // Ignora Shift puro durante o Learn
+                bool isShiftBtn = (raw.Data1 == 63) && (raw.Status == 144 || raw.Status == 145);
+                if (!isShiftBtn && raw.Data2 > 0) // só captura Press (Data2>0)
+                {
+                    mainWindow.NotifyMidiLearn(raw.Status, raw.Data1);
+                }
+                return; // bloqueia roteamento normal enquanto está em modo Learn
+            }
+
             PhysicalControl ctrl = PhysicalControl.Unknown;
             string padMode = "";
 
@@ -706,16 +718,19 @@ public class Program
 
                 
         il.Start(DDJ_IN);
-        Log($"\n✔ Modo Produção ativo. Log: {logFile}\n[Q] para sair.\n", ConsoleColor.Cyan);
+        Log($"\n✔ Modo Produção ativo. Log: {logFile}\n", ConsoleColor.Cyan);
 
-        while (true)
+        // Loop de keep-alive com suporte a shutdown limpo
+        using var cts = new CancellationTokenSource();
+        try
         {
-            
-            Task.Delay(50).Wait();
+            Task.Delay(Timeout.Infinite, cts.Token).Wait(cts.Token);
         }
+        catch (OperationCanceledException) { }
 
         Log("[Bridge] Encerrando...", ConsoleColor.Yellow);
-        il.Dispose(); oe.Dispose();
+        il.Dispose();
+        oe.Dispose();
     } catch (Exception ex) {
         File.WriteAllText("crash_log.txt", ex.ToString());
     }

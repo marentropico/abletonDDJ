@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Shapes;
+using DispatcherTimer = System.Windows.Threading.DispatcherTimer;
 
 namespace LiveBridge.App;
 
@@ -19,6 +20,10 @@ public partial class MainWindow : Window
     private readonly HashSet<string> _activeToggles = new();
     private readonly HashSet<string> _pressedWithShift = new();
     private bool _isShiftActive = false;
+
+    // Exposto para o Program.cs enfileirar sinais MIDI Learn capturados
+    public string? MidiLearnTarget { get; set; }
+    private SettingsWindow? _settingsWindow;
 
     // Banco de dados estático de mapeamentos do Ableton Live (idêntico ao app.js)
     private static readonly Dictionary<string, (string Title, string Desc, string Shift)> MappingInfo = new()
@@ -448,11 +453,45 @@ public partial class MainWindow : Window
         InfoPanel.Visibility = Visibility.Collapsed;
     }
 
-    // Fechar painel ao clicar no fundo
+    // Fechar painel ao clicar no fundo (apenas se não clicou num elemento filho)
     protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
     {
         base.OnMouseLeftButtonDown(e);
-        InfoPanel.Visibility = Visibility.Collapsed;
+        // Só fecha o painel se o clique foi na área externa (não num Canvas interativo)
+        if (e.Source is not Canvas)
+            InfoPanel.Visibility = Visibility.Collapsed;
+    }
+
+    // ── Botão de Configurações ──────────────────────────────────────
+    private void BtnSettings_Click(object sender, RoutedEventArgs e)
+    {
+        if (_settingsWindow != null && _settingsWindow.IsLoaded)
+        {
+            _settingsWindow.Activate();
+            return;
+        }
+
+        _settingsWindow = new SettingsWindow();
+        _settingsWindow.Owner = this;
+
+        // Conecta o MIDI Learn: quando o SettingsWindow pede, registra o alvo
+        _settingsWindow.MidiLearnRequested += controlId =>
+        {
+            MidiLearnTarget = controlId;
+        };
+        _settingsWindow.MidiLearnCancelled += () =>
+        {
+            MidiLearnTarget = null;
+        };
+
+        _settingsWindow.Show();
+    }
+
+    // Chamado pelo Program.cs ao capturar sinal MIDI quando em modo Learn
+    public void NotifyMidiLearn(byte status, byte data1)
+    {
+        if (MidiLearnTarget == null) return;
+        Dispatcher.Invoke(() => _settingsWindow?.OnMidiLearnCaptured(status, data1));
     }
 
     protected override void OnContentRendered(EventArgs e)
@@ -466,19 +505,21 @@ public partial class MainWindow : Window
         try
         {
             UpdateLayout();
-            double width = this.Width > 0 ? this.Width : 1200;
-            double height = this.Height > 0 ? this.Height : 800;
-            
+            double width  = ActualWidth  > 0 ? ActualWidth  : 1200;
+            double height = ActualHeight > 0 ? ActualHeight : 800;
+
             var rtb = new System.Windows.Media.Imaging.RenderTargetBitmap(
                 (int)width, (int)height, 96, 96, System.Windows.Media.PixelFormats.Pbgra32);
-                
             rtb.Render(this);
-            
+
             var encoder = new System.Windows.Media.Imaging.PngBitmapEncoder();
             encoder.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(rtb));
-            
-            string path = @"C:\Users\55119\.gemini\antigravity-ide\brain\22aa3a9a-ccca-4015-b47a-37a6de85f162\wpf_gui_screenshot.png";
-            using var stream = System.IO.File.Create(path);
+
+            // Usa caminho relativo ao executável — sem dependência de path de conversa hardcoded
+            string screenshotDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "screenshots");
+            Directory.CreateDirectory(screenshotDir);
+            string path = System.IO.Path.Combine(screenshotDir, $"ui_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+            using var stream = File.Create(path);
             encoder.Save(stream);
             Console.WriteLine($"[Screenshot] Salvo em: {path}");
         }

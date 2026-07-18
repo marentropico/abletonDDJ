@@ -1,0 +1,260 @@
+<Window x:Class="LiveBridge.App.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AbleToDJ — Configurações de Mapeamento"
+        Width="860" Height="640"
+        Background="#0A0A0E"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize"
+        MinWidth="700" MinHeight="500">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="glowBlue" BlurRadius="12" Color="#38bdf8" ShadowDepth="0" Opacity="0.7"/>
+        <DropShadowEffect x:Key="glowGreen" BlurRadius="10" Color="#22c55e" ShadowDepth="0" Opacity="0.6"/>
+
+        <!-- ListViewItem sem highlight azul padrão do Windows -->
+        <Style x:Key="RowStyle" TargetType="ListViewItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,1,0,1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#12FFFFFF"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#1E38bdf8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TabBtnStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#64748b"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="16,8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>    <!-- Header -->
+            <RowDefinition Height="44"/>    <!-- Stats bar -->
+            <RowDefinition Height="44"/>    <!-- Tabs + Filter -->
+            <RowDefinition Height="*"/>     <!-- List -->
+            <RowDefinition Height="80"/>    <!-- Detail / MIDI Learn -->
+        </Grid.RowDefinitions>
+
+        <!-- ══ HEADER ══ -->
+        <Border Grid.Row="0" Background="#0F0F14" BorderBrush="#18FFFFFF" BorderThickness="0,0,0,1">
+            <Grid Margin="20,0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="⚙" FontSize="20" Foreground="#38bdf8" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="Configurações de Mapeamento" FontSize="16" FontWeight="Bold"
+                               Foreground="#e2e8f0" FontFamily="Segoe UI" VerticalAlignment="Center"/>
+                    <Border Background="#1E38bdf8" CornerRadius="4" Margin="12,0,0,0" Padding="6,2">
+                        <TextBlock Text="v1.0.1" FontSize="11" Foreground="#38bdf8" FontFamily="Consolas"/>
+                    </Border>
+                </StackPanel>
+                <Button Content="✕" HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Background="Transparent" BorderBrush="Transparent"
+                        Foreground="#64748b" FontSize="18" Cursor="Hand"
+                        Click="BtnCloseSettings_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- ══ STATS BAR ══ -->
+        <Border Grid.Row="1" Background="#08FFFFFF" BorderBrush="#10FFFFFF" BorderThickness="0,0,0,1" Padding="20,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Border Background="#1422c55e" CornerRadius="20" Padding="10,4" Margin="0,0,10,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="8" Height="8" Fill="#22c55e" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBlock x:Name="StatMapped" Text="69 mapeados" FontSize="12"
+                                   Foreground="#22c55e" FontFamily="Segoe UI"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#14eab308" CornerRadius="20" Padding="10,4" Margin="0,0,10,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="8" Height="8" Fill="#eab308" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBlock x:Name="StatPartial" Text="51 sem ação" FontSize="12"
+                                   Foreground="#eab308" FontFamily="Segoe UI"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#14ef4444" CornerRadius="20" Padding="10,4">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="8" Height="8" Fill="#ef4444" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBlock x:Name="StatUnmapped" Text="0 não calibrados" FontSize="12"
+                                   Foreground="#ef4444" FontFamily="Segoe UI"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <!-- ══ TABS + FILTER ══ -->
+        <Grid Grid.Row="2" Background="#0A0A0E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="16,0,0,0" VerticalAlignment="Center">
+                <Button x:Name="BtnTabPure" Content="Controles Puros" Style="{StaticResource TabBtnStyle}"
+                        Click="BtnTabPure_Click"/>
+                <Button x:Name="BtnTabShift" Content="Com SHIFT" Style="{StaticResource TabBtnStyle}"
+                        Click="BtnTabShift_Click" Margin="4,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,16,0" VerticalAlignment="Center">
+                <TextBlock Text="Categoria:" Foreground="#64748b" FontSize="12" FontFamily="Segoe UI"
+                           VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="CategoryFilter" Width="130" Background="#15FFFFFF"
+                          Foreground="#cbd5e1" FontSize="12" SelectionChanged="CategoryFilter_Changed">
+                    <ComboBoxItem Content="Todas" IsSelected="True"/>
+                    <ComboBoxItem Content="Transport"/>
+                    <ComboBoxItem Content="Pads"/>
+                    <ComboBoxItem Content="Mixer"/>
+                    <ComboBoxItem Content="Navigation"/>
+                    <ComboBoxItem Content="Editing"/>
+                    <ComboBoxItem Content="BeatFX"/>
+                    <ComboBoxItem Content="JogWheel"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <!-- ══ LIST ══ -->
+        <ListView x:Name="ControlList" Grid.Row="3"
+                  Background="Transparent" BorderThickness="0"
+                  ItemContainerStyle="{StaticResource RowStyle}"
+                  SelectionChanged="ControlList_SelectionChanged"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="32">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Width="10" Height="10" Fill="{Binding StatusColor}"
+                                         VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Controle" Width="220">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DisplayName}" Foreground="#cbd5e1"
+                                           FontSize="12" FontFamily="Segoe UI"
+                                           Padding="4,6" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Categoria" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Background="{Binding CategoryColor}" CornerRadius="3" Padding="5,2" Margin="2">
+                                    <TextBlock Text="{Binding Category}" Foreground="#94a3b8"
+                                               FontSize="10" FontFamily="Consolas"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Ação no Ableton" Width="380">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ActionDescription}" Foreground="{Binding ActionColor}"
+                                           FontSize="12" FontFamily="Segoe UI" Padding="4,6"
+                                           TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- ══ DETAIL / MIDI LEARN PANEL ══ -->
+        <Border Grid.Row="4" Background="#0F0F14" BorderBrush="#18FFFFFF" BorderThickness="0,1,0,0" Padding="20,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Detail info (shown when item selected, no learn mode) -->
+                <StackPanel x:Name="DetailPanel" Grid.Column="0" Visibility="Visible" VerticalAlignment="Center">
+                    <TextBlock x:Name="DetailTitle" Text="Selecione um controle para ver detalhes"
+                               Foreground="#64748b" FontSize="13" FontFamily="Segoe UI"/>
+                    <TextBlock x:Name="DetailMidi" Text="" Foreground="#475569" FontSize="11"
+                               FontFamily="Consolas" Margin="0,4,0,0"/>
+                </StackPanel>
+
+                <!-- MIDI Learn panel (shown during learning) -->
+                <Border x:Name="MidiLearnPanel" Grid.Column="0" Visibility="Collapsed" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Ellipse x:Name="LearnPulse" Width="12" Height="12" Fill="#38bdf8"
+                                 VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="LearnStatus" Text="Aguardando sinal da controladora..."
+                                   Foreground="#38bdf8" FontSize="13" FontFamily="Segoe UI"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="BtnLearn" Content="⊕  Aprender Botão" Visibility="Collapsed"
+                            Foreground="#38bdf8" FontSize="12" FontFamily="Segoe UI"
+                            Cursor="Hand" Click="BtnLearn_Click" Margin="0,0,10,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="#1538bdf8" BorderBrush="#38bdf8" BorderThickness="1"
+                                        CornerRadius="6" Padding="14,8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnCancelLearn" Content="Cancelar" Visibility="Collapsed"
+                            Foreground="#ef4444" FontSize="12" FontFamily="Segoe UI"
+                            Cursor="Hand" Click="BtnCancelLearn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="#15ef4444" BorderBrush="#ef4444" BorderThickness="1"
+                                        CornerRadius="6" Padding="14,8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

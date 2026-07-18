@@ -543,8 +543,35 @@
         
         <!-- Console de logs na parte inferior -->
         <Border Height="40" VerticalAlignment="Bottom" Background="#EA0F172A" BorderBrush="#25FFFFFF" BorderThickness="0,1,0,0">
-            <TextBlock x:Name="LogConsole" Text="Aguardando conexão MIDI..." Foreground="#38bdf8" 
-                       FontFamily="Consolas" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <DockPanel Margin="16,0">
+                <!-- Botão de Configurações (⚙) -->
+                <Button x:Name="BtnSettings" DockPanel.Dock="Right"
+                        Content="⚙" FontSize="16" Foreground="#64748b"
+                        Background="Transparent" BorderBrush="Transparent"
+                        VerticalAlignment="Center" Cursor="Hand"
+                        Click="BtnSettings_Click" ToolTip="Configurações de Mapeamento">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#38bdf8"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <!-- Log MIDI -->
+                <TextBlock x:Name="LogConsole" Text="Aguardando conexão MIDI..."
+                           Foreground="#38bdf8" FontFamily="Consolas" FontSize="13"
+                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+            </DockPanel>
         </Border>
 
         <!-- Painel de Detalhes Flutuante (Glassmorphism simulado com Background escuro semi-transparente) -->
