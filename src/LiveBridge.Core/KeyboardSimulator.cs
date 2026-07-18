@@ -104,6 +104,14 @@ public static class KeyboardSimulator
         keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
     }
 
+    public static void SendConsolidate()
+    {
+        keybd_event(VK_CONTROL, 0, 0, UIntPtr.Zero);
+        keybd_event(0x4A, 0, 0, UIntPtr.Zero); // Tecla J
+        keybd_event(0x4A, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+        keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, UIntPtr.Zero);
+    }
+
     private const byte VK_OEM_PLUS = 0xBB;
     private const byte VK_OEM_MINUS = 0xBD;
 
