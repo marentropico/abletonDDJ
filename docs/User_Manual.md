@@ -49,6 +49,7 @@ Os canais físicos de volume foram intencionalmente omitidos devido a desgastes 
 | :--- | :--- |
 | **Crossfader** | Navega diretamente pela timeline do Arrangement (Esquerda = início do projeto, Direita = fim do projeto). |
 | **Borda do Jog Wheel Esquerdo** | Navegação fina da timeline por passos (Scrubbing / Needle Drop). |
+| **Shift + Borda do Jog Esquerdo** | Arrasta e move horizontalmente o clipe/nota selecionado (Nudge). Conta com sistema *anti-ghosting* que para instantaneamente ao soltar o Shift. |
 | **Borda do Jog Wheel Direito** | Ajusta o Zoom horizontal do Arrangement (Girar p/ esquerda = Zoom In, Girar p/ direita = Zoom Out). |
 | **FX ON/OFF (Segurar)** | Inicia a seleção de um loop. Arraste o Crossfader enquanto segura este botão para determinar a extensão do loop. |
 | **FX ON/OFF (Soltar)** | Define a região selecionada como loop ativo e liga o loop no Ableton (`Ctrl + Shift + L`). |
@@ -60,7 +61,7 @@ Os canais físicos de volume foram intencionalmente omitidos devido a desgastes 
 | Botão / Controle Físico | O que faz no Ableton Live (Ação / Comportamento) |
 | :--- | :--- |
 | **LOAD Deck A** | **Alternador de Foco:** Alterna o foco do teclado do Ableton entre as **Pistas (Tracks)** e o **Navegador Lateral (Browser)**.<br>• *Ao focar o Browser:* Move o cursor automaticamente para a lista de arquivos (Content Pane) após 100ms. |
-| **Shift + LOAD Deck A** | *Desabilitado* para evitar desalinhamento acidental no foco das telas. |
+| **Shift + LOAD Deck A** | **Focar Clip View:** Traz o foco de interface imediatamente para a janela de detalhes do clipe (Clip View), permitindo que os atalhos da controladora editem notas MIDI, quantizem ou manipulem parâmetros do clipe ativo. |
 | **Selector Knob (Girar)** | Navega verticalmente pelas pastas do Browser ou seleciona as Pistas (simula setas Cima / Baixo). |
 | **Selector Knob (Clicar)** | **Entrar / Abrir:** Abre uma pasta expandindo-a ou carrega um sample/efeito na pista ativa (simula tecla `Enter`). |
 | **Shift + Selector Knob (Clicar)** | **Voltar:** Recolhe a pasta atual ou volta uma pasta no histórico (simula seta Esquerda). |
@@ -81,6 +82,11 @@ Os canais físicos de volume foram intencionalmente omitidos devido a desgastes 
 | **Loop Call ▶ (Deck Esquerdo)** | Refazer a última ação (`Ctrl + Y`). |
 | **Beat Sync (Deck Esquerdo)** | Quantiza as notas MIDI do clipe ativo na tela (`Ctrl + U`). |
 | **Shift + Beat Sync (Deck Esquerdo)** | Liga / Desliga o Metrônomo do Ableton. |
+| **Loop In (Deck Direito)** | Liga / Desliga a região de Loop na seleção atual (`Ctrl + L`). |
+| **Loop Out (Deck Direito)** | Consolida os clipes de áudio ou MIDI selecionados (`Ctrl + J`). |
+| **Loop Call ◀ (Deck Direito)** | Reduz a grade musical (Grid) do Ableton (`Ctrl + 1`). |
+| **Loop Call ▶ (Deck Direito)** | Amplia a grade musical (Grid) do Ableton (`Ctrl + 2`). |
+| **Beat Sync (Deck Direito)** | Funciona como a tecla `Esc` (Tira foco, desmarca clipes, fecha janelas). |
 
 ---
 
