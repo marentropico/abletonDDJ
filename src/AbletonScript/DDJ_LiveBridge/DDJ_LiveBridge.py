@@ -191,6 +191,11 @@ class DDJ_LiveBridge(ControlSurface):
         self._btn_reloop_r = ButtonElement(True, MIDI_CC_TYPE, 15, 49)
         self.register_disconnectable(self._btn_reloop_r)
         self._btn_reloop_r.add_value_listener(self._do_arrangement_rec_toggle)
+        
+        # 8. Focus Clip View (Shift + Load Left - CC 51)
+        self._btn_clip_view_focus = ButtonElement(True, MIDI_CC_TYPE, 15, 51)
+        self.register_disconnectable(self._btn_clip_view_focus)
+        self._btn_clip_view_focus.add_value_listener(self._do_focus_clip_view)
 
     def _do_play_toggle(self, value):
         if value > 0:
@@ -377,6 +382,14 @@ class DDJ_LiveBridge(ControlSurface):
         if value > 0:
             self.song.record_mode = not self.song.record_mode
             self.log_message("Arrangement Record alterado para: " + str(self.song.record_mode))
+
+    def _do_focus_clip_view(self, value):
+        if value > 0:
+            try:
+                self.application.view.focus_view('Detail/Clip')
+                self.log_message("Focado no Clip View.")
+            except Exception as e:
+                self.log_message("Erro ao focar no Clip View: " + str(e))
 
     def _do_crossfader_timeline(self, value):
         # Escala o valor absoluto (0 a 127) para a timeline

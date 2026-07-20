@@ -240,9 +240,11 @@ public class ActionRouter
         {
             if (ev.Value == 0) return null;
 
-            // Ignora o clique se o Shift físico estiver ativo (Related Tracks não está implementado na lógica C#)
-            // Isso evita desregulagem do estado interno _browserFocused
-            if (ev.IsShiftActive) return null;
+            if (ev.IsShiftActive) 
+            {
+                // Shift + Load Left -> Focus Clip View via Python API (CC 51)
+                return new ResolvedAction(ActionType.MidiCC, "Focus_Clip_View", MidiChannel: 16, MidiCC: 51, MidiValue: 127);
+            }
 
             _browserFocused = !_browserFocused;
 
